@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Гангнам Смайл нүдний эмнэлэг · Солонгос Каннам · NEW SMILE LASIK | Монгол үйлчлүүлэгчид</title>
+<meta name="description" content="Солонгос Каннам дахь Гангнам Смайл нүдний эмнэлэг — 5-р үеийн NEW SMILE LASIK, харааны засал, мотбөглөх төв. Монгол хэлээр зөвлөгөө, нисэх онгоцны буудлаас угтах, үнэгүй шалгалт." />
+<meta property="og:title" content="Гангнам Смайл нүдний эмнэлэг — Каннам, Солонгос" />
+<meta property="og:description" content="5-р үеийн NEW SMILE LASIK · Хараа 99% зорилт · Монгол хэлээр VIP үйлчилгээ" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#f5f6fa;
+    --bg-warm:#eef0f7;
+    --ink:#1a1d2c;
+    --ink-soft:#5d6378;
+    --navy:#1c2cae;
+    --navy-deep:#131a8a;
+    --navy-soft:#4654d6;
+    --navy-pale:#dde0f0;
+    --grey:#a8acba;
+    --line:rgba(28,44,174,.1);
+    --shadow:0 14px 40px -16px rgba(28,44,174,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Noto Sans","Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--bg);color:var(--ink);
+    line-height:1.75;-webkit-font-smoothing:antialiased;font-weight:400;
+  }
+  h1,h2,h3{font-family:"Noto Sans","Cormorant Garamond",sans-serif;font-weight:600;letter-spacing:-.005em}
+  h1 .en, h2 .en, h3 .en{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+
+  /* Topbar */
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(16px);background:rgba(255,255,255,.85);border-bottom:1px solid var(--line)}
+  .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1240px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-mark{width:34px;height:34px;position:relative;flex-shrink:0}
+  .brand-mark::before,.brand-mark::after{content:"";position:absolute;width:24px;height:24px;border-radius:50%;top:5px}
+  .brand-mark::before{left:0;background:var(--navy)}
+  .brand-mark::after{left:10px;background:var(--grey);mix-blend-mode:multiply}
+  .brand-text{font-family:"Cormorant Garamond",serif;font-size:18px;letter-spacing:.18em;font-weight:600;color:var(--navy-deep);line-height:1.1}
+  .brand-text small{display:block;font-size:9px;letter-spacing:.3em;color:var(--ink-soft);margin-top:2px;font-family:"Noto Sans",sans-serif;font-weight:400}
+  .topbar nav{display:flex;gap:28px;font-size:13px;color:var(--ink-soft);letter-spacing:.02em}
+  .topbar nav a:hover{color:var(--navy)}
+  .topbar .cta{background:var(--navy);color:#fff;padding:11px 22px;font-weight:500;font-size:12px;letter-spacing:.1em}
+  .topbar .cta:hover{background:var(--navy-deep)}
+  @media(max-width:880px){.topbar nav{display:none}}
+
+  /* Hero */
+  .hero{
+    min-height:100vh;padding:140px 0 100px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(50% 40% at 88% 12%,rgba(28,44,174,.07),transparent 70%),
+      radial-gradient(45% 50% at -5% 95%,rgba(28,44,174,.04),transparent 60%),
+      var(--bg);
+  }
+  .hero::before{
+    content:"";position:absolute;
+    top:50%;left:-20%;width:80%;height:140%;
+    border:1px solid var(--navy-pale);
+    border-radius:50%;
+    transform:translateY(-50%);
+    opacity:.4;pointer-events:none;
+  }
+  .hero::after{
+    content:"";position:absolute;
+    top:50%;left:5%;width:60%;height:110%;
+    border:1px solid var(--navy-pale);
+    border-radius:50%;
+    transform:translateY(-50%);
+    opacity:.3;pointer-events:none;
+  }
+  .hero-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;z-index:2}
+  @media(max-width:880px){.hero-inner{grid-template-columns:1fr;gap:48px}}
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.3em;color:var(--navy);text-transform:uppercase;margin-bottom:32px;font-weight:500}
+  .eyebrow::before{content:"";width:36px;height:1px;background:var(--navy)}
+  .hero h1{font-size:62px;line-height:1.15;margin-bottom:28px;letter-spacing:-.01em;font-weight:700;color:var(--ink)}
+  .hero h1 .accent{color:var(--navy)}
+  .hero p.tagline{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;color:var(--navy-deep);margin-bottom:24px;letter-spacing:.02em;font-weight:500}
+  .hero p.lede{font-size:16px;color:var(--ink-soft);max-width:540px;margin-bottom:44px;line-height:1.85}
+  .hero-stats{display:flex;gap:44px;margin-bottom:48px;flex-wrap:wrap}
+  .hero-stats div{}
+  .hero-stats strong{display:block;font-family:"Cormorant Garamond",serif;font-size:38px;color:var(--navy);font-weight:600;line-height:1}
+  .hero-stats span{font-size:12px;color:var(--ink-soft);letter-spacing:.05em;margin-top:8px;display:block}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:18px 32px;font-size:14px;font-weight:500;letter-spacing:.05em;transition:.25s}
+  .btn-primary{background:var(--navy);color:#fff;border:1px solid var(--navy)}
+  .btn-primary:hover{background:var(--navy-deep);border-color:var(--navy-deep);transform:translateY(-2px);box-shadow:var(--shadow)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+
+  .hero-card{
+    aspect-ratio:4/5;position:relative;overflow:hidden;border-radius:4px;
+    background-size:cover;background-position:center;
+    background-image:
+      linear-gradient(180deg,rgba(28,44,174,.45) 0%,rgba(19,26,138,.55) 100%),
+      url('https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=900&q=80&auto=format&fit=crop'),
+      linear-gradient(180deg,#1c2cae,#131a8a);
+    box-shadow:0 30px 80px -30px rgba(19,26,138,.4);
+  }
+  .hero-card-body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:40px;z-index:2;color:#fff}
+  .hero-card-body small{letter-spacing:.3em;font-size:10px;margin-bottom:14px;text-transform:uppercase;color:#fff;opacity:.85;font-weight:500}
+  .hero-card-body h3{font-size:30px;line-height:1.3;margin-bottom:12px;font-weight:600;color:#fff}
+  .hero-card-body p{font-size:14px;color:rgba(255,255,255,.92);line-height:1.7}
+
+  /* Sections */
+  section{padding:130px 0;position:relative}
+  .sec-head{text-align:center;margin-bottom:80px}
+  .sec-head .eyebrow{justify-content:center}
+  .sec-head h2{font-size:48px;line-height:1.2;margin-bottom:18px;font-weight:600;letter-spacing:-.01em}
+  .sec-head h2 .accent{color:var(--navy)}
+  .sec-head p{color:var(--ink-soft);max-width:620px;margin:0 auto;font-size:15px;line-height:1.85}
+
+  /* Why */
+  .why{background:var(--bg-soft)}
+  .why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+  @media(max-width:1080px){.why-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:760px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:440px){.why-grid{grid-template-columns:1fr}}
+  .why-card{padding:48px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.3s;text-align:center}
+  .why-card:last-child{border-right:none}
+  @media(min-width:1080px){.why-card:nth-child(n+1):nth-last-child(-n+5){border-bottom:none}}
+  .why-card:hover{background:var(--bg-warm)}
+  .why-num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:48px;height:48px;border-radius:50%;
+    background:var(--navy);color:#fff;
+    font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600;
+    margin-bottom:22px;
+  }
+  .why-card h3{font-size:16px;margin-bottom:12px;font-weight:600;color:var(--ink);line-height:1.4}
+  .why-card p{font-size:13px;color:var(--ink-soft);line-height:1.7}
+
+  /* Generation timeline */
+  .gen{background:#fff;padding:120px 0}
+  .gen-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;align-items:start;margin-bottom:48px}
+  @media(max-width:880px){.gen-grid{grid-template-columns:repeat(2,1fr)}}
+  .gen-item{text-align:center;position:relative}
+  .gen-item small{font-size:11px;color:var(--ink-soft);letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:14px}
+  .gen-item.active small{color:var(--navy);font-weight:600}
+  .gen-circle{
+    width:96px;height:96px;border-radius:50%;
+    border:1.5px solid var(--grey);
+    margin:0 auto 14px;display:flex;align-items:center;justify-content:center;
+    font-size:11px;color:var(--ink-soft);letter-spacing:.05em;
+    background:#fff;transition:.3s;
+  }
+  .gen-item.active .gen-circle{
+    background:var(--navy);border-color:var(--navy);color:#fff;
+    font-weight:700;font-size:12px;letter-spacing:.1em;
+    box-shadow:0 16px 40px -12px rgba(28,44,174,.4);
+  }
+  .gen-item h4{font-size:14px;font-weight:600;margin-bottom:4px;color:var(--ink)}
+  .gen-item.active h4{color:var(--navy)}
+  .gen-item p{font-size:12px;color:var(--ink-soft)}
+  .gen-summary{max-width:760px;margin:0 auto;text-align:center}
+  .gen-summary h3{font-size:24px;font-weight:600;margin-bottom:14px;color:var(--ink)}
+  .gen-summary h3 strong{color:var(--navy)}
+  .gen-summary p{color:var(--ink-soft);font-size:15px;line-height:1.85}
+
+  /* Treatments */
+  .treat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  @media(max-width:1080px){.treat-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:880px){.treat-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.treat-grid{grid-template-columns:1fr}}
+  .treat-card{
+    background:#fff;transition:.3s;display:flex;flex-direction:column;
+    border:1px solid var(--line);
+  }
+  .treat-card:hover{border-color:var(--navy);transform:translateY(-4px);box-shadow:var(--shadow)}
+  .treat-img{height:180px;position:relative;overflow:hidden;background-size:cover;background-position:center}
+  .treat-img.t1{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1577086664693-894d8405334a?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
+  .treat-img.t2{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
+  .treat-img.t3{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
+  .treat-img.t4{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
+  .treat-img.t5{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
+  .treat-img.t6{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
+  .treat-img.t7{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
+  .treat-img.t8{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
+  .treat-tag{position:absolute;top:14px;left:14px;background:#fff;color:var(--navy);font-size:10px;letter-spacing:.15em;padding:5px 10px;z-index:2;text-transform:uppercase;font-weight:600}
+  .treat-tag.signature{background:var(--navy);color:#fff}
+  .treat-body{padding:24px;flex:1;display:flex;flex-direction:column}
+  .treat-body h3{font-size:20px;margin-bottom:6px;font-weight:600;color:var(--ink)}
+  .treat-body .sub{font-size:10px;color:var(--navy);letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px;font-weight:600}
+  .treat-body p{font-size:13px;color:var(--ink-soft);margin-bottom:18px;flex:1;line-height:1.75}
+  .treat-meta{display:flex;gap:14px;font-size:11px;color:var(--ink-soft);padding-top:14px;border-top:1px solid var(--line)}
+  .treat-meta strong{color:var(--ink);display:block;margin-bottom:2px;font-size:12px;font-weight:600}
+
+  /* Doctor */
+  .doctor{background:var(--bg-soft)}
+  .doctor-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+  @media(max-width:880px){.doctor-grid{grid-template-columns:1fr;gap:48px}}
+  .doctor-img{
+    aspect-ratio:3/4;position:relative;overflow:hidden;
+    background-size:cover;background-position:center;
+    background-image:
+      linear-gradient(180deg,rgba(28,44,174,.15) 0%,rgba(19,26,138,.4) 100%),
+      url('https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=700&q=80&auto=format&fit=crop'),
+      linear-gradient(180deg,#dde0f0 0%,#a8acba 100%);
+  }
+  .doctor-img-label{position:absolute;bottom:32px;left:32px;color:#fff;z-index:2}
+  .doctor-img-label small{font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.85;font-weight:500}
+  .doctor-img-label h4{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:600;margin-top:6px;letter-spacing:.01em}
+  .doctor-info h3{font-size:38px;margin-bottom:20px;line-height:1.25;font-weight:600;color:var(--ink)}
+  .doctor-info h3 .accent{color:var(--navy)}
+  .doctor-info > p{color:var(--ink-soft);font-size:15px;margin-bottom:28px;line-height:1.85}
+  .doctor-cv{display:grid;gap:14px;padding-top:24px;border-top:1px solid var(--line)}
+  .doctor-cv li{list-style:none;display:flex;gap:16px;font-size:14px;color:var(--ink-soft)}
+  .doctor-cv li::before{content:"—";color:var(--navy);flex-shrink:0;font-weight:600}
+
+  /* Process */
+  .process{background:#fff}
+  .step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative}
+  @media(max-width:880px){.step-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.step-grid{grid-template-columns:1fr}}
+  .step{padding:36px 28px;background:var(--bg-soft);border-left:3px solid var(--navy)}
+  .step-num{font-family:"Cormorant Garamond",serif;font-size:48px;color:var(--navy);font-weight:600;margin-bottom:16px;line-height:1}
+  .step h3{font-size:18px;margin-bottom:12px;font-weight:600;color:var(--ink)}
+  .step p{font-size:14px;color:var(--ink-soft);line-height:1.75}
+
+  /* Trust */
+  .trust{background:var(--navy);color:#fff;padding:100px 0}
+  .trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center}
+  @media(max-width:880px){.trust-row{grid-template-columns:repeat(2,1fr)}}
+  .trust-item{padding:32px 24px;border-right:1px solid rgba(255,255,255,.15)}
+  .trust-item:last-child{border-right:none}
+  @media(max-width:880px){.trust-item:nth-child(2){border-right:none}.trust-item:nth-child(1),.trust-item:nth-child(2){border-bottom:1px solid rgba(255,255,255,.15)}}
+  .trust-item strong{display:block;font-family:"Cormorant Garamond",serif;font-size:54px;color:#fff;margin-bottom:8px;font-weight:600;line-height:1.05}
+  .trust-item span{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.08em}
+
+  /* Famous patients */
+  .famous{background:#fff;padding:120px 0}
+  .famous-card{
+    max-width:920px;margin:0 auto;padding:64px 48px;
+    background:var(--bg-soft);
+    text-align:center;position:relative;
+  }
+  .famous-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--navy);
+  }
+  .famous-eyebrow{font-size:11px;letter-spacing:.3em;color:var(--navy);text-transform:uppercase;margin-bottom:20px;font-weight:600}
+  .famous-card h3{font-size:30px;font-weight:600;margin-bottom:20px;color:var(--ink);line-height:1.4}
+  .famous-card h3 .accent{color:var(--navy)}
+  .famous-card p{color:var(--ink-soft);font-size:15px;margin-bottom:36px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.85}
+  .famous-list{display:flex;gap:48px;justify-content:center;flex-wrap:wrap}
+  .famous-item h4{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  .famous-item small{font-size:12px;color:var(--ink-soft);letter-spacing:.05em}
+
+  /* CTA */
+  .cta-bridge{background:var(--bg-soft);padding:120px 0}
+  .cta-bridge-inner{text-align:center;max-width:760px;margin:0 auto}
+  .cta-bridge h2{font-size:48px;margin-bottom:20px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+  .cta-bridge h2 .accent{color:var(--navy)}
+  .cta-bridge p{color:var(--ink-soft);margin-bottom:44px;font-size:16px;line-height:1.85}
+  .channels{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .channel{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border:1px solid var(--line);background:#fff;transition:.2s;font-size:13px;font-weight:500}
+  .channel:hover{border-color:var(--navy);color:var(--navy);transform:translateY(-2px)}
+  .channel .dot{width:8px;height:8px;border-radius:50%;background:#37c34a}
+  .channel.facebook .dot{background:#1877f2}
+  .channel.whatsapp .dot{background:#25d366}
+  .channel.kakao .dot{background:#fee500}
+  .channel.phone .dot{background:var(--navy)}
+
+  /* Location */
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  @media(max-width:880px){.loc-grid{grid-template-columns:1fr}}
+  .loc-info h3{font-size:42px;margin-bottom:24px;font-weight:600;line-height:1.2}
+  .loc-info h3 .accent{color:var(--navy)}
+  .loc-info dl{display:grid;grid-template-columns:120px 1fr;gap:18px 24px;font-size:15px;margin-bottom:36px;padding-top:24px;border-top:1px solid var(--line)}
+  .loc-info dt{color:var(--navy);letter-spacing:.05em;font-size:12px;font-weight:600;padding-top:4px}
+  .loc-info dd{color:var(--ink-soft)}
+  .map-card{aspect-ratio:4/3;overflow:hidden;background:#fff;border:1px solid var(--line)}
+  .map-card iframe{width:100%;height:100%;border:0}
+
+  /* FAQ */
+  .faq{background:var(--bg-soft)}
+  .faq-list{max-width:840px;margin:0 auto}
+  .faq-item{border-top:1px solid var(--line);padding:28px 0;cursor:pointer}
+  .faq-item:last-child{border-bottom:1px solid var(--line)}
+  .faq-item summary{list-style:none;display:flex;justify-content:space-between;align-items:center;font-size:18px;font-weight:600;color:var(--ink);gap:24px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"+";color:var(--navy);font-size:26px;transition:.2s;font-weight:300;flex-shrink:0}
+  .faq-item[open] summary::after{transform:rotate(45deg)}
+  .faq-item p{margin-top:16px;color:var(--ink-soft);font-size:14px;line-height:1.85}
+
+  /* Footer */
+  footer{padding:80px 0 40px;background:var(--ink);color:#a39ea5}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
+  @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
+  @media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
+  footer h4{font-size:11px;letter-spacing:.25em;color:#fff;margin-bottom:24px;text-transform:uppercase;font-weight:600}
+  footer .brand-text{color:#fff}
+  footer p,footer li{font-size:13px;line-height:1.95;color:#9aa0b0}
+  footer ul{list-style:none}
+  footer a:hover{color:var(--navy-soft)}
+  .copy{text-align:center;font-size:11px;color:#6b6f7d;letter-spacing:.1em}
+
+  .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;padding:12px;gap:8px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .sticky-cta a{flex:1;text-align:center;padding:14px;font-size:13px;font-weight:600;letter-spacing:.05em}
+  .sticky-cta .s-fb{background:#1877f2;color:#fff}
+  .sticky-cta .s-call{background:var(--navy);color:#fff}
+  @media(max-width:760px){
+    .sticky-cta{display:flex}
+    body{padding-bottom:80px}
+    .hero h1{font-size:42px}
+    .sec-head h2,.cta-bridge h2,.loc-info h3,.doctor-info h3{font-size:32px}
+    .trust-item strong{font-size:38px}
+    .famous-card{padding:48px 24px}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-text">GANGNAM SMILE<small>EYE CLINIC · СОЛОНГОС</small></div>
+    </div>
+    <nav>
+      <a href="#new-smile">NEW SMILE</a>
+      <a href="#why">Бидний давуу тал</a>
+      <a href="#treatments">Үйлчилгээ</a>
+      <a href="#doctor">Эмч нар</a>
+      <a href="#location">Хаяг</a>
+    </nav>
+    <a href="#cta" class="cta">Цаг авах</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Каннам · Сөүл · Since 2019</span>
+      <h1>Таны харааг<br/><span class="accent">сэргээх</span><br/>5-р үеийн NEW SMILE</h1>
+      <p class="tagline">"The Light and the Ocean in your Smile"</p>
+      <p class="lede">Сөүлийн Каннам метроны 10-р гарцны яг урд орших Гангнам Смайл нүдний эмнэлэг — Солонгосын топ 100 эмчээр удирдуулсан, харааны засал болон катарактын мэс заслын тэргүүлэгч төв. Монгол үйлчлүүлэгчдэд зориулсан үнэгүй урьдчилсан шалгалт болон орчуулагчийн үйлчилгээтэй.</p>
+      <div class="hero-stats">
+        <div><strong>99%</strong><span>Хараа зорилт хүрэлт</span></div>
+        <div><strong>#1</strong><span>SCHWIND ATOS Солонгост</span></div>
+        <div><strong>7+</strong><span>Мэргэжлийн эмч</span></div>
+      </div>
+      <div class="btn-row">
+        <a href="#cta" class="btn btn-primary">Үнэгүй зөвлөгөө авах →</a>
+        <a href="#new-smile" class="btn btn-ghost">NEW SMILE гэж юу вэ</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-body">
+        <small>SIGNATURE TECHNOLOGY</small>
+        <h3>5-р үеийн<br/>NEW SMILE LASIK</h3>
+        <p>7 хэмжээст нүдний хяналт + эргэлтийн залруулга — нарийн астигматизм, хурдан сэргэлт, өдөр тутмын амьдралд богино хугацаанд буцах боломж.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why Gangnam Smile</span>
+      <h2>Гангнам Смайлыг<br/>сонгох <span class="accent">5 шалтгаан</span></h2>
+      <p>Зөвхөн төхөөрөмж биш — Солонгосын топ 100 эмчээр удирдуулсан, тасралтгүй судалгаа хийдэг 7 нүдний эмчтэй мэргэжлийн баг.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">1</div>
+        <h3>Орчин үеийн харааны засал</h3>
+        <p>5-р үеийн NEW SMILE LASIK болон SCHWIND ATOS төхөөрөмж — Солонгост хамгийн их мэс засал хийсэн.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">2</div>
+        <h3>Катарактын мэргэжил</h3>
+        <p>Катарактын мэс засалд тусгай мэргэшсэн баг — сүүлийн үеийн линз сонголтоор хувийн төлөвлөгөө.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">3</div>
+        <h3>Топ 100 эмч</h3>
+        <p>Тэргүүлэгч эмч Ём Дун Жү — Солонгосын топ 100 эмчийн нэг, олон улсын хэвлэлд хүлээн зөвшөөрөгдсөн.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">4</div>
+        <h3>Үйлчлүүлэгчид ээлтэй</h3>
+        <p>Каннам метроны 10-р гарцны яг урд — гадаад үйлчлүүлэгчдэд зориулсан англи орчуулагч байнга.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">5</div>
+        <h3>Олон чиглэлийн мэргэшил</h3>
+        <p>Харааны засал, катаракт, шилэн бие, глаукома, нүдний хагалгаа — нэг газарт цогц үйлчилгээ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gen" id="new-smile">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Innovation Timeline</span>
+      <h2>Харааны заслын<br/><span class="accent">5 үе</span></h2>
+      <p>1980-аад оны PRK-аас 2022 оны NEW SMILE хүртэл — Гангнам Смайл нь сүүлийн үеийн стандарт болсон 5-р үеийн NEW SMILE LASIK-ийг гүйцэтгэж байна.</p>
+    </div>
+    <div class="gen-grid">
+      <div class="gen-item">
+        <small>1st Gen</small>
+        <div class="gen-circle">PRK</div>
+        <h4>PRK</h4>
+        <p>1980-аад он</p>
+      </div>
+      <div class="gen-item">
+        <small>2nd Gen</small>
+        <div class="gen-circle">LASEK</div>
+        <h4>LASEK</h4>
+        <p>1990-ээд он</p>
+      </div>
+      <div class="gen-item">
+        <small>3rd Gen</small>
+        <div class="gen-circle">LASIK</div>
+        <h4>LASIK</h4>
+        <p>2000-аад он</p>
+      </div>
+      <div class="gen-item">
+        <small>4th Gen</small>
+        <div class="gen-circle">SMILE</div>
+        <h4>SMILE LASIK</h4>
+        <p>2010-аад он</p>
+      </div>
+      <div class="gen-item active">
+        <small>5th Gen — NOW</small>
+        <div class="gen-circle">NEXT LEVEL</div>
+        <h4>NEW SMILE</h4>
+        <p>2022 оноос</p>
+      </div>
+    </div>
+    <div class="gen-summary">
+      <h3><strong>NEW SMILE LASIK</strong> — өмнөх SMILE-ийн дутагдлуудыг даван туулсан 5-р үеийн харааны засал.</h3>
+      <p>7 хэмжээст нүдний хяналт болон нүдний эргэлтийн залруулгын функцууд нь өндөр зэрэгтэй астигматизмыг нарийн засах, хурдан сэргэх, өдөр тутмын амьдралдаа аль болох хурдан буцах боломжийг олгоно.</p>
+    </div>
+  </div>
+</section>
+
+<section id="treatments">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Signature Treatments</span>
+      <h2>Бидний <span class="accent">үйлчилгээ</span></h2>
+      <p>Харааны засал, катаракт, шилэн бие, нүдний хагалгаа — нэг газарт бүрэн цогц үйлчилгээ.</p>
+    </div>
+    <div class="treat-grid">
+
+      <article class="treat-card">
+        <div class="treat-img t1"><span class="treat-tag signature">★ Signature</span></div>
+        <div class="treat-body">
+          <div class="sub">5th Gen NEW SMILE</div>
+          <h3>NEW SMILE LASIK</h3>
+          <p>5-р үеийн харааны засал. 7 хэмжээст нүдний хяналт, нарийн астигматизм засал, хурдан сэргэлт.</p>
+          <div class="treat-meta">
+            <span><strong>1 өдөр</strong>Мэс засал</span>
+            <span><strong>1-2 өдөр</strong>Сэргэлт</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="treat-card">
+        <div class="treat-img t2"><span class="treat-tag">Premier</span></div>
+        <div class="treat-body">
+          <div class="sub">New Smile LASIK</div>
+          <h3>Шинэ Смайл LASIK</h3>
+          <p>Сүүлийн үеийн SMILE LASIK — жижиг зүсэлт, эвэрлэг бүрэн хадгална, хуурайших магадлал бага.</p>
+          <div class="treat-meta">
+            <span><strong>1 өдөр</strong>Мэс засал</span>
+            <span><strong>1 өдөр</strong>Сэргэлт</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="treat-card">
+        <div class="treat-img t3"><span class="treat-tag">Smart</span></div>
+        <div class="treat-body">
+          <div class="sub">SmartNova</div>
+          <h3>SmartNova</h3>
+          <p>Зорилтот нүдийг бүрэн хянадаг ухаалаг лазер систем — өвдөлт бага, аюулгүй байдал өндөр.</p>
+          <div class="treat-meta">
+            <span><strong>1 өдөр</strong>Мэс засал</span>
+            <span><strong>1-2 өдөр</strong>Сэргэлт</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="treat-card">
+        <div class="treat-img t4"><span class="treat-tag">Express</span></div>
+        <div class="treat-body">
+          <div class="sub">2DAY LASEK</div>
+          <h3>2 өдрийн LASEK</h3>
+          <p>Хурдасгасан LASEK арга — ажил руугаа 2 хоногийн дараа буцаж болно. Нимгэн эвэрлэгтэй хүмүүст тохиромжтой.</p>
+          <div class="treat-meta">
+            <span><strong>1 өдөр</strong>Мэс засал</span>
+            <span><strong>2-3 өдөр</strong>Сэргэлт</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="treat-card">
+        <div class="treat-img t5"><span class="treat-tag">Implant</span></div>
+        <div class="treat-body">
+          <div class="sub">ICL Lens Implant</div>
+          <h3>ICL Линз суулгац</hp3></h3>
+          <p>Лазер хийх боломжгүй өндөр диоптртой хүмүүст — хиймэл линзийг нүдэнд суулгаснаар бараг хязгааргүй харааны засал.</p>
+          <div class="treat-meta">
+            <span><strong>1 өдөр</strong>Мэс засал</span>
+            <span><strong>1-2 өдөр</strong>Сэргэлт</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="treat-card">
+        <div class="treat-img t6"><span class="treat-tag">Specialty</span></div>
+        <div class="treat-body">
+          <div class="sub">Cataract Surgery</div>
+          <h3>Катарактын мэс засал</h3>
+          <p>Катарактыг арилгах болон сүүлийн үеийн олон чиглэлт линз сонгох. Нэгэн зэрэг тойм харааг засна.</p>
+          <div class="treat-meta">
+            <span><strong>1 өдөр</strong>Мэс засал</span>
+            <span><strong>1-3 өдөр</strong>Сэргэлт</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="treat-card">
+        <div class="treat-img t7"><span class="treat-tag">Anti-Aging</span></div>
+        <div class="treat-body">
+          <div class="sub">Presbyopia</div>
+          <h3>Пресбиопи засал</h3>
+          <p>40+ насны нэг талын харааны бэрхшээлийг засах — хувь хүний хэрэгцээнд тохирсон линз болон лазер сонголт.</p>
+          <div class="treat-meta">
+            <span><strong>1 өдөр</strong>Мэс засал</span>
+            <span><strong>1-2 өдөр</strong>Сэргэлт</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="treat-card">
+        <div class="treat-img t8"><span class="treat-tag">Premium</span></div>
+        <div class="treat-body">
+          <div class="sub">Eye Ring Surgery</div>
+          <h3>Eye Ring мэс засал</h3>
+          <p>Гоо сайхны нүдний мэс засал — нүдний орчмын тойргийг сэргээж, залуу харагдах байдлыг олгоно.</p>
+          <div class="treat-meta">
+            <span><strong>Захиалгат</strong>Төлөвлөгөө</span>
+            <span><strong>3-5 өдөр</strong>Сэргэлт</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="doctor" id="doctor">
+  <div class="wrap doctor-grid">
+    <div class="doctor-img">
+      <div class="doctor-img-label">
+        <small>CHIEF PHYSICIAN</small>
+        <h4>Dr. Yeom Dong Ju</h4>
+      </div>
+    </div>
+    <div class="doctor-info">
+      <span class="eyebrow">Meet the Doctor</span>
+      <h3>Солонгосын <span class="accent">топ 100 эмч</span><br/>тэргүүлэгч Ём Дун Жү</h3>
+      <p>"The First Penguin" — Гангнам Смайлын тэргүүлэгч эмч Ём Дун Жү бол Солонгосын топ 100 эмчийн нэг бөгөөд олон улсын хэвлэлд хүлээн зөвшөөрөгдсөн харааны заслын мэргэжилтэн юм. Олимпийн алтан медалийн эзэд (Ким У Жин, Ан Сан) болон гадаад улсын олон үйлчлүүлэгчийн нүдийг засдаг.</p>
+      <ul class="doctor-cv">
+        <li>Солонгосын топ 100 эмч (Top 100 Doctors of South Korea)</li>
+        <li>SCHWIND ATOS төхөөрөмжөөр Солонгост хамгийн их мэс засал хийсэн (2022 оноос)</li>
+        <li>Олон улсын эрдэм шинжилгээний өгүүлэлд хэвлэгдсэн</li>
+        <li>Германы Innovation Award шагналтан</li>
+        <li>Vision Care гадаад буяны үйл ажиллагаа (Мозамбик гэх мэт)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-row">
+      <div class="trust-item"><strong>99%</strong><span>Хараа зорилт хүрэлт</span></div>
+      <div class="trust-item"><strong>#1</strong><span>ATOS Солонгост</span></div>
+      <div class="trust-item"><strong>2019</strong><span>Каннамд байгуулагдсан</span></div>
+      <div class="trust-item"><strong>7+</strong><span>Мэргэжлийн эмч</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="famous">
+  <div class="wrap">
+    <div class="famous-card">
+      <div class="famous-eyebrow">Trusted by Champions</div>
+      <h3>Олимпийн <span class="accent">алтан медалийн эзэд</span><br/>сонгосон эмнэлэг</h3>
+      <p>Дэлхийн тавцанд Солонгосыг төлөөлж буй тамирчдын харааг найдвартай гарт оруулдаг — олимпийн чанаргүй стандарт нь өдөр тутмын стандарт юм.</p>
+      <div class="famous-list">
+        <div class="famous-item">
+          <h4>Kim Woo-jin</h4>
+          <small>Олимпийн 5 удаагийн алтан медальт (нум сум)</small>
+        </div>
+        <div class="famous-item">
+          <h4>An San</h4>
+          <small>Токиогийн олимпийн 3 удаагийн алтан медальт</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">VIP Patient Journey</span>
+      <h2>Монгол үйлчлүүлэгчдийн<br/><span class="accent">4 алхам</span></h2>
+      <p>Улаанбаатараас Сөүл хүртэл 3 цаг — нэг өдрийн мэс засал, дараа өдөр Сөүлийг үзэж, гэртээ буцах боломжтой.</p>
+    </div>
+    <div class="step-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Үнэгүй зөвлөгөө</h3>
+        <p>Facebook Messenger, WhatsApp эсвэл и-мэйлээр өөрийн нүдний түүхийг илгээх — 24 цагийн дотор Монгол хэлээр анхны төлөвлөгөө хүлээн авна.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Сөүлд ирэх</h3>
+        <p>Инчоны нисэх онгоцны буудалд хүлээн авах үйлчилгээ. Каннамын ойролцоох санал болгох зочид буудлууд (5 минутын зайтай) — Орчуулагч анхны өдөр дагалдана.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Үнэгүй шалгалт + мэс засал</h3>
+        <p>Дэвшилтэт төхөөрөмжөөр үнэгүй урьдчилсан шалгалт. Тохирсон арга батлагдвал тэр өдөртөө мэс засал хийнэ. Бүх процесс орчуулагчтай.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Сэргэлт ба буцах</h3>
+        <p>Маргаашийн өглөө хяналтын шалгалт. Монгол хэл дээрх хагалгааны дараах гарын авлага. Гэртээ буцсаны дараа 90 хоног Messenger-аар хяналт.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-bridge" id="cta">
+  <div class="wrap cta-bridge-inner">
+    <span class="eyebrow">Free Consultation</span>
+    <h2>Үнэгүй зөвлөгөө<br/><span class="accent">авах</span></h2>
+    <p>Та нүднийхээ түүх, эдүгээ ашиглаж буй нүдний шилний диоптр, шалгалтын тайлан байгаа бол илгээнэ үү — 24 цагийн дотор Монгол хэлээр хариу өгнө (зөвлөмж арга, үнийн хүрээ, шаардагдах өдрийн тоо).</p>
+    <div class="channels">
+      <a class="channel facebook" href="https://www.facebook.com/" target="_blank" rel="noopener">
+        <span class="dot"></span>Facebook Messenger
+      </a>
+      <a class="channel whatsapp" href="https://wa.me/" target="_blank" rel="noopener">
+        <span class="dot"></span>WhatsApp
+      </a>
+      <a class="channel kakao" href="https://pf.kakao.com/" target="_blank" rel="noopener">
+        <span class="dot"></span>KakaoTalk
+      </a>
+      <a class="channel phone" href="tel:+82-2-553-0210">
+        <span class="dot"></span>+82-2-553-0210
+      </a>
+    </div>
+    <p style="margin-top:32px;font-size:13px;color:var(--ink-soft)">Монгол хэлтэй ажилтан · Дунджаар 6 цагийн дотор хариу</p>
+  </div>
+</section>
+
+<section id="location">
+  <div class="wrap">
+    <div class="loc-grid">
+      <div class="loc-info">
+        <span class="eyebrow">Visit Us</span>
+        <h3>Каннам метро<br/><span class="accent">10-р гарц</span> · Сөүл</h3>
+        <dl>
+          <dt>Хаяг</dt><dd>Сөүл хот, Сочогү, Каннам-даэро 405, Тонёнг билдинг 4-р давхар, 6-р давхар<br/><span style="font-size:13px;color:var(--grey)">서울 서초구 강남대로 405, 통영빌딩 4F, 6F</span></dd>
+          <dt>Метро</dt><dd>Каннам станц 10-р гарц — яг урд (1 минут)</dd>
+          <dt>Нисэх буудал</dt><dd>Инчон ОУНОБ-аас ~70 минут · Гимпо ОУНОБ-аас ~40 минут<br/>Гадаад үйлчлүүлэгчдэд хүлээн авах үйлчилгээтэй</dd>
+          <dt>Цагийн хуваарь</dt><dd>Дав·Мяг·Пүр·Баа: 10:00–18:30<br/>Бямба: 09:30–16:30 (Үд: 13:00–14:00)<br/><em>Лхагва, Ням, Олон нийтийн амралтын өдөр амарна</em></dd>
+        </dl>
+        <a href="#cta" class="btn btn-primary">Цаг авах →</a>
+      </div>
+      <div class="map-card">
+        <iframe src="https://www.google.com/maps?q=서울+서초구+강남대로+405&output=embed" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Монгол үйлчлүүлэгчдийн<br/><span class="accent">түгээмэл асуултууд</span></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Монгол хэлээр харилцах боломжтой юу?</summary>
+        <p>Тийм. Гангнам Смайл нь Монгол хэлтэй мэргэжилтэнтэй ажилладаг бөгөөд бүх зөвлөгөө, мэс заслын зөвшөөрлийн маягт, мэс заслын дараах зааварчилгаа Монгол хэлээр өгөгдөнө. Англи орчуулагч мөн өдөр бүр байна.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Сөүлд хэдэн өдөр байх шаардлагатай вэ?</summary>
+        <p>NEW SMILE LASIK эсвэл LASIK хийлгэхдээ хамгийн багадаа 3 өдөр (1 өдөр — шалгалт+мэс засал, 1 өдөр — хяналт, 1 өдөр — нөөц) санал болгож байна. LASEK эсвэл цогц төлөвлөгөөнд 4-5 өдөр байх нь зүйтэй.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Үнэ нь хэр байх вэ? Цаасан дээр баталгаажих уу?</summary>
+        <p>Шалгалтын дараа Монгол хэл дээр бичгээр үнийн санал гаргадаг бөгөөд тэр үнээр төлбөр төлөгдөнө. Visa, Mastercard, UnionPay, Apple Pay хүлээн авна. Эмнэлэгт ирсний дараа нэмэлт төлбөр гарахгүй.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Уламжлалт LASIK болон NEW SMILE-ийн ялгаа юу вэ?</summary>
+        <p>NEW SMILE нь 5-р үеийн арга бөгөөд 7 хэмжээст нүдний хяналттай. Жижиг зүсэлт хийдэг тул эвэрлэгийн бүтэц илүү хадгалагдаж, нүдэнд хэрэгтэй мэдрэлүүд хадгалагдан, хуурайших магадлал ердийн LASIK-ээс эрс бага байна.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Гэртээ буцсаны дараа асуудал гарвал яах вэ?</summary>
+        <p>90 хоногийн турш Facebook Messenger эсвэл WhatsApp-аар Монгол хэл дээр хяналт олгоно. Шаардлагатай бол видео зөвлөгөө боломжтой. Нэмэлт шалгалт хэрэгтэй болвол үнэгүй давтан үзлэг (нислэгийн зардлыг өөрөө хариуцна).</p>
+      </details>
+      <details class="faq-item">
+        <summary>Анх удаа Солонгост ирж байна. Аюулгүй юу?</summary>
+        <p>Гангнам Смайл нь 2019 оноос Каннамд үйл ажиллагаа явуулдаг бөгөөд Солонгосын топ 100 эмчээр удирдуулсан баг юм. Олимпийн алтан медалийн эзэд (Ким У Жин, Ан Сан) сонгосон эмнэлэг — дэлхийн стандарт нь өдөр тутмын стандарт.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="margin-bottom:18px">
+          <div class="brand-mark"></div>
+          <div class="brand-text">GANGNAM SMILE<small>EYE CLINIC</small></div>
+        </div>
+        <p>Гангнам Смайл нүдний эмнэлэг<br/>Сөүл хот, Сочогү, Каннам-даэро 405<br/>Тонёнг билдинг 4-р, 6-р давхар<br/><br/>"The Light and the Ocean in your Smile"<br/>Established 2019</p>
+      </div>
+      <div>
+        <h4>Үйлчилгээ</h4>
+        <ul>
+          <li>NEW SMILE LASIK</li>
+          <li>SMILE LASIK</li>
+          <li>SmartNova</li>
+          <li>2DAY LASEK</li>
+          <li>ICL линз</li>
+          <li>Катаракт</li>
+          <li>Пресбиопи</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Шагнал</h4>
+        <ul>
+          <li>Top 100 Doctors</li>
+          <li>Germany Innovation Award</li>
+          <li>SCHWIND ATOS #1 Korea</li>
+          <li>Web Award</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Холбоо барих</h4>
+        <ul>
+          <li>+82-2-553-0210</li>
+          <li>WhatsApp · Facebook</li>
+          <li>KakaoTalk @smileeye</li>
+          <li>Instagram @smile_eyeclinic</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© Гангнам Смайл нүдний эмнэлэг · Gangnam Smile Eye Clinic · International marketing partner: PortZone</div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="s-fb" href="#cta">Facebook</a>
+  <a class="s-call" href="tel:+82-2-553-0210">Утсаар залгах</a>
+</div>
+
+</body>
+</html>
