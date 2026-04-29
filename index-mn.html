@@ -217,27 +217,53 @@
   .treat-meta{display:flex;gap:14px;font-size:11px;color:var(--ink-soft);padding-top:14px;border-top:1px solid var(--line)}
   .treat-meta strong{color:var(--ink);display:block;margin-bottom:2px;font-size:12px;font-weight:600}
 
-  /* Doctor */
+  /* Doctors */
   .doctor{background:var(--bg-soft)}
-  .doctor-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
-  @media(max-width:880px){.doctor-grid{grid-template-columns:1fr;gap:48px}}
-  .doctor-img{
-    aspect-ratio:3/4;position:relative;overflow:hidden;
-    background-size:cover;background-position:center 20%;
-    background-image:
-      linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(13,18,80,.55) 100%),
-      url('assets/doctor-consult.jpg'),
-      linear-gradient(180deg,#dde0f0 0%,#a8acba 100%);
+  .doctors-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  @media(max-width:880px){.doctors-trio{grid-template-columns:1fr;gap:24px;max-width:480px;margin:0 auto}}
+  .doctor-card{
+    background:#fff;border:1px solid var(--line);
+    overflow:hidden;display:flex;flex-direction:column;transition:.3s;
   }
-  .doctor-img-label{position:absolute;bottom:32px;left:32px;color:#fff;z-index:2}
-  .doctor-img-label small{font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.85;font-weight:500}
-  .doctor-img-label h4{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:600;margin-top:6px;letter-spacing:.01em}
-  .doctor-info h3{font-size:38px;margin-bottom:20px;line-height:1.25;font-weight:600;color:var(--ink)}
-  .doctor-info h3 .accent{color:var(--navy)}
-  .doctor-info > p{color:var(--ink-soft);font-size:15px;margin-bottom:28px;line-height:1.85}
-  .doctor-cv{display:grid;gap:14px;padding-top:24px;border-top:1px solid var(--line)}
-  .doctor-cv li{list-style:none;display:flex;gap:16px;font-size:14px;color:var(--ink-soft)}
-  .doctor-cv li::before{content:"—";color:var(--navy);flex-shrink:0;font-weight:600}
+  .doctor-card:hover{border-color:var(--navy);transform:translateY(-4px);box-shadow:var(--shadow)}
+  .doctor-card-img{
+    aspect-ratio:3/4;position:relative;overflow:hidden;
+    background:#f0f1f7;background-size:cover;background-position:center top;
+    border-bottom:3px solid var(--navy);
+  }
+  .doctor-card-img.lead{border-bottom-color:var(--navy-deep);background-color:#e8eaf3}
+  .doctor-card-tag{
+    position:absolute;top:14px;left:14px;
+    background:var(--navy);color:#fff;
+    font-size:10px;letter-spacing:.2em;padding:6px 12px;
+    text-transform:uppercase;font-weight:600;
+  }
+  .doctor-card-body{padding:28px;flex:1;display:flex;flex-direction:column}
+  .doctor-card-body .role{
+    font-size:10px;color:var(--navy);letter-spacing:.25em;
+    text-transform:uppercase;font-weight:600;margin-bottom:10px;
+  }
+  .doctor-card-body h4{
+    font-family:"Cormorant Garamond",serif;
+    font-size:26px;font-weight:600;color:var(--ink);
+    margin-bottom:6px;letter-spacing:-.005em;line-height:1.15;
+  }
+  .doctor-card-body h4 small{
+    display:block;font-family:"Noto Sans",sans-serif;
+    font-size:13px;color:var(--ink-soft);
+    font-weight:500;margin-top:4px;letter-spacing:0;
+  }
+  .doctor-quote{
+    font-style:italic;font-size:13px;color:var(--ink-soft);
+    line-height:1.75;margin:18px 0;
+    padding-left:14px;border-left:2px solid var(--navy-pale);
+  }
+  .dr-meta{list-style:none;padding-top:16px;border-top:1px solid var(--line);margin-top:auto}
+  .dr-meta li{
+    font-size:12px;color:var(--ink-soft);padding:6px 0;
+    display:flex;gap:10px;
+  }
+  .dr-meta li::before{content:"—";color:var(--navy);flex-shrink:0}
 
   /* Process */
   .process{background:#fff}
@@ -260,22 +286,48 @@
   .trust-item span{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.08em}
 
   /* Famous patients */
-  .famous{background:#fff;padding:120px 0}
-  .famous-card{
-    max-width:920px;margin:0 auto;padding:64px 48px;
-    background:var(--bg-soft);
-    text-align:center;position:relative;
-  }
-  .famous-card::before{
-    content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--navy);
-  }
+  .famous{background:#fff;padding:130px 0}
   .famous-eyebrow{font-size:11px;letter-spacing:.3em;color:var(--navy);text-transform:uppercase;margin-bottom:20px;font-weight:600}
-  .famous-card h3{font-size:30px;font-weight:600;margin-bottom:20px;color:var(--ink);line-height:1.4}
-  .famous-card h3 .accent{color:var(--navy)}
-  .famous-card p{color:var(--ink-soft);font-size:15px;margin-bottom:36px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.85}
-  .famous-list{display:flex;gap:48px;justify-content:center;flex-wrap:wrap}
-  .famous-item h4{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;color:var(--navy);margin-bottom:6px}
-  .famous-item small{font-size:12px;color:var(--ink-soft);letter-spacing:.05em}
+  .famous-grid{
+    display:grid;grid-template-columns:repeat(6,1fr);gap:24px 16px;
+    max-width:1100px;margin:0 auto;
+  }
+  @media(max-width:880px){.famous-grid{grid-template-columns:repeat(4,1fr);gap:20px 12px}}
+  @media(max-width:520px){.famous-grid{grid-template-columns:repeat(3,1fr)}}
+  .famous-item{text-align:center;transition:.2s;cursor:default}
+  .famous-item:hover{transform:translateY(-4px)}
+  .famous-photo{
+    width:100%;aspect-ratio:1;border-radius:50%;
+    background-size:cover;background-position:center 25%;
+    background-color:#f0f1f7;
+    margin-bottom:14px;
+    border:2px solid transparent;transition:.2s;
+    box-shadow:0 8px 24px -10px rgba(28,44,174,.18);
+  }
+  .famous-item:hover .famous-photo{border-color:var(--navy);box-shadow:0 14px 30px -10px rgba(28,44,174,.28)}
+  .famous-item .name{
+    font-family:"Cormorant Garamond",serif;
+    font-size:16px;font-weight:600;color:var(--ink);
+    line-height:1.2;letter-spacing:-.005em;
+  }
+  .famous-item .name small{
+    display:block;font-family:"Noto Sans",sans-serif;
+    font-size:11px;color:var(--ink-soft);font-weight:500;
+    margin-top:4px;letter-spacing:.02em;
+  }
+  .famous-highlight{
+    max-width:680px;margin:64px auto 0;text-align:center;
+    padding:36px 32px;background:var(--bg-soft);
+    border-left:3px solid var(--navy);
+  }
+  .famous-highlight h4{
+    font-family:"Cormorant Garamond",serif;
+    font-size:22px;font-weight:600;color:var(--ink);
+    margin-bottom:8px;line-height:1.3;
+  }
+  .famous-highlight h4 .accent{color:var(--navy);font-style:italic}
+  .famous-highlight p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+  .famous-highlight strong{color:var(--ink)}
 
   /* CTA */
   .cta-bridge{background:var(--bg-soft);padding:120px 0}
@@ -351,7 +403,7 @@
   @media(max-width:880px){.innov-grid{grid-template-columns:1fr;gap:48px}}
   .innov-img{
     aspect-ratio:4/3;position:relative;overflow:hidden;
-    background:url('assets/schwind-atos.jpg') center/cover,linear-gradient(135deg,#dde0f0,#a8b1d6);
+    background:url('assets/device-atos.jpg') center/cover,linear-gradient(135deg,#dde0f0,#a8b1d6);
   }
   .innov-img-tag{position:absolute;bottom:24px;left:24px;background:#fff;color:var(--navy);padding:8px 16px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;z-index:2}
   .innov-info h3{font-size:42px;line-height:1.15;margin-bottom:24px;font-weight:600}
@@ -696,24 +748,59 @@
 </section>
 
 <section class="doctor" id="doctor">
-  <div class="wrap doctor-grid">
-    <div class="doctor-img">
-      <div class="doctor-img-label">
-        <small>CHIEF PHYSICIAN</small>
-        <h4>Dr. Yeom Dong Ju</h4>
-      </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our Doctors</span>
+      <h2>Гангнам Смайлын<br/><span class="accent">тэргүүлэгч 3 эмч</span></h2>
+      <p>Тус эмнэлэг нь нийт 7 нүдний эмчтэй. Тэдний 3 нь Солонгосын топ түвшний харааны засал, катаракт, нүдний хагалгаа болон харааны төвийн тэргүүлэгч эмч нар.</p>
     </div>
-    <div class="doctor-info">
-      <span class="eyebrow">Meet the Doctor</span>
-      <h3>Солонгосын <span class="accent">топ 100 эмч</span><br/>тэргүүлэгч Ём Дун Жү</h3>
-      <p>"The First Penguin" — Гангнам Смайлын тэргүүлэгч эмч Ём Дун Жү бол Солонгосын топ 100 эмчийн нэг бөгөөд олон улсын хэвлэлд хүлээн зөвшөөрөгдсөн харааны заслын мэргэжилтэн юм. Олимпийн алтан медалийн эзэд (Ким У Жин, Ан Сан) болон гадаад улсын олон үйлчлүүлэгчийн нүдийг засдаг.</p>
-      <ul class="doctor-cv">
-        <li>Солонгосын топ 100 эмч (Top 100 Doctors of South Korea)</li>
-        <li>SCHWIND ATOS төхөөрөмжөөр Солонгост хамгийн их мэс засал хийсэн (2022 оноос)</li>
-        <li>Олон улсын эрдэм шинжилгээний өгүүлэлд хэвлэгдсэн</li>
-        <li>Германы Innovation Award шагналтан</li>
-        <li>Vision Care гадаад буяны үйл ажиллагаа (Мозамбик гэх мэт)</li>
-      </ul>
+    <div class="doctors-trio">
+
+      <article class="doctor-card">
+        <div class="doctor-card-img lead" style="background-image:url('assets/dr-yeom.jpg')">
+          <span class="doctor-card-tag">★ Chief</span>
+        </div>
+        <div class="doctor-card-body">
+          <span class="role">Chief Physician · Top 100</span>
+          <h4>Dr. Yeom Dong Ju<small>Ём Дун Жү · 염동주</small></h4>
+          <p class="doctor-quote">"Бүдэгдсэн харааг тодорхой болгож олж авах процесс — энэ бол Гангнам Смайлын баялаг туршлага юм."</p>
+          <ul class="dr-meta">
+            <li>Top 100 Doctors of Korea</li>
+            <li>SCHWIND ATOS #1 Korea (2022~)</li>
+            <li>Germany Innovation Award</li>
+            <li>NEW SMILE LASIK мэргэжилтэн</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="doctor-card">
+        <div class="doctor-card-img" style="background-image:url('assets/dr-yoon.jpg')"></div>
+        <div class="doctor-card-body">
+          <span class="role">Director · Cataract</span>
+          <h4>Dr. Yoon Hyo-Sung<small>Юн Хё Сон · 윤효성</small></h4>
+          <p class="doctor-quote">"Харааны засал болон катарактын мэс засал нь алдагдсан харааг сэргээж, эвгүй байдлыг арилгах арга юм."</p>
+          <ul class="dr-meta">
+            <li>Катарактын мэс заслын мэргэжилтэн</li>
+            <li>Олон чиглэлт линз сонголт</li>
+            <li>Харааны засал · Нүдний хагалгаа</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="doctor-card">
+        <div class="doctor-card-img" style="background-image:url('assets/dr-jung.jpg')"></div>
+        <div class="doctor-card-body">
+          <span class="role">Director · Retina · Glaucoma</span>
+          <h4>Dr. Jung Sang-Jun<small>Жон Сан Жүн · 정상준</small></h4>
+          <p class="doctor-quote">"Нүд бол хүний дотоод сэтгэлийг харуулдаг ертөнцийг харах цонх юм."</p>
+          <ul class="dr-meta">
+            <li>Шилэн бие · Глаукомын мэргэжилтэн</li>
+            <li>Нүдний хагалгаа</li>
+            <li>Цогц харааны засал</li>
+          </ul>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -731,20 +818,66 @@
 
 <section class="famous">
   <div class="wrap">
-    <div class="famous-card">
-      <div class="famous-eyebrow">Trusted by Champions</div>
-      <h3>Олимпийн <span class="accent">алтан медалийн эзэд</span><br/>сонгосон эмнэлэг</h3>
-      <p>Дэлхийн тавцанд Солонгосыг төлөөлж буй тамирчдын харааг найдвартай гарт оруулдаг — олимпийн чанаргүй стандарт нь өдөр тутмын стандарт юм.</p>
-      <div class="famous-list">
-        <div class="famous-item">
-          <h4>Kim Woo-jin</h4>
-          <small>Олимпийн 5 удаагийн алтан медальт (нум сум)</small>
-        </div>
-        <div class="famous-item">
-          <h4>An San</h4>
-          <small>Токиогийн олимпийн 3 удаагийн алтан медальт</small>
-        </div>
+    <div class="sec-head">
+      <span class="eyebrow">Trusted by Champions & Stars</span>
+      <h2>Олимпийн <span class="accent">алтан медалийн</span><br/>эзэд сонгосон эмнэлэг</h2>
+      <p>Олимпийн тавцанд Солонгосыг төлөөлж буй тамирчдын болон Солонгосын олон одод найдсан харааны заслын төв. Олимпийн чанарын стандарт өдөр тутмын стандарт юм.</p>
+    </div>
+
+    <div class="famous-grid">
+      <div class="famous-item">
+        <div class="famous-photo" style="background-image:url('assets/celeb01.jpg')"></div>
+        <div class="name">An San<small>Ан Сан · 안산<br/>Олимп · нум сум 🏆</small></div>
       </div>
+      <div class="famous-item">
+        <div class="famous-photo" style="background-image:url('assets/celeb06.jpg')"></div>
+        <div class="name">Ki Bo-bae<small>Ки Бо Бэ · 기보배<br/>Олимп · нум сум 🏆</small></div>
+      </div>
+      <div class="famous-item">
+        <div class="famous-photo" style="background-image:url('assets/celeb12.jpg')"></div>
+        <div class="name">Lee Hyun<small>Ли Хён · 이현<br/>Гольфчин ⛳</small></div>
+      </div>
+      <div class="famous-item">
+        <div class="famous-photo" style="background-image:url('assets/celeb02.jpg')"></div>
+        <div class="name">Kim Ki-ri<small>Ким Ки Ри · 김기리<br/>Жүжигчин · хөтлөгч</small></div>
+      </div>
+      <div class="famous-item">
+        <div class="famous-photo" style="background-image:url('assets/celeb03.jpg')"></div>
+        <div class="name">Jung Sung-ho<small>Жон Сон Хо · 정성호<br/>Хошин шогийн жүжигчин</small></div>
+      </div>
+      <div class="famous-item">
+        <div class="famous-photo" style="background-image:url('assets/celeb04.jpg')"></div>
+        <div class="name">Jung I-na<small>Жон И На · 정이나<br/>Хөтлөгч</small></div>
+      </div>
+      <div class="famous-item">
+        <div class="famous-photo" style="background-image:url('assets/celeb05.jpg')"></div>
+        <div class="name">Lee Sang-jun<small>Ли Сан Жүн · 이상준<br/>Хошин шогийн жүжигчин</small></div>
+      </div>
+      <div class="famous-item">
+        <div class="famous-photo" style="background-image:url('assets/celeb07.jpg')"></div>
+        <div class="name">Lee Sung-wook<small>Ли Сон Үг · 이성욱<br/>Дуучин 🎤</small></div>
+      </div>
+      <div class="famous-item">
+        <div class="famous-photo" style="background-image:url('assets/celeb08.jpg')"></div>
+        <div class="name">Oh Jin-sung<small>О Жин Сон · 오진성<br/>Дуучин 🎤</small></div>
+      </div>
+      <div class="famous-item">
+        <div class="famous-photo" style="background-image:url('assets/celeb09.jpg')"></div>
+        <div class="name">Hwang Young-jin<small>Хван Ён Жин · 황영진<br/>Хөтлөгч</small></div>
+      </div>
+      <div class="famous-item">
+        <div class="famous-photo" style="background-image:url('assets/celeb10.jpg')"></div>
+        <div class="name">Rapi<small>Рапи · 래피<br/>Хөгжмийн зохиолч 🎵</small></div>
+      </div>
+      <div class="famous-item">
+        <div class="famous-photo" style="background-image:url('assets/celeb11.jpg')"></div>
+        <div class="name">Yangpang<small>Янпан · 양팡<br/>YouTuber 📹</small></div>
+      </div>
+    </div>
+
+    <div class="famous-highlight">
+      <h4>An San: <span class="accent">Tokyo 2020</span> 3-time gold medalist</h4>
+      <p>Токиогийн 2020 оны олимпийн алтан медальт <strong>Ан Сан</strong> 2020 оны 12 сард Гангнам Смайлд <strong>Smart Co-Wave LASEK</strong> мэс засал хийлгэж, баруун болон зүүн нүд <strong>1.5/1.5</strong> хараа авсан. Дараа жил Олимпт 3 удаа алтан медалийн эзэн болсон.</p>
     </div>
   </div>
 </section>
