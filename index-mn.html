@@ -101,8 +101,8 @@
     aspect-ratio:4/5;position:relative;overflow:hidden;border-radius:4px;
     background-size:cover;background-position:center;
     background-image:
-      linear-gradient(180deg,rgba(28,44,174,.45) 0%,rgba(19,26,138,.55) 100%),
-      url('https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=900&q=80&auto=format&fit=crop'),
+      linear-gradient(180deg,rgba(13,18,80,.25) 0%,rgba(13,18,80,.7) 100%),
+      url('assets/operating-room.jpg'),
       linear-gradient(180deg,#1c2cae,#131a8a);
     box-shadow:0 30px 80px -30px rgba(19,26,138,.4);
   }
@@ -176,17 +176,40 @@
     border:1px solid var(--line);
   }
   .treat-card:hover{border-color:var(--navy);transform:translateY(-4px);box-shadow:var(--shadow)}
-  .treat-img{height:180px;position:relative;overflow:hidden;background-size:cover;background-position:center}
-  .treat-img.t1{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1577086664693-894d8405334a?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
-  .treat-img.t2{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
-  .treat-img.t3{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
-  .treat-img.t4{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
-  .treat-img.t5{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
-  .treat-img.t6{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
-  .treat-img.t7{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
-  .treat-img.t8{background-image:linear-gradient(135deg,rgba(28,44,174,.35),rgba(19,26,138,.5)),url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80&auto=format&fit=crop'),linear-gradient(135deg,#3a4ad6,#1c2cae)}
-  .treat-tag{position:absolute;top:14px;left:14px;background:#fff;color:var(--navy);font-size:10px;letter-spacing:.15em;padding:5px 10px;z-index:2;text-transform:uppercase;font-weight:600}
-  .treat-tag.signature{background:var(--navy);color:#fff}
+  .treat-img{
+    height:160px;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:18px 22px;
+    background:linear-gradient(135deg,#eef0f7 0%,#dde0f0 100%);
+    color:var(--navy-deep);
+    border-bottom:1px solid var(--line);
+  }
+  .treat-img.t1{background:linear-gradient(135deg,#1c2cae 0%,#131a8a 100%);color:#fff;border-bottom-color:transparent}
+  .treat-img.t2{background:linear-gradient(135deg,#3a4ad6 0%,#2233b8 100%);color:#fff;border-bottom-color:transparent}
+  .treat-img.t3,.treat-img.t4{background:linear-gradient(135deg,#e6e9f4 0%,#c8cee2 100%)}
+  .treat-img.t5,.treat-img.t6{background:linear-gradient(135deg,#eef0f7 0%,#d8dded 100%)}
+  .treat-img.t7,.treat-img.t8{background:linear-gradient(135deg,#f0f1f7 0%,#cfd5e8 100%)}
+  .treat-img::before{
+    content:"";position:absolute;top:-30px;right:-30px;width:140px;height:140px;
+    border-radius:50%;border:1px solid currentColor;opacity:.15;pointer-events:none;
+  }
+  .treat-img::after{
+    content:"";position:absolute;top:-50px;right:-50px;width:200px;height:200px;
+    border-radius:50%;border:1px solid currentColor;opacity:.1;pointer-events:none;
+  }
+  .treat-gen-label{
+    font-family:"Cormorant Garamond",serif;font-style:italic;
+    font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    opacity:.7;font-weight:500;position:relative;z-index:1;
+  }
+  .treat-name-large{
+    font-family:"Cormorant Garamond",serif;
+    font-size:32px;line-height:1.1;font-weight:600;
+    letter-spacing:-.01em;position:relative;z-index:1;
+  }
+  .treat-tag{position:absolute;top:14px;right:14px;background:#fff;color:var(--navy);font-size:10px;letter-spacing:.15em;padding:5px 10px;z-index:2;text-transform:uppercase;font-weight:600}
+  .treat-tag.signature{background:var(--navy-deep);color:#fff;border:1px solid #fff}
+  .treat-img.t1 .treat-tag,.treat-img.t2 .treat-tag{background:rgba(255,255,255,.95);color:var(--navy-deep)}
   .treat-body{padding:24px;flex:1;display:flex;flex-direction:column}
   .treat-body h3{font-size:20px;margin-bottom:6px;font-weight:600;color:var(--ink)}
   .treat-body .sub{font-size:10px;color:var(--navy);letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px;font-weight:600}
@@ -200,10 +223,10 @@
   @media(max-width:880px){.doctor-grid{grid-template-columns:1fr;gap:48px}}
   .doctor-img{
     aspect-ratio:3/4;position:relative;overflow:hidden;
-    background-size:cover;background-position:center;
+    background-size:cover;background-position:center 20%;
     background-image:
-      linear-gradient(180deg,rgba(28,44,174,.15) 0%,rgba(19,26,138,.4) 100%),
-      url('https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=700&q=80&auto=format&fit=crop'),
+      linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(13,18,80,.55) 100%),
+      url('assets/doctor-consult.jpg'),
       linear-gradient(180deg,#dde0f0 0%,#a8acba 100%);
   }
   .doctor-img-label{position:absolute;bottom:32px;left:32px;color:#fff;z-index:2}
@@ -303,6 +326,42 @@
   footer a:hover{color:var(--navy-soft)}
   .copy{text-align:center;font-size:11px;color:#6b6f7d;letter-spacing:.1em}
 
+  /* Video showcase */
+  .showcase{padding:0;background:var(--ink);color:#fff;position:relative;overflow:hidden}
+  .showcase-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:0;align-items:stretch;min-height:560px}
+  @media(max-width:880px){.showcase-grid{grid-template-columns:1fr}}
+  .showcase-video{position:relative;background:#000;overflow:hidden}
+  .showcase-video video{width:100%;height:100%;object-fit:cover;display:block}
+  @media(max-width:880px){.showcase-video{aspect-ratio:16/9}}
+  .showcase-text{padding:80px 64px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(135deg,#1a1d2c 0%,#131a8a 100%);position:relative}
+  .showcase-text::before{content:"";position:absolute;top:40px;right:40px;width:1px;height:60%;background:linear-gradient(180deg,rgba(255,255,255,.3),transparent)}
+  @media(max-width:880px){.showcase-text{padding:64px 32px}}
+  .showcase-text .eyebrow{color:rgba(255,255,255,.7)}
+  .showcase-text .eyebrow::before{background:rgba(255,255,255,.5)}
+  .showcase-text h2{font-size:42px;line-height:1.2;margin-bottom:20px;font-weight:600;color:#fff}
+  .showcase-text h2 .accent{color:#a8b1d6;font-style:italic;font-family:"Cormorant Garamond",serif;font-weight:500}
+  .showcase-text p{color:rgba(255,255,255,.75);font-size:15px;line-height:1.85;margin-bottom:28px}
+  .showcase-meta{display:flex;gap:32px;flex-wrap:wrap;padding-top:24px;border-top:1px solid rgba(255,255,255,.15)}
+  .showcase-meta div strong{display:block;font-family:"Cormorant Garamond",serif;font-size:28px;color:#fff;line-height:1;font-weight:600}
+  .showcase-meta div span{font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.1em;text-transform:uppercase;margin-top:6px;display:block}
+
+  /* Innovation section */
+  .innovation{padding:130px 0;background:#fff}
+  .innov-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  @media(max-width:880px){.innov-grid{grid-template-columns:1fr;gap:48px}}
+  .innov-img{
+    aspect-ratio:4/3;position:relative;overflow:hidden;
+    background:url('assets/schwind-atos.jpg') center/cover,linear-gradient(135deg,#dde0f0,#a8b1d6);
+  }
+  .innov-img-tag{position:absolute;bottom:24px;left:24px;background:#fff;color:var(--navy);padding:8px 16px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;z-index:2}
+  .innov-info h3{font-size:42px;line-height:1.15;margin-bottom:24px;font-weight:600}
+  .innov-info h3 .accent{color:var(--navy);font-style:italic;font-family:"Cormorant Garamond",serif}
+  .innov-info > p{color:var(--ink-soft);font-size:15px;line-height:1.85;margin-bottom:28px}
+  .innov-info ul{list-style:none;padding-top:24px;border-top:1px solid var(--line)}
+  .innov-info li{padding:14px 0;font-size:14px;color:var(--ink-soft);display:flex;gap:16px;border-bottom:1px solid var(--line)}
+  .innov-info li:last-child{border-bottom:none}
+  .innov-info li strong{color:var(--ink);font-weight:600;flex-shrink:0;min-width:90px;font-size:13px;letter-spacing:.05em;text-transform:uppercase}
+
   .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;padding:12px;gap:8px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
   .sticky-cta a{flex:1;text-align:center;padding:14px;font-size:13px;font-weight:600;letter-spacing:.05em}
   .sticky-cta .s-fb{background:#1877f2;color:#fff}
@@ -358,6 +417,26 @@
         <small>SIGNATURE TECHNOLOGY</small>
         <h3>5-р үеийн<br/>NEW SMILE LASIK</h3>
         <p>7 хэмжээст нүдний хяналт + эргэлтийн залруулга — нарийн астигматизм, хурдан сэргэлт, өдөр тутмын амьдралд богино хугацаанд буцах боломж.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="showcase">
+  <div class="showcase-grid">
+    <div class="showcase-video">
+      <video autoplay muted loop playsinline poster="assets/operating-room.jpg">
+        <source src="assets/promo-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="showcase-text">
+      <span class="eyebrow">Watch Our Story</span>
+      <h2>Каннамын <span class="accent">харааны<br/>заслын</span> урдаа барьдаг<br/>эмнэлэг</h2>
+      <p>2019 онд Сөүлийн Каннамд байгуулагдсан Гангнам Смайл нь 5-р үеийн NEW SMILE LASIK болон катарактын мэс заслын тэргүүлэгч төв. Олимпийн алтан медалийн эзэдийн итгэл хүлээсэн стандартыг өдөр тутамд хэрэгжүүлж байна.</p>
+      <div class="showcase-meta">
+        <div><strong>Top 100</strong><span>Doctors of Korea</span></div>
+        <div><strong>#1</strong><span>SCHWIND ATOS Korea</span></div>
+        <div><strong>2019</strong><span>Established</span></div>
       </div>
     </div>
   </div>
@@ -446,6 +525,27 @@
   </div>
 </section>
 
+<section class="innovation">
+  <div class="wrap">
+    <div class="innov-grid">
+      <div class="innov-img">
+        <span class="innov-img-tag">SCHWIND ATOS</span>
+      </div>
+      <div class="innov-info">
+        <span class="eyebrow">Signature Equipment</span>
+        <h3>SCHWIND ATOS —<br/>Солонгост <span class="accent">хамгийн их</span><br/>мэс засал хийсэн</h3>
+        <p>Германы SCHWIND ATOS бол 5-р үеийн NEW SMILE LASIK-ийг хийдэг дэлхийн стандарт төхөөрөмж. Гангнам Смайл нь Солонгост энэ төхөөрөмжөөр хамгийн их мэс засал хийсэн эмнэлгийн тэмдэгтэй (2022 оноос).</p>
+        <ul>
+          <li><strong>7-Dimensional</strong>Нүдний хяналт ба эргэлтийн залруулга</li>
+          <li><strong>CenTrax®</strong>Төвлөрлийн урьдчилан таамаглах систем</li>
+          <li><strong>Speed-Up</strong>Хурдан, нарийн лазерын хүчдэл</li>
+          <li><strong>99% Target</strong>Зорилт хүрэлтийн харааны үр дүн</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="treatments">
   <div class="wrap">
     <div class="sec-head">
@@ -456,11 +556,15 @@
     <div class="treat-grid">
 
       <article class="treat-card">
-        <div class="treat-img t1"><span class="treat-tag signature">★ Signature</span></div>
+        <div class="treat-img t1">
+          <span class="treat-tag signature">★ Signature</span>
+          <span class="treat-gen-label">5th Generation</span>
+          <span class="treat-name-large">NEW SMILE</span>
+        </div>
         <div class="treat-body">
-          <div class="sub">5th Gen NEW SMILE</div>
-          <h3>NEW SMILE LASIK</h3>
-          <p>5-р үеийн харааны засал. 7 хэмжээст нүдний хяналт, нарийн астигматизм засал, хурдан сэргэлт.</p>
+          <div class="sub">NEW SMILE LASIK</div>
+          <h3>5-р үеийн NEW SMILE</h3>
+          <p>7 хэмжээст нүдний хяналт, нүдний эргэлтийн залруулга. Нарийн астигматизм, хурдан сэргэлт.</p>
           <div class="treat-meta">
             <span><strong>1 өдөр</strong>Мэс засал</span>
             <span><strong>1-2 өдөр</strong>Сэргэлт</span>
@@ -469,7 +573,11 @@
       </article>
 
       <article class="treat-card">
-        <div class="treat-img t2"><span class="treat-tag">Premier</span></div>
+        <div class="treat-img t2">
+          <span class="treat-tag">Premier</span>
+          <span class="treat-gen-label">4th Generation</span>
+          <span class="treat-name-large">SMILE LASIK</span>
+        </div>
         <div class="treat-body">
           <div class="sub">New Smile LASIK</div>
           <h3>Шинэ Смайл LASIK</h3>
@@ -482,10 +590,14 @@
       </article>
 
       <article class="treat-card">
-        <div class="treat-img t3"><span class="treat-tag">Smart</span></div>
+        <div class="treat-img t3">
+          <span class="treat-tag">Smart</span>
+          <span class="treat-gen-label">Smart Laser</span>
+          <span class="treat-name-large">SmartNova</span>
+        </div>
         <div class="treat-body">
           <div class="sub">SmartNova</div>
-          <h3>SmartNova</h3>
+          <h3>SmartNova ухаалаг лазер</h3>
           <p>Зорилтот нүдийг бүрэн хянадаг ухаалаг лазер систем — өвдөлт бага, аюулгүй байдал өндөр.</p>
           <div class="treat-meta">
             <span><strong>1 өдөр</strong>Мэс засал</span>
@@ -495,7 +607,11 @@
       </article>
 
       <article class="treat-card">
-        <div class="treat-img t4"><span class="treat-tag">Express</span></div>
+        <div class="treat-img t4">
+          <span class="treat-tag">Express</span>
+          <span class="treat-gen-label">2-Day Recovery</span>
+          <span class="treat-name-large">2DAY LASEK</span>
+        </div>
         <div class="treat-body">
           <div class="sub">2DAY LASEK</div>
           <h3>2 өдрийн LASEK</h3>
@@ -508,10 +624,14 @@
       </article>
 
       <article class="treat-card">
-        <div class="treat-img t5"><span class="treat-tag">Implant</span></div>
+        <div class="treat-img t5">
+          <span class="treat-tag">Implant</span>
+          <span class="treat-gen-label">Lens Implant</span>
+          <span class="treat-name-large">ICL</span>
+        </div>
         <div class="treat-body">
           <div class="sub">ICL Lens Implant</div>
-          <h3>ICL Линз суулгац</hp3></h3>
+          <h3>ICL Линз суулгац</h3>
           <p>Лазер хийх боломжгүй өндөр диоптртой хүмүүст — хиймэл линзийг нүдэнд суулгаснаар бараг хязгааргүй харааны засал.</p>
           <div class="treat-meta">
             <span><strong>1 өдөр</strong>Мэс засал</span>
@@ -521,7 +641,11 @@
       </article>
 
       <article class="treat-card">
-        <div class="treat-img t6"><span class="treat-tag">Specialty</span></div>
+        <div class="treat-img t6">
+          <span class="treat-tag">Specialty</span>
+          <span class="treat-gen-label">Cataract</span>
+          <span class="treat-name-large">Cataract</span>
+        </div>
         <div class="treat-body">
           <div class="sub">Cataract Surgery</div>
           <h3>Катарактын мэс засал</h3>
@@ -534,7 +658,11 @@
       </article>
 
       <article class="treat-card">
-        <div class="treat-img t7"><span class="treat-tag">Anti-Aging</span></div>
+        <div class="treat-img t7">
+          <span class="treat-tag">Anti-Aging</span>
+          <span class="treat-gen-label">Age 40+</span>
+          <span class="treat-name-large">Presbyopia</span>
+        </div>
         <div class="treat-body">
           <div class="sub">Presbyopia</div>
           <h3>Пресбиопи засал</h3>
@@ -547,7 +675,11 @@
       </article>
 
       <article class="treat-card">
-        <div class="treat-img t8"><span class="treat-tag">Premium</span></div>
+        <div class="treat-img t8">
+          <span class="treat-tag">Premium</span>
+          <span class="treat-gen-label">Aesthetic</span>
+          <span class="treat-name-large">Eye Ring</span>
+        </div>
         <div class="treat-body">
           <div class="sub">Eye Ring Surgery</div>
           <h3>Eye Ring мэс засал</h3>
