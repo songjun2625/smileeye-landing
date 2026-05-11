@@ -9,22 +9,79 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://songjun2625.github.io/smileeye-landing/blog/lasik-review-mongolian-office-worker-korea/</loc>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/lasik-review-mongolian-office-worker-korea/" />
-    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-review-mongolian-office-worker-korea/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-review-mongolian-office-worker-korea/" />
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
+  <!-- Blog post 1: 안경 없는 첫날 (Row 2) -->
   <url>
     <loc>https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-review-mongolian-office-worker-korea/</loc>
     <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-review-mongolian-office-worker-korea/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/lasik-review-mongolian-office-worker-korea/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-review-mongolian-office-worker-korea/" />
     <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://songjun2625.github.io/smileeye-landing/blog/lasik-review-mongolian-office-worker-korea/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog post 2: 진짜 총비용 (Row 3) -->
+  <url>
+    <loc>https://songjun2625.github.io/smileeye-landing/mn/blog/korea-vision-correction-total-cost-breakdown/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/korea-vision-correction-total-cost-breakdown/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/korea-vision-correction-total-cost-breakdown/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/korea-vision-correction-total-cost-breakdown/" />
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://songjun2625.github.io/smileeye-landing/blog/korea-vision-correction-total-cost-breakdown/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog post 3: 자가 체크 (Row 4) -->
+  <url>
+    <loc>https://songjun2625.github.io/smileeye-landing/mn/blog/vision-correction-self-check-mongolia/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/vision-correction-self-check-mongolia/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/vision-correction-self-check-mongolia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/vision-correction-self-check-mongolia/" />
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://songjun2625.github.io/smileeye-landing/blog/vision-correction-self-check-mongolia/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog post 4: 안경 vs 라식 (Row 5) -->
+  <url>
+    <loc>https://songjun2625.github.io/smileeye-landing/mn/blog/glasses-lifetime-cost-vs-lasik/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/glasses-lifetime-cost-vs-lasik/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/glasses-lifetime-cost-vs-lasik/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/glasses-lifetime-cost-vs-lasik/" />
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://songjun2625.github.io/smileeye-landing/blog/glasses-lifetime-cost-vs-lasik/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog post 5: 수술 무서워요 (Row 6) -->
+  <url>
+    <loc>https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-fear-real-emotions-before-surgery/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-fear-real-emotions-before-surgery/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/lasik-fear-real-emotions-before-surgery/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-fear-real-emotions-before-surgery/" />
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://songjun2625.github.io/smileeye-landing/blog/lasik-fear-real-emotions-before-surgery/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>
