@@ -1,12 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://songjun2625.github.io/smileeye-landing/</loc>
-    <xhtml:link rel="alternate" hreflang="mn-MN" href="https://songjun2625.github.io/smileeye-landing/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/" />
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/mn/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/" />
+    <lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/" />
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/" />
+    <lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/mn/blog/glasses-lifetime-cost-vs-lasik/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/glasses-lifetime-cost-vs-lasik/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/glasses-lifetime-cost-vs-lasik/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/glasses-lifetime-cost-vs-lasik/" />
+    <lastmod>2026-05-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/blog/glasses-lifetime-cost-vs-lasik/</loc>
+    <lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/mn/blog/incheon-airport-to-gangnam-first-day-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/incheon-airport-to-gangnam-first-day-guide/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/incheon-airport-to-gangnam-first-day-guide/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/incheon-airport-to-gangnam-first-day-guide/" />
+    <lastmod>2026-05-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/blog/incheon-airport-to-gangnam-first-day-guide/</loc>
+    <lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/mn/blog/korea-vision-correction-total-cost/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/korea-vision-correction-total-cost/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/korea-vision-correction-total-cost/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/korea-vision-correction-total-cost/" />
+    <lastmod>2026-05-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/blog/korea-vision-correction-total-cost/</loc>
+    <lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/mn/blog/korea-vision-correction-trip-schedule-from-mongolia/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/korea-vision-correction-trip-schedule-from-mongolia/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/korea-vision-correction-trip-schedule-from-mongolia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/korea-vision-correction-trip-schedule-from-mongolia/" />
+    <lastmod>2026-05-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/blog/korea-vision-correction-trip-schedule-from-mongolia/</loc>
+    <lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/mn/blog/kpop-celebrity-vision-correction-trend/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/kpop-celebrity-vision-correction-trend/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/kpop-celebrity-vision-correction-trend/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/kpop-celebrity-vision-correction-trend/" />
+    <lastmod>2026-05-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/blog/kpop-celebrity-vision-correction-trend/</loc>
+    <lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-before-wedding-bride-timeline/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-before-wedding-bride-timeline/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/lasik-before-wedding-bride-timeline/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-before-wedding-bride-timeline/" />
+    <lastmod>2026-05-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/blog/lasik-before-wedding-bride-timeline/</loc>
+    <lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-fear-real-feelings-and-reassurance/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-fear-real-feelings-and-reassurance/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/lasik-fear-real-feelings-and-reassurance/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-fear-real-feelings-and-reassurance/" />
+    <lastmod>2026-05-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/blog/lasik-fear-real-feelings-and-reassurance/</loc>
+    <lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-recovery-daily-activities/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-recovery-daily-activities/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/lasik-recovery-daily-activities/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-recovery-daily-activities/" />
+    <lastmod>2026-05-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/blog/lasik-recovery-daily-activities/</loc>
+    <lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-review-mongolian-office-worker-korea/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-review-mongolian-office-worker-korea/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/lasik-review-mongolian-office-worker-korea/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/lasik-review-mongolian-office-worker-korea/" />
+    <lastmod>2026-05-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/blog/lasik-review-mongolian-office-worker-korea/</loc>
+    <lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/mn/blog/vision-correction-self-check-mongolia/</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/vision-correction-self-check-mongolia/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/vision-correction-self-check-mongolia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/vision-correction-self-check-mongolia/" />
+    <lastmod>2026-05-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://songjun2625.github.io/smileeye-landing/blog/vision-correction-self-check-mongolia/</loc>
+    <lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
 </urlset>
