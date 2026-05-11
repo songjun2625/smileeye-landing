@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://songjun2625.github.io/smileeye-landing/sitemap.xml
