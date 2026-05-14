@@ -1,0 +1,578 @@
+/* ============================================================
+   blog.css — 강남스마일 블로그 (eopla 스타일 미니멀 매거진)
+   사용처: smile-i.com/blog/, smile-i.com/mn/blog/
+   ============================================================ */
+
+:root {
+  --ink:          #15171c;
+  --ink-soft:     #4a5060;
+  --ink-faint:    #8c92a3;
+  --ink-divider:  #e6e8ee;
+  --bg:           #ffffff;
+  --bg-soft:      #fafbfc;
+  --bg-elevated:  #f4f5f7;
+  --accent:       #1c2cae;
+  --accent-deep:  #131a8a;
+  --accent-soft:  rgba(28, 44, 174, 0.08);
+  --max-width:    720px;
+  --wide-width:   1080px;
+  --radius:       4px;
+  --font-sans:    -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+                  "Noto Sans KR", "Noto Sans", "Pretendard",
+                  "Noto Sans Mongolian", sans-serif;
+  --font-serif:   "Charter", "Iowan Old Style", "Source Serif Pro",
+                  "Apple Garamond", Georgia, serif;
+}
+
+/* ── Reset (스코프드: .blog-post 내부만) ─────────────── */
+.blog-post, .blog-list { box-sizing: border-box; }
+.blog-post *, .blog-list *,
+.blog-post *::before, .blog-list *::before,
+.blog-post *::after, .blog-list *::after { box-sizing: border-box; }
+
+.blog-post {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.8;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+}
+
+/* ── Top bar — 카테고리만 작게 ──────────────────── */
+.blog-post .post-meta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 56px;
+  padding-bottom: 0;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+
+.blog-post .post-meta-top .back-link {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  transition: color .15s ease;
+}
+.blog-post .post-meta-top .back-link:hover { color: var(--accent); }
+
+.blog-post .post-meta-top .post-category {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+  padding: 0;
+  background: none;
+}
+
+/* ── 태그 (상단) — eopla처럼 #해시태그 인라인 ───── */
+.blog-post .post-tags-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 500;
+}
+.blog-post .post-tags-top a,
+.blog-post .post-tags-top .tag {
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.blog-post .post-tags-top a:hover { text-decoration: underline; }
+
+/* ── 제목 — 압도적인 크기 ──────────────────────── */
+.blog-post .post-title {
+  font-size: 40px;
+  line-height: 1.25;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin: 0 0 24px;
+  word-break: keep-all;
+}
+
+/* ── 서브타이틀 / 리드 — 부드러운 회색 큰 글씨 ──── */
+.blog-post .post-subtitle {
+  font-size: 19px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  font-weight: 400;
+  margin: 0 0 32px;
+  letter-spacing: -0.005em;
+}
+
+/* ── 상단 메타 (날짜·읽기시간) — 작고 깔끔하게 ──── */
+.blog-post .post-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--ink-faint);
+  letter-spacing: 0.01em;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--ink-divider);
+  margin-bottom: 48px;
+}
+.blog-post .post-stats > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.blog-post .post-stats > span + span::before {
+  content: "·";
+  margin-right: 16px;
+  color: var(--ink-divider);
+}
+
+/* 메타바·작성자 상단 영역은 숨김 (작성자는 하단으로 이동) */
+.blog-post .post-meta-bar { display: none; }
+.blog-post .post-hero .post-tags { display: none; }
+
+/* ── Hero 이미지 — 절제된 노출 ──────────────────── */
+.blog-post .post-hero-image {
+  margin: 0 0 56px;
+  background: var(--bg-soft);
+}
+.blog-post .post-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+
+/* ── 본문 — 큰 글씨·넉넉한 줄간격 ──────────────── */
+.blog-post .post-body {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--ink);
+}
+
+.blog-post .post-body > h1 { display: none; }
+
+.blog-post .post-body p {
+  margin: 28px 0;
+  font-weight: 400;
+}
+
+.blog-post .post-body p:first-child {
+  margin-top: 0;
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.blog-post .post-body h2 {
+  font-size: 26px;
+  line-height: 1.35;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 72px 0 20px;
+  letter-spacing: -0.015em;
+  position: relative;
+  padding-left: 0;
+}
+
+/* H2에 자동 번호 — eopla 스타일 "01." */
+.blog-post .post-body { counter-reset: section; }
+.blog-post .post-body h2 { counter-increment: section; }
+.blog-post .post-body h2::before {
+  content: counter(section, decimal-leading-zero) ". ";
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-right: 4px;
+}
+
+.blog-post .post-body h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 40px 0 12px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.blog-post .post-body ul,
+.blog-post .post-body ol {
+  margin: 24px 0 24px 4px;
+  padding-left: 22px;
+}
+.blog-post .post-body li {
+  margin: 10px 0;
+  line-height: 1.8;
+}
+.blog-post .post-body li::marker {
+  color: var(--ink-faint);
+}
+
+.blog-post .post-body a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+  font-weight: 500;
+}
+.blog-post .post-body a:hover {
+  color: var(--accent);
+}
+
+.blog-post .post-body strong {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.blog-post .post-body em {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* 인용 블록 — 큰 글자, 좌측 액센트 ─── */
+.blog-post .post-body blockquote {
+  margin: 40px -8px;
+  padding: 4px 0 4px 28px;
+  border-left: 3px solid var(--accent);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.7;
+  font-style: normal;
+  letter-spacing: -0.005em;
+}
+.blog-post .post-body blockquote p:first-child { margin-top: 0; }
+.blog-post .post-body blockquote p:last-child  { margin-bottom: 0; }
+
+/* 표 — 깨끗하고 절제된 ─── */
+.blog-post .post-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 36px 0;
+  font-size: 15px;
+  border-top: 2px solid var(--ink);
+}
+.blog-post .post-body th {
+  text-align: left;
+  font-weight: 700;
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--ink-divider);
+  color: var(--ink);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+.blog-post .post-body td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--ink-divider);
+  vertical-align: top;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.blog-post .post-body tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+
+/* figure — 본문 사이 이미지 ─── */
+.blog-post .post-body figure {
+  margin: 56px -24px;
+  text-align: center;
+}
+.blog-post .post-body figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+.blog-post .post-body figcaption {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--ink-faint);
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  padding: 0 24px;
+}
+
+/* 섹션 구분 별표 ─── */
+.blog-post .post-body hr {
+  border: none;
+  margin: 56px 0;
+  text-align: center;
+}
+.blog-post .post-body hr::after {
+  content: "* * *";
+  color: var(--ink-faint);
+  letter-spacing: 0.8em;
+  font-size: 14px;
+}
+
+/* ── 하단 — 작성자 카드 ────────────────────────── */
+.blog-post .post-footer {
+  margin-top: 96px;
+  padding-top: 48px;
+  border-top: 1px solid var(--ink-divider);
+}
+
+.blog-post .post-author-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 28px 0;
+  margin-bottom: 32px;
+}
+.blog-post .post-author-card .author-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+  letter-spacing: 0;
+}
+.blog-post .post-author-card .author-info {
+  flex: 1;
+}
+.blog-post .post-author-card .author-name {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.blog-post .post-author-card .author-role {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-faint);
+  letter-spacing: 0.01em;
+  margin-bottom: 8px;
+}
+.blog-post .post-author-card .author-bio {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-top: 4px;
+}
+
+/* CTA / 공유 — 미니멀하게 ─── */
+.blog-post .post-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 36px 32px;
+  background: var(--bg-soft);
+  border: 1px solid var(--ink-divider);
+  border-radius: 4px;
+  margin-top: 32px;
+}
+
+.blog-post .post-cta {
+  text-align: left;
+}
+.blog-post .post-cta h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+.blog-post .post-cta p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0 0 16px;
+}
+.blog-post .post-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.blog-post .post-cta .btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: var(--ink);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
+  transition: background .15s ease;
+}
+.blog-post .post-cta .btn:hover { background: var(--accent); }
+.blog-post .post-cta .btn-whatsapp { background: #25d366; }
+.blog-post .post-cta .btn-whatsapp:hover { background: #1ebf5d; }
+
+.blog-post .post-share {
+  border-top: 1px solid var(--ink-divider);
+  padding-top: 28px;
+}
+.blog-post .post-share h4 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-faint);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+.blog-post .post-share-links {
+  display: flex;
+  gap: 12px;
+}
+.blog-post .post-share-links a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid var(--ink-divider);
+  color: var(--ink);
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 2px;
+  font-weight: 500;
+  transition: all .15s ease;
+}
+.blog-post .post-share-links a:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+/* ── 모바일 반응형 ──────────────────────────── */
+@media (max-width: 640px) {
+  .blog-post { padding: 36px 20px 64px; }
+  .blog-post .post-meta-top { margin-bottom: 32px; font-size: 12px; }
+  .blog-post .post-title { font-size: 30px; letter-spacing: -0.015em; }
+  .blog-post .post-subtitle { font-size: 17px; }
+  .blog-post .post-stats { font-size: 12px; padding-bottom: 28px; margin-bottom: 32px; }
+  .blog-post .post-hero-image { margin: 0 -20px 40px; }
+  .blog-post .post-body { font-size: 16px; line-height: 1.8; }
+  .blog-post .post-body p:first-child { font-size: 17px; }
+  .blog-post .post-body h2 { font-size: 22px; margin: 52px 0 16px; }
+  .blog-post .post-body h3 { font-size: 18px; }
+  .blog-post .post-body blockquote { font-size: 17px; margin: 28px 0; }
+  .blog-post .post-body figure { margin: 36px -20px; }
+  .blog-post .post-actions { padding: 24px; }
+  .blog-post .post-footer { margin-top: 64px; padding-top: 36px; }
+}
+
+/* ─────────────────────────────────────────────────
+   블로그 리스트 (/blog/index.html)
+   ───────────────────────────────────────────────── */
+.blog-list {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  max-width: var(--wide-width);
+  margin: 0 auto;
+  padding: 80px 24px 96px;
+  background: var(--bg);
+}
+
+.blog-list .list-header {
+  text-align: left;
+  margin-bottom: 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--ink-divider);
+}
+
+.blog-list .list-header h1 {
+  font-size: 44px;
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+.blog-list .list-header p {
+  font-size: 17px;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.blog-list .list-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 32px;
+}
+@media (max-width: 960px) { .blog-list .list-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .blog-list .list-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+.blog-list .list-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity .15s ease;
+}
+.blog-list .list-card:hover { opacity: 0.85; }
+
+.blog-list .list-card-img {
+  aspect-ratio: 1200 / 630;
+  overflow: hidden;
+  background: var(--bg-soft);
+  margin-bottom: 18px;
+}
+.blog-list .list-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+.blog-list .list-card:hover .list-card-img img { transform: scale(1.02); }
+
+.blog-list .list-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.blog-list .list-card-meta {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.blog-list .list-card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+  margin: 4px 0;
+  letter-spacing: -0.015em;
+}
+.blog-list .list-card p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog-list .list-card-date {
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
