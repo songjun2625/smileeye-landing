@@ -579,3 +579,274 @@
   margin-top: 6px;
   letter-spacing: 0.02em;
 }
+
+/* ============================================================
+   매거진 컴포넌트 — 본문 안 시각요소
+   ============================================================ */
+
+/* ── 리드 단락 — H1 직후 첫 단락 강조 ──────────────── */
+.blog-post .post-body > p.lead {
+  font-size: 21px;
+  line-height: 1.7;
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  padding: 22px 0 24px;
+  margin: 0 0 28px;
+  border-bottom: 1px solid var(--ink-divider);
+}
+
+/* ── 콜아웃 박스 — Tip / Check / Warn / Note ─────── */
+.blog-post .post-body .callout {
+  margin: 28px 0;
+  padding: 20px 22px 20px 56px;
+  border-radius: 8px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.72;
+  background: var(--bg-soft);
+  border: 1px solid var(--ink-divider);
+  border-left: 3px solid var(--accent);
+}
+.blog-post .post-body .callout::before {
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  font-size: 20px;
+  line-height: 1;
+}
+.blog-post .post-body .callout p { margin: 0; }
+.blog-post .post-body .callout p + p { margin-top: 8px; }
+.blog-post .post-body .callout strong { color: var(--ink); }
+
+.blog-post .post-body .callout-tip::before { content: "💡"; }
+.blog-post .post-body .callout-tip {
+  background: rgba(28, 44, 174, 0.04);
+  border-left-color: var(--accent);
+}
+
+.blog-post .post-body .callout-check {
+  background: rgba(8, 138, 90, 0.05);
+  border-left-color: #0a8a5c;
+}
+.blog-post .post-body .callout-check::before { content: "✅"; }
+
+.blog-post .post-body .callout-warn {
+  background: rgba(204, 80, 0, 0.05);
+  border-left-color: #cc5000;
+}
+.blog-post .post-body .callout-warn::before { content: "⚠️"; }
+
+.blog-post .post-body .callout-note {
+  background: var(--bg-elevated);
+  border-left-color: var(--ink-soft);
+}
+.blog-post .post-body .callout-note::before { content: "📌"; }
+
+/* ── 통계 카드 — 큰 숫자 강조 ──────────────────────── */
+.blog-post .post-body .stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin: 32px 0;
+}
+.blog-post .post-body .stat-card {
+  border: 1px solid var(--ink-divider);
+  border-radius: 8px;
+  padding: 22px 20px;
+  background: var(--bg);
+  text-align: left;
+}
+.blog-post .post-body .stat-card .stat-num {
+  display: block;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.blog-post .post-body .stat-card .stat-label {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+}
+
+/* ── 비교 카드 — 좌우 박스 ────────────────────────── */
+.blog-post .post-body .compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 28px 0;
+}
+@media (max-width: 600px) {
+  .blog-post .post-body .compare-grid { grid-template-columns: 1fr; }
+}
+.blog-post .post-body .compare-card {
+  padding: 18px 20px;
+  border: 1px solid var(--ink-divider);
+  border-radius: 8px;
+  background: var(--bg);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.blog-post .post-body .compare-card.is-positive {
+  background: rgba(8, 138, 90, 0.05);
+  border-color: rgba(8, 138, 90, 0.25);
+}
+.blog-post .post-body .compare-card.is-negative {
+  background: rgba(204, 80, 0, 0.05);
+  border-color: rgba(204, 80, 0, 0.25);
+}
+.blog-post .post-body .compare-card h4 {
+  font-size: 14px;
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: var(--ink);
+}
+.blog-post .post-body .compare-card ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+/* ── 체크리스트 — 시각화된 ✓ ────────────────────── */
+.blog-post .post-body ul.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+  border: 1px solid var(--ink-divider);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.blog-post .post-body ul.checklist li {
+  padding: 14px 18px 14px 48px;
+  position: relative;
+  border-bottom: 1px solid var(--ink-divider);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.blog-post .post-body ul.checklist li:last-child { border-bottom: none; }
+.blog-post .post-body ul.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 18px;
+  top: 14px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 20px;
+}
+
+/* ── FAQ 카드 — Q/A 박싱 ──────────────────────────── */
+.blog-post .post-body .faq-card {
+  margin: 18px 0;
+  padding: 20px 22px;
+  border: 1px solid var(--ink-divider);
+  border-radius: 8px;
+  background: var(--bg-soft);
+}
+.blog-post .post-body .faq-card .faq-q {
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 8px;
+  font-size: 16px;
+  display: flex;
+  gap: 8px;
+}
+.blog-post .post-body .faq-card .faq-q::before {
+  content: "Q";
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  line-height: 22px;
+  font-weight: 700;
+}
+.blog-post .post-body .faq-card .faq-a {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.75;
+  padding-left: 30px;
+}
+
+/* ── 풀쿼트 — 본문 인용 강조 ──────────────────────── */
+.blog-post .post-body blockquote.pull-quote {
+  margin: 40px -8px;
+  padding: 24px 28px;
+  border: none;
+  border-top: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  background: transparent;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.55;
+  color: var(--ink);
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+.blog-post .post-body blockquote.pull-quote::before { display: none; }
+.blog-post .post-body blockquote.pull-quote p { margin: 0; }
+.blog-post .post-body blockquote.pull-quote cite {
+  display: block;
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin-top: 10px;
+  letter-spacing: 0.04em;
+}
+
+/* ── 스텝 카드 — 1, 2, 3 순서 ──────────────────────── */
+.blog-post .post-body .step-list {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0;
+  counter-reset: step;
+}
+.blog-post .post-body .step-list > li {
+  position: relative;
+  padding: 16px 20px 16px 64px;
+  margin-bottom: 10px;
+  border: 1px solid var(--ink-divider);
+  border-radius: 8px;
+  background: var(--bg);
+  font-size: 16px;
+  line-height: 1.7;
+  counter-increment: step;
+}
+.blog-post .post-body .step-list > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 20px;
+  top: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  line-height: 28px;
+}
+.blog-post .post-body .step-list > li strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
