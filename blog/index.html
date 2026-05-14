@@ -3,241 +3,455 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>강남스마일안과 블로그 — 한국 시력교정 가이드</title>
-<meta name="description" content="몽골 환자를 위한 한국 시력교정 가이드 — 비용·일정·후기·안전성을 환자 시각으로 정리한 블로그.">
+<title>강남스마일 블로그</title>
+<meta name="description" content="시력교정 · 몽골 환자 가이드 · 의료관광 정보">
 <link rel="canonical" href="https://songjun2625.github.io/smileeye-landing/blog/">
 <link rel="alternate" hreflang="ko" href="https://songjun2625.github.io/smileeye-landing/blog/">
 <link rel="alternate" hreflang="mn" href="https://songjun2625.github.io/smileeye-landing/mn/blog/">
 <link rel="alternate" hreflang="x-default" href="https://songjun2625.github.io/smileeye-landing/mn/blog/">
-
 <meta property="og:type" content="website">
-<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="강남스마일 블로그">
+<meta property="og:description" content="시력교정 · 몽골 환자 가이드 · 의료관광 정보">
 <meta property="og:url" content="https://songjun2625.github.io/smileeye-landing/blog/">
-<meta property="og:title" content="강남스마일안과 블로그 — 한국 시력교정 가이드">
-<meta property="og:description" content="몽골 환자를 위한 한국 시력교정 가이드 — 비용·일정·후기·안전성을 환자 시각으로 정리한 블로그.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-  :root {
-    --navy: #1c2cae;
-    --navy-deep: #131a8a;
-    --navy-soft: #4654d6;
-    --ink: #1a1d2c;
-    --ink-soft: #5d6378;
-    --bg: #fbfbfd;
-    --line: rgba(28,44,174,.1);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:"Noto Sans","Inter",-apple-system,sans-serif;
-    background:var(--bg);color:var(--ink);
-    line-height:1.65;-webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
-
-  /* Header */
-  header{
-    padding:80px 0 56px;
-    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
-    color:#fff;position:relative;overflow:hidden;
-  }
-  header::before{content:"";position:absolute;top:-50%;right:-10%;width:600px;height:600px;border:1px solid rgba(255,255,255,.1);border-radius:50%}
-  header::after{content:"";position:absolute;top:-20%;right:-5%;width:400px;height:400px;border:1px solid rgba(255,255,255,.08);border-radius:50%}
-  .hero-inner{position:relative;z-index:2}
-  .brand{
-    display:inline-flex;align-items:center;gap:14px;
-    font-family:"Cormorant Garamond",serif;font-size:24px;letter-spacing:.3em;
-    color:#fff;margin-bottom:24px;font-weight:600;
-  }
-  .brand-mark{width:34px;height:34px;position:relative}
-  .brand-mark::before,.brand-mark::after{content:"";position:absolute;width:24px;height:24px;border-radius:50%;top:5px}
-  .brand-mark::before{left:0;background:#fff}
-  .brand-mark::after{left:10px;background:rgba(255,255,255,.5);mix-blend-mode:screen}
-  .brand small{font-size:11px;letter-spacing:.4em;color:rgba(255,255,255,.7);font-family:"Noto Sans",sans-serif;margin-left:10px}
-  h1{font-size:48px;line-height:1.15;margin-bottom:16px;font-weight:700;letter-spacing:-.01em;max-width:720px}
-  .tagline{font-size:17px;color:rgba(255,255,255,.85);max-width:600px;line-height:1.7}
-  .lang-switch{margin-top:32px;display:inline-flex;gap:0;border:1px solid rgba(255,255,255,.2);padding:0}
-  .lang-switch a{padding:10px 22px;font-size:12px;letter-spacing:.18em;font-weight:500;color:rgba(255,255,255,.7);border-right:1px solid rgba(255,255,255,.2);transition:.2s}
-  .lang-switch a:last-child{border-right:none}
-  .lang-switch a.active{background:#fff;color:var(--navy-deep)}
-
-  /* Posts grid */
-  .posts{padding:72px 0 80px}
-  .posts-head{
-    display:flex;justify-content:space-between;align-items:flex-end;
-    margin-bottom:36px;padding-bottom:18px;border-bottom:1px solid var(--line)
-  }
-  .posts-head h2{font-size:24px;font-weight:600;color:var(--navy-deep);letter-spacing:-.01em}
-  .posts-head .count{font-size:13px;color:var(--ink-soft);letter-spacing:.05em}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-  @media(max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}h1{font-size:36px}}
-  @media(max-width:620px){.grid{grid-template-columns:1fr;gap:20px}h1{font-size:30px}header{padding:56px 0 40px}.brand{font-size:20px}}
-
-  .card{
-    background:#fff;border:1px solid var(--line);
-    overflow:hidden;transition:.25s;
-    display:flex;flex-direction:column;
-  }
-  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(28,44,174,.25);border-color:var(--navy-soft)}
-  .card-img{aspect-ratio:1200/630;background:#eef0f7;overflow:hidden}
-  .card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.4s}
-  .card:hover .card-img img{transform:scale(1.03)}
-  .card-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
-  .card-meta{font-size:11px;letter-spacing:.15em;color:var(--navy);text-transform:uppercase;font-weight:600}
-  .card h3{font-size:17px;line-height:1.4;font-weight:600;color:var(--ink);letter-spacing:-.005em}
-  .card p{font-size:13px;color:var(--ink-soft);line-height:1.65;flex:1}
-  .card-cta{margin-top:6px;font-size:12px;letter-spacing:.15em;color:var(--navy);font-weight:600;text-transform:uppercase}
-
-  /* Footer CTA */
-  footer{padding:64px 0 56px;background:#1a1d2c;color:#a8acba}
-  footer .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
-  footer h4{color:#fff;font-size:22px;font-weight:600;letter-spacing:-.005em;max-width:560px}
-  footer p{font-size:14px;line-height:1.7;color:#a8acba;max-width:520px}
-  .channels{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-  .channels a{padding:13px 26px;border:1px solid rgba(255,255,255,.18);font-size:12px;letter-spacing:.18em;font-weight:600;color:#fff;transition:.2s;text-transform:uppercase}
-  .channels a:hover{background:#fff;color:#1a1d2c}
-  .main-link{margin-top:16px;font-size:11px;letter-spacing:.25em;color:#7a8095;text-transform:uppercase}
-  .main-link a{color:#fff;text-decoration:underline}
-</style>
+<link rel="stylesheet" href="../blog.css">
 </head>
 <body>
-
-<header>
-  <div class="wrap hero-inner">
-    <div class="brand">
-      <span class="brand-mark"></span>
-      SMILE EYE <small>BLOG · GANGNAM · SEOUL</small>
-    </div>
-    <h1>안경 없는 일상,<br/>한국에서 시작하세요</h1>
-    <p class="tagline">강남스마일안과의원 — 누적 7만건 시력교정. 비용·일정·후기를 환자 시각으로 정리한 가이드 모음.</p>
-    <div class="lang-switch">
-      <a href="https://songjun2625.github.io/smileeye-landing/blog/" class="active">한국어</a>
-      <a href="https://songjun2625.github.io/smileeye-landing/mn/blog/" class="">Монгол</a>
-    </div>
-  </div>
-</header>
-
-<section class="posts">
-  <div class="wrap">
-    <div class="posts-head">
-      <h2>전체 글</h2>
-      <span class="count">10 편</span>
-    </div>
-    <div class="grid">
-      <a class="card" href="glasses-lifetime-cost-vs-lasik/">
-        <div class="card-img"><img src="glasses-lifetime-cost-vs-lasik/og.jpg" alt="안경 평생 비용 vs 라식 1회, 진짜 어느 쪽이 더 절약될까요?" loading="lazy" decoding="async" /></div>
-        <div class="card-body">
-          <span class="card-meta">BLOG</span>
-          <h3>안경 평생 비용 vs 라식 1회, 진짜 어느 쪽이 더 절약될까요?</h3>
-          <p>20·30대가 가장 궁금해하는 질문. 안경·렌즈를 40년 쓰는 비용과 라식 1회 비용을 솔직하게 비교합니다. 몽골에서 한국 강남스마일까지 오는 총비용도 함께 정리했습니다.</p>
-          <span class="card-cta">READ MORE →</span>
-        </div>
-      </a>
-      <a class="card" href="incheon-airport-to-gangnam-first-day-guide/">
-        <div class="card-img"><img src="incheon-airport-to-gangnam-first-day-guide/og.jpg" alt="인천공항에서 강남까지, 한국 도착 첫날 통역·동선 가이드" loading="lazy" decoding="async" /></div>
-        <div class="card-body">
-          <span class="card-meta">BLOG</span>
-          <h3>인천공항에서 강남까지, 한국 도착 첫날 통역·동선 가이드</h3>
-          <p>라식·SMILE 상담을 위해 한국에 도착한 첫날, 인천공항에서 강남 안과까지 가는 동선과 통역, 식사·환전·유심까지 한 번에 정리했습니다.</p>
-          <span class="card-cta">READ MORE →</span>
-        </div>
-      </a>
-      <a class="card" href="korea-vision-correction-total-cost/">
-        <div class="card-img"><img src="korea-vision-correction-total-cost/og.jpg" alt="한국 시력교정 총비용 완전 정리 — 시술비·항공·호텔·통역까지" loading="lazy" decoding="async" /></div>
-        <div class="card-body">
-          <span class="card-meta">BLOG</span>
-          <h3>한국 시력교정 총비용 완전 정리 — 시술비·항공·호텔·통역까지</h3>
-          <p>한국 라식 비용이 진짜 얼마인지 궁금하신가요? 시술비뿐 아니라 항공·호텔·통역·식비까지 모두 합한 실제 총비용을 몽골 환자 기준으로 정리해드립니다.</p>
-          <span class="card-cta">READ MORE →</span>
-        </div>
-      </a>
-      <a class="card" href="korea-vision-correction-trip-schedule-from-mongolia/">
-        <div class="card-img"><img src="korea-vision-correction-trip-schedule-from-mongolia/og.jpg" alt="몽골에서 한국 시력교정, 출국 전날부터 귀국 다음 날까지 진짜 일정" loading="lazy" decoding="async" /></div>
-        <div class="card-body">
-          <span class="card-meta">BLOG</span>
-          <h3>몽골에서 한국 시력교정, 출국 전날부터 귀국 다음 날까지 진짜 일정</h3>
-          <p>몽골에서 한국으로 라식·SMILE 받으러 갈 때 실제 며칠이 걸릴까요? 출국 전날 준비부터 귀국 다음 날 일상 복귀까지, 강남스마일안과의원 환자들의 실제 일정으로 정리했습니다.</p>
-          <span class="card-cta">READ MORE →</span>
-        </div>
-      </a>
-      <a class="card" href="kpop-celebrity-vision-correction-trend/">
-        <div class="card-img"><img src="kpop-celebrity-vision-correction-trend/og.jpg" alt="한국 셀럽 라식 트렌드: K-pop 스타들은 어떤 시력교정을 받을까?" loading="lazy" decoding="async" /></div>
-        <div class="card-body">
-          <span class="card-meta">BLOG</span>
-          <h3>한국 셀럽 라식 트렌드: K-pop 스타들은 어떤 시력교정을 받을까?</h3>
-          <p>K-pop 아이돌과 한국 셀럽들이 선택하는 시력교정 시술을 비교 분석합니다. 라식·SMILE·ICL의 차이, 회복 기간, 몽골 환자가 알아야 할 정보까지 정리했습니다.</p>
-          <span class="card-cta">READ MORE →</span>
-        </div>
-      </a>
-      <a class="card" href="lasik-before-wedding-bride-timeline/">
-        <div class="card-img"><img src="lasik-before-wedding-bride-timeline/og.jpg" alt="결혼식 전 라식, 신부 베스트 일정표 (한국 시력교정 가이드)" loading="lazy" decoding="async" /></div>
-        <div class="card-body">
-          <span class="card-meta">BLOG</span>
-          <h3>결혼식 전 라식, 신부 베스트 일정표 (한국 시력교정 가이드)</h3>
-          <p>결혼식을 앞두고 라식을 고민 중이신가요? 신부 메이크업·웨딩 촬영·신혼여행까지 고려한 시력교정 베스트 일정과 회복 기간을 강남스마일안과가 정리했습니다.</p>
-          <span class="card-cta">READ MORE →</span>
-        </div>
-      </a>
-      <a class="card" href="lasik-fear-real-feelings-and-reassurance/">
-        <div class="card-img"><img src="lasik-fear-real-feelings-and-reassurance/og.jpg" alt="라식 무서워요, 수술대 오르기 직전 진짜 감정과 안심 포인트" loading="lazy" decoding="async" /></div>
-        <div class="card-body">
-          <span class="card-meta">BLOG</span>
-          <h3>라식 무서워요, 수술대 오르기 직전 진짜 감정과 안심 포인트</h3>
-          <p>라식이 무서운 건 당연합니다. 수술 직전 환자가 실제로 느낀 감정과 시력교정 부작용 걱정에 대한 안심 포인트를 솔직하게 정리했습니다.</p>
-          <span class="card-cta">READ MORE →</span>
-        </div>
-      </a>
-      <a class="card" href="lasik-recovery-daily-activities/">
-        <div class="card-img"><img src="lasik-recovery-daily-activities/og.jpg" alt="라식 후 컴퓨터·SNS 언제부터? 회복 일별 가능 활동 정리" loading="lazy" decoding="async" /></div>
-        <div class="card-body">
-          <span class="card-meta">BLOG</span>
-          <h3>라식 후 컴퓨터·SNS 언제부터? 회복 일별 가능 활동 정리</h3>
-          <p>라식 후 컴퓨터, SNS, 운동, 화장은 며칠 차부터 가능할까요? 수술 당일부터 1개월까지 일별 회복 일정과 일상 복귀 시점을 정리했습니다.</p>
-          <span class="card-cta">READ MORE →</span>
-        </div>
-      </a>
-      <a class="card" href="lasik-review-mongolian-office-worker-korea/">
-        <div class="card-img"><img src="lasik-review-mongolian-office-worker-korea/og.jpg" alt="안경 없는 첫날 — 한국 라식 받은 30대 몽골 직장인 후기" loading="lazy" decoding="async" /></div>
-        <div class="card-body">
-          <span class="card-meta">BLOG</span>
-          <h3>안경 없는 첫날 — 한국 라식 받은 30대 몽골 직장인 후기</h3>
-          <p>한국에서 라식을 받은 30대 몽골 직장인의 솔직한 후기. 비용, 회복 기간, 휴가 일정, 통역까지 — 라식 후기 한 편으로 정리한 강남스마일안과 가이드입니다.</p>
-          <span class="card-cta">READ MORE →</span>
-        </div>
-      </a>
-      <a class="card" href="vision-correction-self-check-mongolia/">
-        <div class="card-img"><img src="vision-correction-self-check-mongolia/og.jpg" alt="시력교정 가능할까? 출국 전 1분 자가 체크리스트" loading="lazy" decoding="async" /></div>
-        <div class="card-body">
-          <span class="card-meta">BLOG</span>
-          <h3>시력교정 가능할까? 출국 전 1분 자가 체크리스트</h3>
-          <p>라식·SMILE·ICL을 고민 중이라면 출국 전 확인해야 할 자가 진단 항목을 정리했습니다. 나이·각막·생활습관까지 1분 체크리스트로 확인해보세요.</p>
-          <span class="card-cta">READ MORE →</span>
-        </div>
-      </a>
-    </div>
+<section class="blog-list">
+  <header class="list-header">
+    <h1>강남스마일 블로그</h1>
+    <p style="color:#5d6378;font-size:15px;margin-top:4px;">시력교정 · 몽골 환자 가이드 · 의료관광 정보</p>
+  </header>
+  <div class="list-grid">
+    <a class="list-card" href="smile-pro-recovery-mongolian-patients-faq/">
+      <div class="list-card-img">
+        <img src="smile-pro-recovery-mongolian-patients-faq/og.jpg" alt="SMILE Pro 라식 회복 기간, 몽골 환자가 가장 많이 묻는 5가지" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>SMILE Pro 라식 회복 기간, 몽골 환자가 가장 많이 묻는 5가지</h3>
+        <p>SMILE Pro 라식 후 회복 기간, 일상 복귀 시점, 항공 일정까지. 몽골 환자가 가장 많이 묻는 5가지 질문에 강남스마일안과가 답합니다.</p>
+        <span class="list-card-date">2026-05-12 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="cataract-presbyopia-multifocal-iol/">
+      <div class="list-card-img">
+        <img src="cataract-presbyopia-multifocal-iol/og.jpg" alt="백내장 수술로 노안까지 한 번에? 다초점 IOL 비교 가이드" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>백내장 수술로 노안까지 한 번에? 다초점 IOL 비교 가이드</h3>
+        <p>백내장 수술 한 번으로 노안까지 교정할 수 있는지 궁금하신가요? 다초점 인공수정체(IOL)와 단초점 IOL의 차이, 적합한 분, 비용과 회복까지 비교해 드립니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="cataract-surgery-daily-recovery-driving-reading/">
+      <div class="list-card-img">
+        <img src="cataract-surgery-daily-recovery-driving-reading/og.jpg" alt="백내장 수술 후 일상, 언제부터 책 읽고 운전 가능할까요?" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>백내장 수술 후 일상, 언제부터 책 읽고 운전 가능할까요?</h3>
+        <p>백내장 수술 후 독서·운전·집안일 복귀 시점을 시기별로 안내합니다. 회복 기간, 주의사항, 가족이 도와줄 일까지 한 번에 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="cataract-surgery-fear-5-reassurances/">
+      <div class="list-card-img">
+        <img src="cataract-surgery-fear-5-reassurances/og.jpg" alt="백내장 수술 무서워하는 부모님께 — 의사가 답하는 5가지 안심" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>백내장 수술 무서워하는 부모님께 — 의사가 답하는 5가지 안심</h3>
+        <p>백내장 수술이 무섭다는 부모님, 어떻게 안심시켜 드릴까요? 통증·시간·합병증·회복까지, 자녀가 가장 궁금해하는 5가지를 의료진 관점에서 풀어드립니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="dream-lens-kids-myopia-management/">
+      <div class="list-card-img">
+        <img src="dream-lens-kids-myopia-management/og.jpg" alt="드림렌즈로 자녀 시력 지키기: 라식 전 꼭 알아둘 옵션" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>드림렌즈로 자녀 시력 지키기: 라식 전 꼭 알아둘 옵션</h3>
+        <p>자녀 근시가 빠르게 진행 중이라면? 드림렌즈로 안경 없이 어린이 근시 관리하는 방법과 라식 가능 시기까지, 학부모가 꼭 알아야 할 정보를 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="dry-eye-lasik-safety-guide/">
+      <div class="list-card-img">
+        <img src="dry-eye-lasik-safety-guide/og.jpg" alt="안구건조증 있어도 라식 가능할까? 사전 관리와 안전 가이드" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>안구건조증 있어도 라식 가능할까? 사전 관리와 안전 가이드</h3>
+        <p>안구건조증이 있어도 라식이 가능한지, 수술 전 관리 방법과 안전한 시술 선택 기준을 강남스마일안과가 알려드립니다. 몽골어 상담 가능.</p>
+        <span class="list-card-date">2026-05-11 · 2분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="gangnam-smile-vs-other-korean-eye-clinics/">
+      <div class="list-card-img">
+        <img src="gangnam-smile-vs-other-korean-eye-clinics/og.jpg" alt="다른 한국 안과 vs 강남스마일 — 외국인 환자에게 특히 좋은 5가지 이유" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>다른 한국 안과 vs 강남스마일 — 외국인 환자에게 특히 좋은 5가지 이유</h3>
+        <p>한국 안과 비교 검색 중이신가요? 외국인 환자 입장에서 강남스마일이 다른 한국 안과와 무엇이 다른지, 비용·통역·후기·사후관리 5가지 기준으로 솔직하게 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="glasses-lifetime-cost-vs-lasik/">
+      <div class="list-card-img">
+        <img src="glasses-lifetime-cost-vs-lasik/og.jpg" alt="안경 평생 비용 vs 라식 1회, 진짜 어느 쪽이 더 절약될까요?" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>안경 평생 비용 vs 라식 1회, 진짜 어느 쪽이 더 절약될까요?</h3>
+        <p>20·30대가 가장 궁금해하는 질문. 안경·렌즈를 40년 쓰는 비용과 라식 1회 비용을 솔직하게 비교합니다. 몽골에서 한국 강남스마일까지 오는 총비용도 함께 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="glasses-lifetime-cost-vs-lasik-comparison/">
+      <div class="list-card-img">
+        <img src="glasses-lifetime-cost-vs-lasik-comparison/og.jpg" alt="안경 평생 비용 vs 라식 1회, 진짜 어느 쪽이 더 절약될까?" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>안경 평생 비용 vs 라식 1회, 진짜 어느 쪽이 더 절약될까?</h3>
+        <p>안경·렌즈를 평생 쓰는 비용과 라식 1회 비용을 30년 기준으로 비교합니다. 숨은 비용, 회복기간, 몽골에서 한국 원정 수술 시 총비용까지 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="high-myopia-icl-when-lasik-not-possible/">
+      <div class="list-card-img">
+        <img src="high-myopia-icl-when-lasik-not-possible/og.jpg" alt="고도근시 -8.00, 라식 안 된다면? ICL이 답이 될 수 있어요" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>고도근시 -8.00, 라식 안 된다면? ICL이 답이 될 수 있어요</h3>
+        <p>도수 -8.00 이상 고도근시라 라식이 어렵다는 진단을 받으셨나요? 각막을 깎지 않는 ICL 렌즈삽입술이 왜 대안이 되는지, 비용·회복·안전성까지 친구처럼 알려드립니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="high-school-senior-lasik-after-suneung/">
+      <div class="list-card-img">
+        <img src="high-school-senior-lasik-after-suneung/og.jpg" alt="고3 자녀 라식, 수능 끝나고 바로 받아도 될까요?" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>고3 자녀 라식, 수능 끝나고 바로 받아도 될까요?</h3>
+        <p>수능을 마친 고3 자녀의 라식·시력교정을 고민하는 학부모를 위한 가이드입니다. 적정 시기, 안전성, 회복 기간, 대학 입학 전 일정까지 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="icl-vs-lasik-difference-mongolia/">
+      <div class="list-card-img">
+        <img src="icl-vs-lasik-difference-mongolia/og.jpg" alt="ICL과 라식의 차이점 — 몽골 환자가 알아야 할 5가지" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>ICL과 라식의 차이점 — 몽골 환자가 알아야 할 5가지</h3>
+        <p>ICL과 라식, 어떤 시력교정이 나에게 맞을까요? 각막 두께·근시 정도·회복 기간·비용을 기준으로 두 시술의 차이를 5가지 핵심 포인트로 비교 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="incheon-airport-to-gangnam-first-day-guide/">
+      <div class="list-card-img">
+        <img src="incheon-airport-to-gangnam-first-day-guide/og.jpg" alt="인천공항에서 강남까지, 한국 도착 첫날 통역·동선 가이드" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>인천공항에서 강남까지, 한국 도착 첫날 통역·동선 가이드</h3>
+        <p>라식·SMILE 상담을 위해 한국에 도착한 첫날, 인천공항에서 강남 안과까지 가는 동선과 통역, 식사·환전·유심까지 한 번에 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="korea-lasik-mongolian-review-30s/">
+      <div class="list-card-img">
+        <img src="korea-lasik-mongolian-review-30s/og.jpg" alt="안경 없는 첫날: 한국 라식 받은 30대 몽골 직장인 솔직 후기" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>안경 없는 첫날: 한국 라식 받은 30대 몽골 직장인 솔직 후기</h3>
+        <p>한국에서 라식 수술을 받은 30대 몽골 직장인의 솔직한 후기. 비용, 회복 기간, 일상 복귀, 몽골과 한국 라식의 차이까지 라식 후기 한 편으로 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="korea-vision-correction-total-cost/">
+      <div class="list-card-img">
+        <img src="korea-vision-correction-total-cost/og.jpg" alt="한국 시력교정 총비용 완전 정리 — 시술비·항공·호텔·통역까지" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>한국 시력교정 총비용 완전 정리 — 시술비·항공·호텔·통역까지</h3>
+        <p>한국 라식 비용이 진짜 얼마인지 궁금하신가요? 시술비뿐 아니라 항공·호텔·통역·식비까지 모두 합한 실제 총비용을 몽골 환자 기준으로 정리해드립니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="korea-vision-correction-total-cost-breakdown/">
+      <div class="list-card-img">
+        <img src="korea-vision-correction-total-cost-breakdown/og.jpg" alt="한국 라식 비용, 시력교정 총비용 실제 얼마? (항공·호텔 포함)" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>한국 라식 비용, 시력교정 총비용 실제 얼마? (항공·호텔 포함)</h3>
+        <p>한국에서 라식·SMILE 시력교정 받을 때 시술비뿐 아니라 항공·호텔·통역까지 합친 진짜 총비용을 단계별로 정리했습니다. 몽골 환자를 위한 실전 가이드입니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="korea-vision-correction-total-cost-guide/">
+      <div class="list-card-img">
+        <img src="korea-vision-correction-total-cost-guide/og.jpg" alt="한국 라식 비용, 진짜 총비용은? 시술비·항공·호텔 다 합산" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>한국 라식 비용, 진짜 총비용은? 시술비·항공·호텔 다 합산</h3>
+        <p>한국에서 시력교정 받을 때 시술비 외에 항공·호텔·통역까지 합치면 실제로 얼마가 들까요? 몽골에서 오시는 분들을 위한 솔직한 총비용 가이드입니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="korea-vision-correction-trip-schedule-from-mongolia/">
+      <div class="list-card-img">
+        <img src="korea-vision-correction-trip-schedule-from-mongolia/og.jpg" alt="몽골에서 한국 시력교정, 출국 전날부터 귀국 다음 날까지 진짜 일정" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>몽골에서 한국 시력교정, 출국 전날부터 귀국 다음 날까지 진짜 일정</h3>
+        <p>몽골에서 한국으로 라식·SMILE 받으러 갈 때 실제 며칠이 걸릴까요? 출국 전날 준비부터 귀국 다음 날 일상 복귀까지, 강남스마일안과의원 환자들의 실제 일정으로 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="korea-vs-mongolia-china-vision-correction-comparison/">
+      <div class="list-card-img">
+        <img src="korea-vs-mongolia-china-vision-correction-comparison/og.jpg" alt="왜 굳이 한국이야? 몽골·중국 vs 한국 시력교정 솔직 비교" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>왜 굳이 한국이야? 몽골·중국 vs 한국 시력교정 솔직 비교</h3>
+        <p>몽골·중국·한국 시력교정을 비용, 기술, 안전성, 사후관리, 총 여행비용까지 솔직하게 비교했습니다. 후기를 검색하는 분들을 위한 가이드입니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="kpop-celebrity-vision-correction-trend/">
+      <div class="list-card-img">
+        <img src="kpop-celebrity-vision-correction-trend/og.jpg" alt="한국 셀럽 라식 트렌드: K-pop 스타들은 어떤 시력교정을 받을까?" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>한국 셀럽 라식 트렌드: K-pop 스타들은 어떤 시력교정을 받을까?</h3>
+        <p>K-pop 아이돌과 한국 셀럽들이 선택하는 시력교정 시술을 비교 분석합니다. 라식·SMILE·ICL의 차이, 회복 기간, 몽골 환자가 알아야 할 정보까지 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-5-years-later-vision-regression/">
+      <div class="list-card-img">
+        <img src="lasik-5-years-later-vision-regression/og.jpg" alt="라식 5년 후 시력은? 재퇴행 추적 데이터로 본 진실" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>라식 5년 후 시력은? 재퇴행 추적 데이터로 본 진실</h3>
+        <p>라식 5년·10년 후 시력은 어떻게 변할까요? 시력 재퇴행 비율, 원인, 재시술 가능성까지 장기 추적 데이터를 바탕으로 솔직하게 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-before-wedding-bride-timeline/">
+      <div class="list-card-img">
+        <img src="lasik-before-wedding-bride-timeline/og.jpg" alt="결혼식 전 라식, 신부 베스트 일정표 (한국 시력교정 가이드)" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>결혼식 전 라식, 신부 베스트 일정표 (한국 시력교정 가이드)</h3>
+        <p>결혼식을 앞두고 라식을 고민 중이신가요? 신부 메이크업·웨딩 촬영·신혼여행까지 고려한 시력교정 베스트 일정과 회복 기간을 강남스마일안과가 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-business-traveler-life-changes/">
+      <div class="list-card-img">
+        <img src="lasik-business-traveler-life-changes/og.jpg" alt="출장 잦은 직장인의 라식 후기: 일상이 바뀐 5가지 순간" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>출장 잦은 직장인의 라식 후기: 일상이 바뀐 5가지 순간</h3>
+        <p>비행기·미팅·야근이 일상인 직장인이 라식 후 가장 크게 달라졌다고 말하는 5가지 순간을 정리했습니다. 회복 기간, 비용, 출장 일정 조율까지 한 번에 확인하세요.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-failure-cases-warning-signs/">
+      <div class="list-card-img">
+        <img src="lasik-failure-cases-warning-signs/og.jpg" alt="라식 실패 사례, 위험 신호와 피하는 법 총정리" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>라식 실패 사례, 위험 신호와 피하는 법 총정리</h3>
+        <p>라식·SMILE·ICL 등 시력교정 실패 사례에서 반복되는 위험 신호와 부작용 유형, 그리고 미리 피하는 방법을 환자 관점에서 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-fear-real-emotions-before-surgery/">
+      <div class="list-card-img">
+        <img src="lasik-fear-real-emotions-before-surgery/og.jpg" alt="라식 무서워요, 수술 직전 진짜 감정과 안심 포인트 5가지" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>라식 무서워요, 수술 직전 진짜 감정과 안심 포인트 5가지</h3>
+        <p>라식이 무섭다는 감정은 자연스럽습니다. 수술 직전 환자들이 실제로 느낀 두려움과 안심 포인트, 시력교정 부작용에 대한 솔직한 안내를 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-fear-real-emotions-safety-points/">
+      <div class="list-card-img">
+        <img src="lasik-fear-real-emotions-safety-points/og.jpg" alt="라식 무서워요, 수술 직전 진짜 감정과 안심 포인트 5가지" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>라식 무서워요, 수술 직전 진짜 감정과 안심 포인트 5가지</h3>
+        <p>라식 무서움이 드는 건 당연합니다. 시력교정 부작용 걱정, 수술 직전 떨림, 회복기 불안까지. 라식 검토자가 느끼는 진짜 감정과 안심할 수 있는 구체적인 포인트를 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-fear-real-feelings-and-reassurance/">
+      <div class="list-card-img">
+        <img src="lasik-fear-real-feelings-and-reassurance/og.jpg" alt="라식 무서워요, 수술대 오르기 직전 진짜 감정과 안심 포인트" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>라식 무서워요, 수술대 오르기 직전 진짜 감정과 안심 포인트</h3>
+        <p>라식이 무서운 건 당연합니다. 수술 직전 환자가 실제로 느낀 감정과 시력교정 부작용 걱정에 대한 안심 포인트를 솔직하게 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-long-term-review-1-5-10-years/">
+      <div class="list-card-img">
+        <img src="lasik-long-term-review-1-5-10-years/og.jpg" alt="라식 후 1년·5년·10년, 시력은 정말 유지될까요?" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>라식 후 1년·5년·10년, 시력은 정말 유지될까요?</h3>
+        <p>라식 장기 후기가 궁금하신가요? 강남스마일 25,000건 데이터와 1년·5년·10년 경과 환자 사례를 바탕으로 시력교정 10년 후 변화, 재시술 가능성, 부작용 여부를 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-recovery-combat-sports-boxing-mma/">
+      <div class="list-card-img">
+        <img src="lasik-recovery-combat-sports-boxing-mma/og.jpg" alt="라식 후 복싱·MMA 다시 해도 될까? 격투기 복귀 가이드" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>라식 후 복싱·MMA 다시 해도 될까? 격투기 복귀 가이드</h3>
+        <p>라식 후 격투기·복싱·MMA 복귀가 정말 가능한지, 언제부터 안전한지, 어떤 보호 장비가 필요한지 운동 단계별로 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-recovery-daily-activities/">
+      <div class="list-card-img">
+        <img src="lasik-recovery-daily-activities/og.jpg" alt="라식 후 컴퓨터·SNS 언제부터? 회복 일별 가능 활동 정리" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>라식 후 컴퓨터·SNS 언제부터? 회복 일별 가능 활동 정리</h3>
+        <p>라식 후 컴퓨터, SNS, 운동, 화장은 며칠 차부터 가능할까요? 수술 당일부터 1개월까지 일별 회복 일정과 일상 복귀 시점을 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-recovery-daily-activity-timeline/">
+      <div class="list-card-img">
+        <img src="lasik-recovery-daily-activity-timeline/og.jpg" alt="라식 후 컴퓨터·SNS 며칠 만에? 일별 회복 일정표" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>라식 후 컴퓨터·SNS 며칠 만에? 일별 회복 일정표</h3>
+        <p>라식 후 컴퓨터, SNS, 운동, 화장은 며칠부터 가능할까요? 수술 당일부터 1개월까지 일별 가능 활동과 라식 회복 일정을 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-review-mongolian-office-worker-korea/">
+      <div class="list-card-img">
+        <img src="lasik-review-mongolian-office-worker-korea/og.jpg" alt="안경 없는 첫날 — 한국 라식 받은 30대 몽골 직장인 후기" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>안경 없는 첫날 — 한국 라식 받은 30대 몽골 직장인 후기</h3>
+        <p>한국에서 라식을 받은 30대 몽골 직장인의 솔직한 후기. 비용, 회복 기간, 휴가 일정, 통역까지 — 라식 후기 한 편으로 정리한 강남스마일안과 가이드입니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="lasik-satisfaction-men-vs-women/">
+      <div class="list-card-img">
+        <img src="lasik-satisfaction-men-vs-women/og.jpg" alt="남자와 여자, 라식 만족도에 차이가 있을까요?" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>남자와 여자, 라식 만족도에 차이가 있을까요?</h3>
+        <p>라식·SMILE 만족도는 성별에 따라 다를까요? 회복 속도, 안구건조증, 화장·운동 복귀 등 남녀가 신경 쓰는 포인트를 비교해 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 2분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="parents-cataract-korea-best-timing/">
+      <div class="list-card-img">
+        <img src="parents-cataract-korea-best-timing/og.jpg" alt="부모님 백내장, 한국에 모시고 갈 시기는 언제일까요?" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>부모님 백내장, 한국에 모시고 갈 시기는 언제일까요?</h3>
+        <p>부모님 백내장 수술, 한국 방문 시기를 고민 중이신가요? 수술 적기 신호, 준비 일정, 강남스마일 백내장 절차와 가족 동반 안내를 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="parents-cataract-medical-tourism-korea-guide/">
+      <div class="list-card-img">
+        <img src="parents-cataract-medical-tourism-korea-guide/og.jpg" alt="부모님 모시고 가는 한국 의료관광, 백내장 수술 풀가이드" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>부모님 모시고 가는 한국 의료관광, 백내장 수술 풀가이드</h3>
+        <p>부모님 백내장 수술로 한국 방문을 준비 중이신가요? 항공권, 휠체어 동반, 호텔, 통역까지 자녀가 챙겨야 할 모든 것을 단계별로 안내합니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="teen-lasik-age-guide/">
+      <div class="list-card-img">
+        <img src="teen-lasik-age-guide/og.jpg" alt="자녀 라식, 몇 살부터 가능할까요? 학부모를 위한 시력교정 나이 가이드" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>자녀 라식, 몇 살부터 가능할까요? 학부모를 위한 시력교정 나이 가이드</h3>
+        <p>자녀의 시력이 매년 떨어지고 있다면 라식을 언제 받을 수 있을지 궁금하실 겁니다. 청소년 라식 나이 기준, 근시 진행과 안정화, 대안 시술까지 학부모 관점에서 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="thin-cornea-icl-alternative-to-lasik/">
+      <div class="list-card-img">
+        <img src="thin-cornea-icl-alternative-to-lasik/og.jpg" alt="각막이 얇으면 라식 못 하나요? 렌즈삽입술(ICL)이라는 선택지" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>각막이 얇으면 라식 못 하나요? 렌즈삽입술(ICL)이라는 선택지</h3>
+        <p>각막이 얇다고 라식 부적합 판정을 받으셨나요? 각막을 깎지 않는 렌즈삽입술(ICL)의 원리, 적합 대상, 회복 기간, 강남스마일 상담 방법까지 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 5분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="vacation-lasik-student-schedule-guide/">
+      <div class="list-card-img">
+        <img src="vacation-lasik-student-schedule-guide/og.jpg" alt="방학에 라식 가능할까? 대학생 자녀 시력교정 베스트 시기 가이드" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>방학에 라식 가능할까? 대학생 자녀 시력교정 베스트 시기 가이드</h3>
+        <p>대학생 자녀의 라식·SMILE 수술, 방학 일정에 맞출 수 있을까요? 회복 기간, 학기 복귀 시점, 한국 원정 일정까지 학부모가 꼭 알아야 할 시기 가이드를 정리했습니다.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
+    <a class="list-card" href="vision-correction-self-check-mongolia/">
+      <div class="list-card-img">
+        <img src="vision-correction-self-check-mongolia/og.jpg" alt="시력교정 가능할까? 출국 전 1분 자가 체크리스트" loading="lazy" />
+      </div>
+      <div class="list-card-body">
+        <span class="list-card-meta">BLOG</span>
+        <h3>시력교정 가능할까? 출국 전 1분 자가 체크리스트</h3>
+        <p>라식·SMILE·ICL을 고민 중이라면 출국 전 확인해야 할 자가 진단 항목을 정리했습니다. 나이·각막·생활습관까지 1분 체크리스트로 확인해보세요.</p>
+        <span class="list-card-date">2026-05-11 · 4분 읽기</span>
+      </div>
+    </a>
   </div>
 </section>
-
-<footer>
-  <div class="wrap">
-    <h4>지금 바로 무료 상담을 시작하세요</h4>
-    <p>몽골어 상담 가능 · 한국 도착 일정 안내 · 사전 정밀검사 무료. 다음 채널 중 편한 곳으로 연락주세요.</p>
-    <div class="channels">
-      <a href="https://pf.kakao.com/_Yxcmyj" target="_blank" rel="noopener">KakaoTalk</a>
-      <a href="https://wa.me/821057720210" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="https://www.facebook.com/groups/Smileeyeclinicmogolia" target="_blank" rel="noopener">Facebook Group</a>
-      <a href="mailto:gangnamsmile00@gmail.com">Email</a>
-    </div>
-    <div class="main-link">
-      <a href="../">메인 사이트로 →</a>
-    </div>
-  </div>
-</footer>
-
 </body>
 </html>
