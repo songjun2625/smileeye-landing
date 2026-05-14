@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gangnam Smile Design System v1 — 강남스마일안과의원 디자인 시스템</title>
+<meta name="description" content="강남스마일안과의원 전용 통합 디자인 시스템 — 컬러·타이포·컴포넌트·카드뉴스 템플릿·브랜드 보이스." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Mongolian&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Brand */
+    --navy:#1c2cae;
+    --navy-deep:#131a8a;
+    --navy-soft:#4654d6;
+    --navy-pale:#dde0f0;
+    --navy-tint:#eef0f7;
+    --gold:#E8B143;
+
+    /* Surfaces */
+    --bg:#ffffff;
+    --bg-soft:#f5f6fa;
+    --bg-warm:#eef0f7;
+    --ivory:#FBF8F0;
+    --cream:#FCFAF5;
+
+    /* Ink */
+    --ink:#1a1d2c;
+    --ink-soft:#5d6378;
+    --ink-mute:#8a90a3;
+    --grey:#a8acba;
+    --line:rgba(28,44,174,.1);
+    --line-strong:rgba(28,44,174,.2);
+
+    /* Semantic */
+    --success:#22C55E;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+    --info:#3B82F6;
+
+    /* Effects */
+    --shadow-sm:0 2px 8px -2px rgba(28,44,174,.08);
+    --shadow-md:0 14px 40px -16px rgba(28,44,174,.18);
+    --shadow-lg:0 30px 80px -30px rgba(19,26,138,.4);
+
+    /* Radius */
+    --r-xs:2px;
+    --r-sm:4px;
+    --r-md:8px;
+    --r-lg:16px;
+    --r-xl:24px;
+    --r-pill:999px;
+
+    /* Spacing scale (8pt) */
+    --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:24px;
+    --s-6:32px; --s-7:48px; --s-8:64px; --s-9:96px; --s-10:128px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;font-size:14px}
+  body{
+    font-family:"Pretendard","Noto Sans","Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--bg);color:var(--ink);
+    line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  code{font-family:"SF Mono","Menlo",monospace;font-size:.85em;background:var(--bg-soft);padding:2px 8px;border-radius:var(--r-sm);color:var(--navy-deep)}
+
+  /* ==================== Layout ==================== */
+  .ds-shell{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+  @media(max-width:980px){.ds-shell{grid-template-columns:1fr}}
+
+  /* Sidebar */
+  .ds-side{
+    position:sticky;top:0;height:100vh;overflow-y:auto;
+    background:var(--ink);color:#fff;
+    padding:40px 28px 60px;
+    border-right:1px solid var(--ink);
+  }
+  @media(max-width:980px){.ds-side{position:relative;height:auto;padding:32px}}
+  .ds-side .brand{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  .ds-side .brand-mark{width:42px;height:42px;position:relative;flex-shrink:0}
+  .ds-side .brand-mark::before,.ds-side .brand-mark::after{content:"";position:absolute;width:30px;height:30px;border-radius:50%;top:6px}
+  .ds-side .brand-mark::before{left:0;background:var(--navy-soft)}
+  .ds-side .brand-mark::after{left:12px;background:var(--gold);mix-blend-mode:screen;opacity:.9}
+  .ds-side .brand-text{font-family:"Cormorant Garamond",serif;font-size:18px;letter-spacing:.18em;font-weight:600;line-height:1.1}
+  .ds-side .brand-text small{display:block;font-size:9px;letter-spacing:.3em;opacity:.6;margin-top:2px;font-family:"Noto Sans",sans-serif}
+  .ds-side .ds-label{font-size:10px;letter-spacing:.3em;opacity:.45;text-transform:uppercase;margin:36px 0 14px}
+  .ds-nav{display:flex;flex-direction:column;gap:2px}
+  .ds-nav a{
+    display:flex;align-items:center;gap:10px;
+    padding:8px 12px;font-size:13px;color:rgba(255,255,255,.6);
+    border-radius:var(--r-sm);transition:.2s;
+  }
+  .ds-nav a::before{content:"";width:14px;height:1px;background:currentColor;opacity:.4}
+  .ds-nav a:hover{color:#fff;background:rgba(255,255,255,.05)}
+  .ds-nav a.active{color:var(--gold);background:rgba(232,177,67,.1)}
+  .ds-side .meta{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:11px;line-height:1.7;color:rgba(255,255,255,.4)}
+  .ds-side .meta strong{color:rgba(255,255,255,.7);font-weight:500}
+
+  /* Main */
+  .ds-main{padding:0;max-width:100%;overflow:hidden}
+  .ds-section{padding:96px 80px;border-bottom:1px solid var(--line)}
+  @media(max-width:880px){.ds-section{padding:64px 32px}}
+  .ds-section:nth-child(even){background:var(--bg-soft)}
+
+  .ds-eyebrow{
+    display:inline-flex;align-items:center;gap:14px;
+    font-size:11px;letter-spacing:.3em;color:var(--navy);text-transform:uppercase;
+    margin-bottom:20px;font-weight:500;
+  }
+  .ds-eyebrow::before{content:"";width:36px;height:1px;background:var(--navy)}
+  .ds-h1{font-size:56px;line-height:1.15;letter-spacing:-.02em;font-weight:700;margin-bottom:20px}
+  .ds-h1 .it{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;color:var(--navy)}
+  .ds-h2{font-size:36px;line-height:1.2;letter-spacing:-.01em;font-weight:600;margin-bottom:14px}
+  .ds-h2 .num{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;color:var(--navy);margin-right:14px;font-size:.7em;vertical-align:.15em}
+  .ds-h3{font-size:20px;font-weight:600;margin:48px 0 16px;letter-spacing:-.005em}
+  .ds-h3 .small{font-size:11px;letter-spacing:.2em;color:var(--ink-mute);text-transform:uppercase;font-weight:500;margin-left:12px}
+  .ds-lede{font-size:16px;color:var(--ink-soft);max-width:680px;line-height:1.85;margin-bottom:48px}
+
+  .grid{display:grid;gap:16px}
+  .g-2{grid-template-columns:repeat(2,1fr)}
+  .g-3{grid-template-columns:repeat(3,1fr)}
+  .g-4{grid-template-columns:repeat(4,1fr)}
+  .g-5{grid-template-columns:repeat(5,1fr)}
+  .g-6{grid-template-columns:repeat(6,1fr)}
+  @media(max-width:880px){.g-3,.g-4,.g-5,.g-6{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.g-2,.g-3,.g-4,.g-5,.g-6{grid-template-columns:1fr}}
+
+  /* ==================== COVER ==================== */
+  #cover{
+    background:
+      radial-gradient(60% 50% at 88% 12%,rgba(28,44,174,.08),transparent 70%),
+      radial-gradient(45% 50% at -5% 95%,rgba(232,177,67,.08),transparent 60%),
+      var(--bg);
+    padding:120px 80px;position:relative;overflow:hidden;
+  }
+  #cover::before,#cover::after{
+    content:"";position:absolute;border:1px solid var(--navy-pale);border-radius:50%;pointer-events:none;
+  }
+  #cover::before{top:50%;left:-20%;width:80%;height:140%;transform:translateY(-50%);opacity:.4}
+  #cover::after{top:50%;left:5%;width:60%;height:110%;transform:translateY(-50%);opacity:.3}
+  .cover-inner{position:relative;z-index:2;max-width:920px}
+  .cover-tag{display:inline-block;font-size:11px;letter-spacing:.3em;color:var(--navy);background:#fff;padding:8px 16px;border:1px solid var(--navy-pale);margin-bottom:32px;font-weight:500}
+  .cover-title{font-size:88px;line-height:1.05;letter-spacing:-.03em;font-weight:800;margin-bottom:32px}
+  .cover-title .it{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;color:var(--navy);display:block;font-size:.55em;letter-spacing:0;margin-top:8px}
+  @media(max-width:680px){.cover-title{font-size:52px}}
+  .cover-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px;padding-top:32px;border-top:1px solid var(--line)}
+  @media(max-width:680px){.cover-meta{grid-template-columns:repeat(2,1fr)}}
+  .cover-meta dt{font-size:10px;letter-spacing:.2em;color:var(--ink-mute);text-transform:uppercase;margin-bottom:6px}
+  .cover-meta dd{font-size:14px;color:var(--ink);font-weight:500}
+
+  /* ==================== Brand DNA ==================== */
+  .dna-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  @media(max-width:880px){.dna-grid{grid-template-columns:repeat(2,1fr)}}
+  .dna-item{padding:32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+  .dna-item .ax{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--navy);font-size:14px;margin-bottom:8px;letter-spacing:.05em}
+  .dna-item h4{font-size:20px;font-weight:600;margin-bottom:12px;color:var(--ink)}
+  .dna-item p{font-size:13px;color:var(--ink-soft);line-height:1.7}
+
+  /* ==================== Logo ==================== */
+  .logo-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+  @media(max-width:880px){.logo-grid{grid-template-columns:1fr}}
+  .logo-card{background:#fff;border:1px solid var(--line);padding:48px;display:flex;align-items:center;justify-content:center;min-height:280px;position:relative}
+  .logo-card.dark{background:var(--ink);color:#fff}
+  .logo-card.brand{background:var(--navy);color:#fff}
+  .logo-card .label{position:absolute;top:16px;left:20px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+  .logo-mark{display:flex;align-items:center;gap:18px}
+  .logo-mark .symbol{width:64px;height:64px;position:relative;flex-shrink:0}
+  .logo-mark .symbol::before,.logo-mark .symbol::after{content:"";position:absolute;width:46px;height:46px;border-radius:50%;top:9px}
+  .logo-mark .symbol::before{left:0;background:var(--navy)}
+  .logo-mark .symbol::after{left:18px;background:var(--grey);mix-blend-mode:multiply}
+  .logo-card.dark .symbol::before,.logo-card.brand .symbol::before{background:var(--navy-soft)}
+  .logo-card.dark .symbol::after{background:var(--gold);mix-blend-mode:screen;opacity:.9}
+  .logo-card.brand .symbol::after{background:#fff;mix-blend-mode:screen;opacity:.85}
+  .logo-mark .text{font-family:"Cormorant Garamond",serif;font-size:28px;letter-spacing:.18em;font-weight:600;line-height:1.1;color:var(--navy-deep)}
+  .logo-mark .text small{display:block;font-size:11px;letter-spacing:.3em;color:var(--ink-soft);margin-top:4px;font-family:"Noto Sans",sans-serif;font-weight:400}
+  .logo-card.dark .text,.logo-card.brand .text{color:#fff}
+  .logo-card.dark .text small,.logo-card.brand .text small{color:rgba(255,255,255,.7)}
+  .logo-rules{background:var(--bg-warm);padding:32px;font-size:13px;color:var(--ink-soft);line-height:1.85}
+  .logo-rules h4{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:16px;letter-spacing:.05em;text-transform:uppercase}
+  .logo-rules ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .logo-rules li{padding-left:18px;position:relative}
+  .logo-rules li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:1px;background:var(--navy)}
+
+  /* ==================== Color ==================== */
+  .swatch{background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
+  .swatch .chip{height:120px;position:relative}
+  .swatch .info{padding:16px 18px;font-size:12px}
+  .swatch .info strong{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px}
+  .swatch .info code{background:transparent;padding:0;color:var(--ink-soft);font-size:11px}
+  .swatch .info p{font-size:11px;color:var(--ink-mute);margin-top:6px;line-height:1.5}
+  .swatch.lg .chip{height:180px}
+
+  /* ==================== Typography ==================== */
+  .type-row{display:grid;grid-template-columns:120px 1fr 200px;gap:32px;align-items:baseline;padding:24px 0;border-bottom:1px solid var(--line)}
+  @media(max-width:880px){.type-row{grid-template-columns:1fr}}
+  .type-row .name{font-size:11px;letter-spacing:.2em;color:var(--ink-mute);text-transform:uppercase}
+  .type-row .sample{color:var(--ink)}
+  .type-row .meta{font-size:11px;color:var(--ink-soft);font-family:"SF Mono",monospace;line-height:1.7}
+  .t-display{font-size:88px;font-weight:800;letter-spacing:-.03em;line-height:1}
+  .t-h1{font-size:56px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+  .t-h2{font-size:36px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+  .t-h3{font-size:24px;font-weight:600;letter-spacing:-.005em;line-height:1.3}
+  .t-bodyL{font-size:18px;font-weight:400;line-height:1.7}
+  .t-body{font-size:15px;font-weight:400;line-height:1.7}
+  .t-cap{font-size:12px;font-weight:500;letter-spacing:.05em;color:var(--ink-soft)}
+  .t-eyebrow{font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--navy)}
+  .t-italic{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;color:var(--navy);font-size:32px}
+
+  .font-stack{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+  @media(max-width:880px){.font-stack{grid-template-columns:1fr}}
+  .font-card{background:#fff;border:1px solid var(--line);padding:28px}
+  .font-card .label{font-size:10px;letter-spacing:.2em;color:var(--navy);text-transform:uppercase;margin-bottom:14px;font-weight:500}
+  .font-card .preview{font-size:32px;line-height:1.3;margin-bottom:14px;color:var(--ink)}
+  .font-card .name{font-size:13px;color:var(--ink-soft);font-family:"SF Mono",monospace}
+
+  /* ==================== Spacing & Grid ==================== */
+  .space-row{display:grid;grid-template-columns:80px 1fr 80px;align-items:center;gap:24px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .space-row .name{font-size:12px;color:var(--ink-mute);font-family:"SF Mono",monospace}
+  .space-row .bar{height:14px;background:var(--navy);border-radius:2px}
+  .space-row .val{font-size:12px;color:var(--ink-soft);font-family:"SF Mono",monospace;text-align:right}
+
+  .grid-vis{background:#fff;border:1px solid var(--line);padding:32px;position:relative}
+  .grid-cols{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;height:240px}
+  .grid-col{background:linear-gradient(180deg,rgba(28,44,174,.06),rgba(28,44,174,.02));border-radius:2px}
+
+  /* ==================== Radius / Shadow ==================== */
+  .token-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  @media(max-width:880px){.token-grid{grid-template-columns:repeat(2,1fr)}}
+  .token-card{background:#fff;border:1px solid var(--line);padding:24px;text-align:center}
+  .token-card .demo{height:80px;background:var(--navy);margin-bottom:16px}
+  .token-card .name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px}
+  .token-card .val{font-size:11px;color:var(--ink-soft);font-family:"SF Mono",monospace}
+
+  .shadow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:880px){.shadow-grid{grid-template-columns:1fr}}
+  .shadow-card{background:#fff;height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
+  .shadow-card.s-sm{box-shadow:var(--shadow-sm)}
+  .shadow-card.s-md{box-shadow:var(--shadow-md)}
+  .shadow-card.s-lg{box-shadow:var(--shadow-lg)}
+  .shadow-card .name{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .shadow-card .val{font-size:11px;color:var(--ink-soft);font-family:"SF Mono",monospace}
+
+  /* ==================== Components ==================== */
+  .comp-row{background:#fff;border:1px solid var(--line);padding:48px;margin-bottom:24px}
+  .comp-row .comp-label{font-size:10px;letter-spacing:.2em;color:var(--navy);text-transform:uppercase;margin-bottom:24px;font-weight:500;display:flex;align-items:center;gap:14px}
+  .comp-row .comp-label::before{content:"";width:24px;height:1px;background:var(--navy)}
+  .comp-row .demo{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:24px}
+  .comp-row .notes{font-size:12px;color:var(--ink-soft);line-height:1.7;background:var(--bg-soft);padding:14px 18px;border-left:3px solid var(--navy)}
+  .comp-row .notes code{background:#fff}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;font-size:13px;font-weight:500;letter-spacing:.05em;transition:.25s;cursor:pointer;border:1px solid transparent;font-family:inherit}
+  .btn-primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .btn-primary:hover{background:var(--navy-deep);border-color:var(--navy-deep);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .btn-gold:hover{background:#d09a2a;border-color:#d09a2a}
+  .btn-link{color:var(--navy);padding:14px 0;border:none;background:transparent}
+  .btn-link::after{content:"→";transition:.2s}
+  .btn-link:hover::after{transform:translateX(4px);display:inline-block}
+  .btn.lg{padding:18px 36px;font-size:14px}
+  .btn.sm{padding:10px 20px;font-size:12px}
+  .btn:disabled,.btn.disabled{opacity:.4;pointer-events:none}
+
+  /* Tags & Pills */
+  .tag{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:var(--r-pill);font-size:11px;font-weight:500;letter-spacing:.05em;border:1px solid var(--line)}
+  .tag.solid{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .tag.gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .tag.outline{background:#fff;color:var(--navy);border-color:var(--navy)}
+  .tag.ghost{background:var(--navy-tint);color:var(--navy-deep);border-color:transparent}
+  .tag.success{background:#ECFDF3;color:#067647;border-color:#ABEFC6}
+  .tag.warning{background:#FEF6E7;color:#B54708;border-color:#F9DBAF}
+  .tag.danger{background:#FEF3F2;color:#B42318;border-color:#FECDCA}
+
+  /* Eyebrow */
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.3em;color:var(--navy);text-transform:uppercase;font-weight:500}
+  .eyebrow::before{content:"";width:36px;height:1px;background:var(--navy)}
+
+  /* Number Badge */
+  .num-badge{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600}
+  .num-badge.gold{background:var(--gold);color:var(--ink)}
+  .num-badge.outline{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+  .num-badge.lg{width:64px;height:64px;font-size:26px}
+  .num-badge.sm{width:32px;height:32px;font-size:14px}
+
+  /* Stat */
+  .stat{display:flex;flex-direction:column;gap:6px}
+  .stat strong{font-family:"Cormorant Garamond",serif;font-size:48px;color:var(--navy);font-weight:600;line-height:1}
+  .stat span{font-size:11px;color:var(--ink-soft);letter-spacing:.05em}
+  .stat-row{display:flex;gap:48px;flex-wrap:wrap}
+
+  /* Card patterns */
+  .why-card-d{padding:36px 24px;border:1px solid var(--line);background:#fff;text-align:center;transition:.3s}
+  .why-card-d:hover{background:var(--bg-warm)}
+  .why-card-d .num-badge{margin-bottom:18px}
+  .why-card-d h4{font-size:15px;font-weight:600;margin-bottom:10px;line-height:1.4}
+  .why-card-d p{font-size:12px;color:var(--ink-soft);line-height:1.7}
+
+  .treat-card-d{background:#fff;border:1px solid var(--line);transition:.3s;display:flex;flex-direction:column}
+  .treat-card-d:hover{border-color:var(--navy);box-shadow:var(--shadow-md)}
+  .treat-card-d .img{height:140px;padding:18px 22px;background:linear-gradient(135deg,#1c2cae,#131a8a);color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+  .treat-card-d .img.mute{background:linear-gradient(135deg,#eef0f7,#dde0f0);color:var(--navy-deep)}
+  .treat-card-d .img::before{content:"";position:absolute;top:-30px;right:-30px;width:140px;height:140px;border-radius:50%;border:1px solid currentColor;opacity:.15}
+  .treat-card-d .gen-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;position:relative;z-index:1}
+  .treat-card-d .price-label{font-size:18px;font-family:"Cormorant Garamond",serif;font-weight:600;position:relative;z-index:1}
+  .treat-card-d .body{padding:20px 22px}
+  .treat-card-d .body h4{font-size:14px;font-weight:600;margin-bottom:8px;color:var(--ink)}
+  .treat-card-d .body p{font-size:12px;color:var(--ink-soft);line-height:1.7}
+
+  /* Doctor card */
+  .doc-card{background:#fff;border:1px solid var(--line);padding:24px;display:flex;gap:20px;align-items:center}
+  .doc-card .avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--navy-tint),var(--navy-pale));flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--navy);font-size:24px;font-weight:600}
+  .doc-card .info h4{font-size:15px;font-weight:600;margin-bottom:4px}
+  .doc-card .info p{font-size:12px;color:var(--ink-soft);line-height:1.6}
+  .doc-card .info small{display:block;font-size:10px;letter-spacing:.2em;color:var(--navy);text-transform:uppercase;margin-bottom:6px;font-weight:500}
+
+  /* Generation circles */
+  .gen-row{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+  .gen-cell{text-align:center;flex:1;min-width:120px}
+  .gen-cell .lab{font-size:10px;color:var(--ink-soft);letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px}
+  .gen-cell.active .lab{color:var(--navy);font-weight:600}
+  .gen-circle{width:88px;height:88px;border-radius:50%;border:1.5px solid var(--grey);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink-soft);background:#fff;transition:.3s}
+  .gen-cell.active .gen-circle{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;box-shadow:0 16px 40px -12px rgba(28,44,174,.4)}
+  .gen-cell h5{font-size:13px;font-weight:600;margin-bottom:4px}
+  .gen-cell p{font-size:11px;color:var(--ink-soft)}
+
+  /* Form */
+  .field{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;max-width:380px}
+  .field label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+  .field input,.field textarea,.field select{padding:14px 16px;border:1px solid var(--line-strong);background:#fff;font-size:14px;font-family:inherit;color:var(--ink);transition:.2s}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(28,44,174,.1)}
+  .field input::placeholder{color:var(--ink-mute)}
+  .check{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-soft)}
+  .check input{accent-color:var(--navy);width:16px;height:16px}
+
+  /* Topbar pattern */
+  .topbar-d{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;background:rgba(255,255,255,.95);border:1px solid var(--line);backdrop-filter:blur(16px)}
+  .topbar-d nav{display:flex;gap:24px;font-size:12px;color:var(--ink-soft);letter-spacing:.02em}
+
+  /* Footer band (cardnews) */
+  .footer-band{height:60px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;letter-spacing:.5px;font-family:"Inter",sans-serif}
+  .footer-band .gold{color:var(--gold);margin:0 14px}
+
+  /* Section header pattern */
+  .sec-header-d{text-align:center;padding:40px;background:var(--bg-warm)}
+  .sec-header-d .eyebrow{justify-content:center;margin-bottom:18px}
+  .sec-header-d h2{font-size:36px;font-weight:600;letter-spacing:-.01em;margin-bottom:14px}
+  .sec-header-d h2 .accent{color:var(--navy)}
+  .sec-header-d p{color:var(--ink-soft);max-width:580px;margin:0 auto;font-size:14px;line-height:1.85}
+
+  /* ==================== Cardnews templates ==================== */
+  .cn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:32px}
+  @media(max-width:1080px){.cn-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.cn-grid{grid-template-columns:1fr}}
+  .cn-card{background:#fff;border:1px solid var(--line);overflow:hidden}
+  .cn-canvas{aspect-ratio:1/1;background:#fff;position:relative;overflow:hidden;font-family:"Pretendard","Noto Sans",sans-serif}
+  .cn-canvas::after{
+    content:"";position:absolute;left:0;right:0;bottom:60px;height:1px;background:rgba(0,0,0,.04);
+  }
+  .cn-band{position:absolute;left:0;right:0;bottom:0;height:60px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:600;letter-spacing:1px;font-family:"Inter",sans-serif}
+  .cn-band .gold{color:var(--gold);margin:0 8px}
+  .cn-meta{padding:14px 18px;border-top:1px solid var(--line);font-size:11px;color:var(--ink-soft);display:flex;justify-content:space-between}
+  .cn-meta strong{color:var(--ink);font-weight:600}
+
+  /* CN P1 - Cover */
+  .cn-p1{padding:14% 12% 12%;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,#fff 0%,var(--navy-tint) 100%)}
+  .cn-p1 .tag{align-self:flex-start;font-size:7px;padding:4px 10px;background:var(--navy);color:#fff;border:none}
+  .cn-p1 .head{font-size:18px;font-weight:700;line-height:1.2;color:var(--ink);margin-top:10%;letter-spacing:-.5px}
+  .cn-p1 .head .it{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--navy);font-weight:500;display:block;font-size:.7em;margin-top:4px}
+  .cn-p1 .sub{font-size:10px;color:var(--ink-soft);margin-top:8px}
+
+  /* CN P2 - Definition list */
+  .cn-p2{padding:12%}
+  .cn-p2 .eb{font-size:7px;letter-spacing:1.5px;color:var(--navy);margin-bottom:10px;text-transform:uppercase}
+  .cn-p2 .ttl{font-size:14px;font-weight:700;line-height:1.3;margin-bottom:14px;color:var(--ink)}
+  .cn-p2 .checks{display:flex;flex-direction:column;gap:8px}
+  .cn-p2 .checks li{font-size:9px;color:var(--ink);display:flex;gap:6px;align-items:flex-start;list-style:none}
+  .cn-p2 .checks li::before{content:"✓";color:var(--navy);font-weight:700;flex-shrink:0}
+
+  /* CN P3 - Process steps */
+  .cn-p3{padding:12% 10%}
+  .cn-p3 .eb{font-size:7px;letter-spacing:1.5px;color:var(--navy);margin-bottom:10px;text-transform:uppercase}
+  .cn-p3 .ttl{font-size:13px;font-weight:700;margin-bottom:14px;color:var(--ink)}
+  .cn-p3 .steps{display:flex;flex-direction:column;gap:6px}
+  .cn-p3 .step{display:flex;gap:8px;align-items:center;font-size:9px;color:var(--ink)}
+  .cn-p3 .num{width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;flex-shrink:0;font-family:"Cormorant Garamond",serif}
+
+  /* CN P4 - Big number */
+  .cn-p4{padding:12%;background:linear-gradient(180deg,#fff,var(--navy-tint));text-align:center;display:flex;flex-direction:column;justify-content:center}
+  .cn-p4 .eb{font-size:7px;letter-spacing:1.5px;color:var(--navy);margin-bottom:14px;text-transform:uppercase}
+  .cn-p4 .big{font-family:"Cormorant Garamond",serif;font-size:64px;line-height:1;color:var(--navy);font-weight:700;margin-bottom:10px}
+  .cn-p4 .desc{font-size:10px;color:var(--ink-soft);line-height:1.6}
+
+  /* CN P5 - Compare */
+  .cn-p5{padding:10%;display:flex;flex-direction:column;gap:10px}
+  .cn-p5 .eb{font-size:7px;letter-spacing:1.5px;color:var(--navy);margin-bottom:4px;text-transform:uppercase}
+  .cn-p5 .ttl{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .cn-p5 .cols{display:grid;grid-template-columns:1fr 1fr;gap:6px;flex:1}
+  .cn-p5 .col{padding:14px;font-size:9px;line-height:1.5;display:flex;flex-direction:column}
+  .cn-p5 .col.a{background:var(--bg-soft);color:var(--ink-soft)}
+  .cn-p5 .col.b{background:var(--navy);color:#fff}
+  .cn-p5 .col strong{font-size:10px;font-weight:700;margin-bottom:6px;display:block}
+
+  /* CN P6 - Audience */
+  .cn-p6{padding:12%}
+  .cn-p6 .eb{font-size:7px;letter-spacing:1.5px;color:var(--navy);margin-bottom:10px;text-transform:uppercase}
+  .cn-p6 .ttl{font-size:14px;font-weight:700;margin-bottom:14px;color:var(--ink)}
+  .cn-p6 ul{display:flex;flex-direction:column;gap:8px;list-style:none}
+  .cn-p6 li{font-size:9px;color:var(--ink);padding-left:18px;position:relative}
+  .cn-p6 li::before{content:"";position:absolute;left:0;top:6px;width:10px;height:1px;background:var(--navy)}
+
+  /* CN P7 - CTA */
+  .cn-p7{padding:14% 10% 12%;background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+  .cn-p7 .eb{font-size:7px;letter-spacing:1.5px;color:var(--gold);margin-bottom:14px;text-transform:uppercase}
+  .cn-p7 .head{font-size:16px;font-weight:700;line-height:1.3;letter-spacing:-.3px}
+  .cn-p7 .head .it{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-weight:500;display:block;font-size:.7em;margin-top:4px}
+  .cn-p7 .cta-btn{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;background:var(--gold);color:var(--ink);padding:8px 14px;font-size:9px;font-weight:600;letter-spacing:.5px;margin-top:18px}
+
+  /* Cover variant */
+  .cn-pCover{padding:0;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(180deg,rgba(13,18,80,.2) 0%,rgba(13,18,80,.85) 100%),linear-gradient(135deg,#1c2cae,#131a8a)}
+  .cn-pCover .body{padding:14% 12% 14%}
+  .cn-pCover .tag{display:inline-block;font-size:7px;letter-spacing:1.5px;color:#fff;border:1px solid rgba(255,255,255,.4);padding:4px 8px;margin-bottom:14px;text-transform:uppercase}
+  .cn-pCover .head{font-size:18px;font-weight:700;line-height:1.2;color:#fff;letter-spacing:-.5px}
+  .cn-pCover .head .it{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-weight:500;display:block;font-size:.7em;margin-top:4px}
+
+  /* Safe zone visualization */
+  .safe-zone{position:relative;aspect-ratio:1/1;background:#fff;border:1px solid var(--line)}
+  .safe-zone .grid-overlay{position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);gap:2.2%;padding:6.6%}
+  .safe-zone .grid-overlay div{background:linear-gradient(180deg,rgba(28,44,174,.05),rgba(28,44,174,.02))}
+  .safe-zone .marker{position:absolute;border:1px dashed var(--navy);font-size:9px;color:var(--navy);padding:2px 6px;background:#fff;font-family:"SF Mono",monospace;font-weight:500}
+  .safe-zone .m-safe{inset:6.6%;border:1px dashed rgba(28,44,174,.4);background:transparent;padding:0}
+  .safe-zone .m-safe::after{content:"SAFE 72px";position:absolute;top:-10px;left:0;font-size:9px;color:var(--navy);background:#fff;padding:0 6px;font-family:"SF Mono",monospace}
+  .safe-zone .m-hero{position:absolute;left:6.6%;right:6.6%;top:13%;height:28%;border:1px solid rgba(28,44,174,.3);background:rgba(28,44,174,.04);font-size:10px;color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:"SF Mono",monospace}
+  .safe-zone .m-body{position:absolute;left:6.6%;right:6.6%;top:43%;height:48%;border:1px solid rgba(28,44,174,.2);background:rgba(28,44,174,.02);font-size:10px;color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:"SF Mono",monospace}
+  .safe-zone .m-band{position:absolute;left:0;right:0;bottom:0;height:5.55%;background:var(--navy);color:#fff;font-size:9px;display:flex;align-items:center;justify-content:center;letter-spacing:1px;font-family:"Inter",sans-serif;font-weight:600}
+
+  /* ==================== Voice ==================== */
+  .voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);background:#fff}
+  @media(max-width:880px){.voice-grid{grid-template-columns:1fr}}
+  .voice-cell{padding:32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .voice-cell:last-child{border-right:none}
+  .voice-cell.no{background:#FEF3F2}
+  .voice-cell.yes{background:#ECFDF3}
+  .voice-cell .lab{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+  .voice-cell.no .lab{color:#B42318}
+  .voice-cell.yes .lab{color:#067647}
+  .voice-cell p{font-size:14px;color:var(--ink);line-height:1.7}
+  .voice-cell p + p{margin-top:8px;font-size:12px;color:var(--ink-soft)}
+
+  .lang-card{background:#fff;border:1px solid var(--line);padding:32px}
+  .lang-card .lab{font-size:10px;letter-spacing:.2em;color:var(--navy);text-transform:uppercase;margin-bottom:16px;font-weight:500;display:flex;align-items:center;gap:10px}
+  .lang-card .lab::before{content:"";width:14px;height:1px;background:var(--navy)}
+  .lang-card.kr p{font-family:"Pretendard","Noto Sans",sans-serif;font-size:18px;line-height:1.7;color:var(--ink)}
+  .lang-card.mn p{font-family:"Noto Sans Mongolian","Noto Sans",sans-serif;font-size:17px;line-height:1.7;color:var(--ink)}
+  .lang-card.en p{font-family:"Inter",sans-serif;font-size:17px;line-height:1.7;color:var(--ink)}
+
+  /* ==================== Imagery ==================== */
+  .img-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:880px){.img-grid{grid-template-columns:repeat(2,1fr)}}
+  .img-tile{aspect-ratio:1/1;background:linear-gradient(135deg,var(--navy-tint),var(--navy-pale));position:relative;overflow:hidden}
+  .img-tile.dark{background:linear-gradient(135deg,#1c2cae,#131a8a)}
+  .img-tile .lab{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,.6));font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+  .img-tile.dark .lab{color:var(--gold)}
+
+  /* ==================== Don'ts ==================== */
+  .dont-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:880px){.dont-grid{grid-template-columns:1fr}}
+  .dont-card{background:#fff;border:1px solid var(--line);padding:24px;border-left:3px solid var(--danger)}
+  .dont-card.do{border-left-color:var(--success)}
+  .dont-card .lab{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+  .dont-card .lab.no{color:#B42318}
+  .dont-card .lab.yes{color:#067647}
+  .dont-card p{font-size:13px;color:var(--ink);line-height:1.6}
+
+  /* ==================== Footer ==================== */
+  .ds-footer{padding:64px 80px;background:var(--ink);color:#fff;display:grid;grid-template-columns:1.2fr .8fr;gap:40px}
+  @media(max-width:880px){.ds-footer{grid-template-columns:1fr;padding:48px 32px}}
+  .ds-footer .col-lab{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px;font-weight:500}
+  .ds-footer h3{font-family:"Cormorant Garamond",serif;font-size:36px;font-style:italic;font-weight:500;line-height:1.3;color:#fff;margin-bottom:16px}
+  .ds-footer p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;max-width:480px}
+  .ds-footer .meta{font-size:11px;color:rgba(255,255,255,.4);line-height:1.8;font-family:"SF Mono",monospace}
+  .ds-footer .meta strong{color:rgba(255,255,255,.7);display:block;font-weight:500;margin-top:8px;font-family:inherit}
+
+  /* Helpers */
+  .mt-0{margin-top:0!important}
+  .mt-3{margin-top:24px}
+  .mt-5{margin-top:48px}
+  .center{text-align:center}
+</style>
+</head>
+<body>
+
+<div class="ds-shell">
+
+  <!-- ================== SIDEBAR NAV ================== -->
+  <aside class="ds-side">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-text">SMILE EYE<small>DESIGN SYSTEM</small></div>
+    </div>
+
+    <div class="ds-label">Foundation</div>
+    <nav class="ds-nav">
+      <a href="#cover">Cover</a>
+      <a href="#dna">Brand DNA</a>
+      <a href="#logo">Logo &amp; Symbol</a>
+      <a href="#color">Color Tokens</a>
+      <a href="#typo">Typography</a>
+      <a href="#spacing">Spacing &amp; Grid</a>
+      <a href="#radius">Radius / Shadow</a>
+      <a href="#iconography">Iconography</a>
+    </nav>
+
+    <div class="ds-label">Components</div>
+    <nav class="ds-nav">
+      <a href="#button">Button</a>
+      <a href="#tag">Tag &amp; Badge</a>
+      <a href="#stat">Stat &amp; Number</a>
+      <a href="#cards">Card Patterns</a>
+      <a href="#doctor">Doctor Card</a>
+      <a href="#timeline">Generation Timeline</a>
+      <a href="#form">Form Field</a>
+      <a href="#topbar">Topbar / Footer Band</a>
+      <a href="#sec-header">Section Header</a>
+    </nav>
+
+    <div class="ds-label">Patterns</div>
+    <nav class="ds-nav">
+      <a href="#cardnews">Card News 1080</a>
+      <a href="#safezone">Safe Zone &amp; Grid</a>
+    </nav>
+
+    <div class="ds-label">Voice</div>
+    <nav class="ds-nav">
+      <a href="#voice">Tone &amp; Copy</a>
+      <a href="#lang">3-Language Sample</a>
+      <a href="#imagery">Imagery</a>
+      <a href="#donts">Do &amp; Don't</a>
+    </nav>
+
+    <div class="meta">
+      <strong>Version 1.0</strong>
+      Last updated 2026-05<br>
+      Owner · PortZone<br>
+      Maintainer · 송준 대표
+    </div>
+  </aside>
+
+  <main class="ds-main">
+
+    <!-- ================== COVER ================== -->
+    <section id="cover" class="ds-section" style="padding:0">
+      <div id="cover" style="padding:120px 80px;position:relative;overflow:hidden">
+        <div class="cover-inner">
+          <div class="cover-tag">DESIGN SYSTEM · v1.0 · 2026</div>
+          <h1 class="cover-title">
+            Gangnam Smile<br>
+            Design System
+            <span class="it">A quiet, precise visual language for vision care.</span>
+          </h1>
+          <p class="ds-lede" style="margin-top:24px">
+            강남스마일안과의원의 모든 디자인 자산 — 카드뉴스·랜딩페이지·소셜·인쇄물 — 의 일관성을 위한
+            통합 디자인 토큰, 컴포넌트, 카피 가이드라인. 18년 의료 전문성과 차세대 시력교정의
+            정밀함을 한 번에 표현하기 위한 룰북.
+          </p>
+          <dl class="cover-meta">
+            <div><dt>Brand</dt><dd>강남스마일안과의원</dd></div>
+            <div><dt>Audience</dt><dd>몽골 환자 · 한국 일반</dd></div>
+            <div><dt>Core asset</dt><dd>카드뉴스 1080 · 랜딩 · 인쇄물</dd></div>
+            <div><dt>Operator</dt><dd>(주)포트존</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== BRAND DNA ================== -->
+    <section id="dna" class="ds-section">
+      <div class="ds-eyebrow">01 Brand DNA</div>
+      <h2 class="ds-h2"><span class="num">01</span>네 가지 축으로 본 강남스마일</h2>
+      <p class="ds-lede">모든 카피·디자인 결정은 아래 네 축의 균형을 우선 검토한다. 한 축에 치우치면 의료 신뢰감이 흔들리거나(과한 친근함) 거리감이 생긴다(과한 전문성).</p>
+      <div class="dna-grid">
+        <div class="dna-item">
+          <div class="ax">Axis 01</div>
+          <h4>신뢰성 Trust</h4>
+          <p>18년 의료 전문성 · 안과전문의 3인 직접 진료 · 학회 정회원. 데이터·연차·자격으로 입증.</p>
+        </div>
+        <div class="dna-item">
+          <div class="ax">Axis 02</div>
+          <h4>친근함 Warmth</h4>
+          <p>몽골 환자 전담 · 한·몽·영 다언어 응대 · 공항 픽업. "여러분"의 가까운 거리.</p>
+        </div>
+        <div class="dna-item">
+          <div class="ax">Axis 03</div>
+          <h4>전문성 Precision</h4>
+          <p>차세대 SMILE / ICL / ECHO · 정밀 검사 · 임상 데이터 5년 추적.</p>
+        </div>
+        <div class="dna-item">
+          <div class="ax">Axis 04</div>
+          <h4>투명성 Clarity</h4>
+          <p>가격 공개 · 검수 결과 공유 · 효능 단정 표현 회피. 의료광고법 준수.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== LOGO ================== -->
+    <section id="logo" class="ds-section">
+      <div class="ds-eyebrow">02 Logo</div>
+      <h2 class="ds-h2"><span class="num">02</span>로고 &amp; 심볼</h2>
+      <p class="ds-lede">
+        심볼은 두 개의 원이 겹친 형태 — 양안(兩眼)의 시야가 맞춰지는 순간을 의미. 메인 라이트 / 다크 / 브랜드 백그라운드 3가지 사용 환경을 정의한다.
+      </p>
+      <div class="logo-grid">
+        <div>
+          <div class="grid g-3" style="gap:14px">
+            <div class="logo-card">
+              <div class="label">Light</div>
+              <div class="logo-mark">
+                <div class="symbol"></div>
+                <div class="text">SMILE EYE<small>강남스마일안과의원</small></div>
+              </div>
+            </div>
+            <div class="logo-card dark">
+              <div class="label">Dark</div>
+              <div class="logo-mark">
+                <div class="symbol"></div>
+                <div class="text">SMILE EYE<small>강남스마일안과의원</small></div>
+              </div>
+            </div>
+            <div class="logo-card brand">
+              <div class="label">Brand BG</div>
+              <div class="logo-mark">
+                <div class="symbol"></div>
+                <div class="text">SMILE EYE<small>강남스마일안과의원</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="logo-rules">
+          <h4>Usage Rules</h4>
+          <ul>
+            <li>최소 클리어 스페이스: 심볼 가로의 1/2</li>
+            <li>최소 사이즈: 디지털 24px / 인쇄 8mm</li>
+            <li>심볼 단독 사용 가능 (소셜 프로필 등)</li>
+            <li>워드마크는 Cormorant Garamond Semibold 0.18em</li>
+            <li>회전·왜곡·그라디언트·드롭쉐도우 금지</li>
+            <li>몽골어 환경에서는 워드마크 아래 "Гангнам Смайл нүдний эмнэлэг" 보조 텍스트 추가</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== COLOR ================== -->
+    <section id="color" class="ds-section">
+      <div class="ds-eyebrow">03 Color</div>
+      <h2 class="ds-h2"><span class="num">03</span>컬러 토큰</h2>
+      <p class="ds-lede">
+        Navy를 단일 주조색으로 하고, Gold는 강조·CTA·하단 띠지 텍스트에만 제한적으로 사용한다.
+        Neutral은 배경 위계를 만들기 위한 5단계 그라데이션. Semantic은 폼·알림용으로만.
+      </p>
+
+      <h3 class="ds-h3">Primary <span class="small">brand core</span></h3>
+      <div class="grid g-4">
+        <div class="swatch lg">
+          <div class="chip" style="background:#1c2cae"></div>
+          <div class="info"><strong>navy</strong><code>#1C2CAE</code><p>로고 · CTA · 헤더 · 메인 강조</p></div>
+        </div>
+        <div class="swatch lg">
+          <div class="chip" style="background:#131a8a"></div>
+          <div class="info"><strong>navy-deep</strong><code>#131A8A</code><p>호버 · 깊은 배경 · 푸터</p></div>
+        </div>
+        <div class="swatch lg">
+          <div class="chip" style="background:#4654d6"></div>
+          <div class="info"><strong>navy-soft</strong><code>#4654D6</code><p>그라디언트 보조 · 차트 보조선</p></div>
+        </div>
+        <div class="swatch lg">
+          <div class="chip" style="background:#E8B143"></div>
+          <div class="info"><strong>gold</strong><code>#E8B143</code><p>띠지 텍스트 · CTA 강조 · 포인트</p></div>
+        </div>
+      </div>
+
+      <h3 class="ds-h3">Neutral <span class="small">surface &amp; ink</span></h3>
+      <div class="grid g-6">
+        <div class="swatch"><div class="chip" style="background:#FFFFFF;border:1px solid var(--line)"></div><div class="info"><strong>white</strong><code>#FFFFFF</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#FCFAF5"></div><div class="info"><strong>cream</strong><code>#FCFAF5</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#F5F6FA"></div><div class="info"><strong>bg-soft</strong><code>#F5F6FA</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#EEF0F7"></div><div class="info"><strong>bg-warm</strong><code>#EEF0F7</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#DDE0F0"></div><div class="info"><strong>navy-pale</strong><code>#DDE0F0</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#1A1D2C"></div><div class="info"><strong>ink</strong><code>#1A1D2C</code></div></div>
+      </div>
+      <div class="grid g-6 mt-3">
+        <div class="swatch"><div class="chip" style="background:#5d6378"></div><div class="info"><strong>ink-soft</strong><code>#5D6378</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#8a90a3"></div><div class="info"><strong>ink-mute</strong><code>#8A90A3</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#a8acba"></div><div class="info"><strong>grey</strong><code>#A8ACBA</code></div></div>
+        <div class="swatch"><div class="chip" style="background:rgba(28,44,174,.1)"></div><div class="info"><strong>line</strong><code>rgba(28,44,174,.1)</code></div></div>
+        <div class="swatch"><div class="chip" style="background:rgba(28,44,174,.2)"></div><div class="info"><strong>line-strong</strong><code>rgba(28,44,174,.2)</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#FBF8F0"></div><div class="info"><strong>ivory</strong><code>#FBF8F0</code></div></div>
+      </div>
+
+      <h3 class="ds-h3">Semantic <span class="small">form &amp; alert only</span></h3>
+      <div class="grid g-4">
+        <div class="swatch"><div class="chip" style="background:#22C55E"></div><div class="info"><strong>success</strong><code>#22C55E</code><p>승인 · 정상 · 확정</p></div></div>
+        <div class="swatch"><div class="chip" style="background:#F59E0B"></div><div class="info"><strong>warning</strong><code>#F59E0B</code><p>주의 · 검토중</p></div></div>
+        <div class="swatch"><div class="chip" style="background:#EF4444"></div><div class="info"><strong>danger</strong><code>#EF4444</code><p>리스크 · 경고 · MYTH</p></div></div>
+        <div class="swatch"><div class="chip" style="background:#3B82F6"></div><div class="info"><strong>info</strong><code>#3B82F6</code><p>정보 · 링크</p></div></div>
+      </div>
+    </section>
+
+    <!-- ================== TYPOGRAPHY ================== -->
+    <section id="typo" class="ds-section">
+      <div class="ds-eyebrow">04 Typography</div>
+      <h2 class="ds-h2"><span class="num">04</span>타이포그래피</h2>
+      <p class="ds-lede">
+        본문은 산세리프(Pretendard / Noto Sans / Inter)로 명확하게, 강조 한 단어만 Cormorant Garamond Italic으로 호흡.
+        의료 정보의 신뢰감을 위해 Bold 이상의 무게는 헤드라인에서만 사용한다.
+      </p>
+
+      <h3 class="ds-h3">Type Scale</h3>
+      <div>
+        <div class="type-row">
+          <div class="name">Display</div>
+          <div class="sample t-display">99% 시력</div>
+          <div class="meta">88pt / 800 / -.03em<br>Pretendard Black</div>
+        </div>
+        <div class="type-row">
+          <div class="name">H1</div>
+          <div class="sample t-h1">차세대 시력교정의 기준</div>
+          <div class="meta">56pt / 700 / -.02em<br>Pretendard Bold</div>
+        </div>
+        <div class="type-row">
+          <div class="name">H2</div>
+          <div class="sample t-h2">왜 강남스마일을 선택할까?</div>
+          <div class="meta">36pt / 600 / -.01em</div>
+        </div>
+        <div class="type-row">
+          <div class="name">H3</div>
+          <div class="sample t-h3">5세대 NEW SMILE LASIK</div>
+          <div class="meta">24pt / 600</div>
+        </div>
+        <div class="type-row">
+          <div class="name">Body L</div>
+          <div class="sample t-bodyL">25,000건 누적 수술 · 5년 추적 99.7% 유지율 — 강남스마일이 쌓아온 데이터입니다.</div>
+          <div class="meta">18pt / 400 / 1.7</div>
+        </div>
+        <div class="type-row">
+          <div class="name">Body</div>
+          <div class="sample t-body">정밀 검사 50종 · 안과전문의 3인 직접 진료 · 한국어/몽골어/영어 다언어 상담.</div>
+          <div class="meta">15pt / 400 / 1.7</div>
+        </div>
+        <div class="type-row">
+          <div class="name">Caption</div>
+          <div class="sample t-cap">5년 추적 결과 기준 · 임상 데이터 출처 · 환자 사례 기반</div>
+          <div class="meta">12pt / 500 / .05em</div>
+        </div>
+        <div class="type-row">
+          <div class="name">Eyebrow</div>
+          <div class="sample t-eyebrow">CLINICAL EVIDENCE</div>
+          <div class="meta">11pt / 500 / .3em<br>UPPERCASE</div>
+        </div>
+        <div class="type-row">
+          <div class="name">Italic Accent</div>
+          <div class="sample t-italic">A clearer view, refined.</div>
+          <div class="meta">Cormorant Garamond<br>Italic Medium</div>
+        </div>
+      </div>
+
+      <h3 class="ds-h3">Font Stack</h3>
+      <div class="font-stack">
+        <div class="font-card">
+          <div class="label">한국어</div>
+          <div class="preview" style="font-family:'Pretendard','Noto Sans',sans-serif">강남스마일</div>
+          <div class="name">Pretendard / Noto Sans</div>
+        </div>
+        <div class="font-card">
+          <div class="label">English</div>
+          <div class="preview" style="font-family:'Inter',sans-serif">Smile Eye</div>
+          <div class="name">Inter (300–700)</div>
+        </div>
+        <div class="font-card">
+          <div class="label">Монгол хэл</div>
+          <div class="preview" style="font-family:'Noto Sans Mongolian','Noto Sans',sans-serif">Гангнам Смайл</div>
+          <div class="name">Noto Sans Mongolian</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== SPACING ================== -->
+    <section id="spacing" class="ds-section">
+      <div class="ds-eyebrow">05 Spacing</div>
+      <h2 class="ds-h2"><span class="num">05</span>스페이싱 &amp; 그리드</h2>
+      <p class="ds-lede">8pt 베이스 스케일. 카드 내부 패딩은 24/32, 섹션 간격은 96/128. 그리드는 12 컬럼 / 거터 24px.</p>
+
+      <h3 class="ds-h3">Spacing Scale (8pt base)</h3>
+      <div>
+        <div class="space-row"><div class="name">s-1</div><div class="bar" style="width:4px"></div><div class="val">4px</div></div>
+        <div class="space-row"><div class="name">s-2</div><div class="bar" style="width:8px"></div><div class="val">8px</div></div>
+        <div class="space-row"><div class="name">s-3</div><div class="bar" style="width:12px"></div><div class="val">12px</div></div>
+        <div class="space-row"><div class="name">s-4</div><div class="bar" style="width:16px"></div><div class="val">16px</div></div>
+        <div class="space-row"><div class="name">s-5</div><div class="bar" style="width:24px"></div><div class="val">24px</div></div>
+        <div class="space-row"><div class="name">s-6</div><div class="bar" style="width:32px"></div><div class="val">32px</div></div>
+        <div class="space-row"><div class="name">s-7</div><div class="bar" style="width:48px"></div><div class="val">48px</div></div>
+        <div class="space-row"><div class="name">s-8</div><div class="bar" style="width:64px"></div><div class="val">64px</div></div>
+        <div class="space-row"><div class="name">s-9</div><div class="bar" style="width:96px"></div><div class="val">96px</div></div>
+        <div class="space-row"><div class="name">s-10</div><div class="bar" style="width:128px"></div><div class="val">128px</div></div>
+      </div>
+
+      <h3 class="ds-h3">12-Column Grid <span class="small">max 1240 · gutter 24</span></h3>
+      <div class="grid-vis">
+        <div class="grid-cols">
+          <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+          <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+          <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+          <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== RADIUS / SHADOW ================== -->
+    <section id="radius" class="ds-section">
+      <div class="ds-eyebrow">06 Radius / Shadow</div>
+      <h2 class="ds-h2"><span class="num">06</span>모서리 &amp; 그림자</h2>
+      <p class="ds-lede">의료 신뢰감을 위해 둥근 모서리는 절제적으로. 본문 카드는 0~4px, 강조 카드만 16~24px. 그림자도 동일.</p>
+
+      <h3 class="ds-h3">Radius</h3>
+      <div class="token-grid">
+        <div class="token-card"><div class="demo" style="border-radius:0"></div><div class="name">r-0</div><div class="val">0px · sharp</div></div>
+        <div class="token-card"><div class="demo" style="border-radius:2px"></div><div class="name">r-xs</div><div class="val">2px · subtle</div></div>
+        <div class="token-card"><div class="demo" style="border-radius:4px"></div><div class="name">r-sm</div><div class="val">4px · default</div></div>
+        <div class="token-card"><div class="demo" style="border-radius:8px"></div><div class="name">r-md</div><div class="val">8px · card</div></div>
+        <div class="token-card"><div class="demo" style="border-radius:24px"></div><div class="name">r-xl</div><div class="val">24px · feature</div></div>
+      </div>
+
+      <h3 class="ds-h3">Elevation</h3>
+      <div class="shadow-grid">
+        <div class="shadow-card s-sm"><div class="name">shadow-sm</div><div class="val">0 2 8 -2 navy/.08</div></div>
+        <div class="shadow-card s-md"><div class="name">shadow-md</div><div class="val">0 14 40 -16 navy/.18</div></div>
+        <div class="shadow-card s-lg"><div class="name">shadow-lg</div><div class="val">0 30 80 -30 navy/.40</div></div>
+      </div>
+    </section>
+
+    <!-- ================== ICONOGRAPHY ================== -->
+    <section id="iconography" class="ds-section">
+      <div class="ds-eyebrow">07 Iconography</div>
+      <h2 class="ds-h2"><span class="num">07</span>아이콘</h2>
+      <p class="ds-lede">
+        라인 아이콘 1.5px stroke 단일 사용. 컬러 아이콘·이모지·플랫 일러스트 혼용 금지.
+        Lucide / Phosphor (Light) 둘 중 하나로 통일.
+      </p>
+      <div class="grid g-6">
+        <div class="token-card"><div class="demo" style="background:transparent;display:flex;align-items:center;justify-content:center"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1c2cae" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg></div><div class="name">eye</div><div class="val">1.5px stroke</div></div>
+        <div class="token-card"><div class="demo" style="background:transparent;display:flex;align-items:center;justify-content:center"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1c2cae" stroke-width="1.5"><path d="M20 6L9 17l-5-5"/></svg></div><div class="name">check</div><div class="val">단일 색상</div></div>
+        <div class="token-card"><div class="demo" style="background:transparent;display:flex;align-items:center;justify-content:center"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1c2cae" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div><div class="name">arrow</div><div class="val">우측 진입</div></div>
+        <div class="token-card"><div class="demo" style="background:transparent;display:flex;align-items:center;justify-content:center"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1c2cae" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div class="name">time</div><div class="val">회복 기간 등</div></div>
+        <div class="token-card"><div class="demo" style="background:transparent;display:flex;align-items:center;justify-content:center"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1c2cae" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div><div class="name">chat</div><div class="val">상담</div></div>
+        <div class="token-card"><div class="demo" style="background:transparent;display:flex;align-items:center;justify-content:center"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1c2cae" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div><div class="name">shield</div><div class="val">안전성</div></div>
+      </div>
+    </section>
+
+    <!-- ================== BUTTON ================== -->
+    <section id="button" class="ds-section">
+      <div class="ds-eyebrow">Components · 01</div>
+      <h2 class="ds-h2"><span class="num">08</span>Button</h2>
+      <p class="ds-lede">CTA 위계는 Primary &gt; Ghost &gt; Link. Gold는 다크 배경의 CTA에서만 1회 사용.</p>
+
+      <div class="comp-row">
+        <div class="comp-label">Variants</div>
+        <div class="demo">
+          <button class="btn btn-primary">상담 신청 →</button>
+          <button class="btn btn-ghost">검진 안내</button>
+          <button class="btn btn-gold">무료 검사 예약</button>
+          <a class="btn btn-link">자세히 보기</a>
+        </div>
+        <div class="notes">기본 사이즈 <code>14px / 28px</code> · 간격 <code>10px</code> · 트랜지션 <code>.25s</code> · 호버 시 <code>translateY(-2px)</code> + shadow-md.</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-label">Sizes</div>
+        <div class="demo">
+          <button class="btn btn-primary lg">Large 18/36</button>
+          <button class="btn btn-primary">Default 14/28</button>
+          <button class="btn btn-primary sm">Small 10/20</button>
+        </div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-label">States</div>
+        <div class="demo">
+          <button class="btn btn-primary">Default</button>
+          <button class="btn btn-primary" style="background:var(--navy-deep);transform:translateY(-2px);box-shadow:var(--shadow-md)">Hover</button>
+          <button class="btn btn-primary disabled">Disabled</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== TAG ================== -->
+    <section id="tag" class="ds-section">
+      <div class="ds-eyebrow">Components · 02</div>
+      <h2 class="ds-h2"><span class="num">09</span>Tag &amp; Badge</h2>
+      <p class="ds-lede">카테고리·세대·상태를 표시하는 Pill 형태. 한 화면당 3가지 색 미만으로 제한.</p>
+
+      <div class="comp-row">
+        <div class="comp-label">Tag Variants</div>
+        <div class="demo">
+          <span class="tag solid">5세대 SMILE</span>
+          <span class="tag outline">정보형</span>
+          <span class="tag ghost">선택 사항</span>
+          <span class="tag gold">PROMOTION</span>
+          <span class="tag success">예약 확정</span>
+          <span class="tag warning">검토중</span>
+          <span class="tag danger">MYTH</span>
+        </div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-label">Eyebrow</div>
+        <div class="demo">
+          <span class="eyebrow">CLINICAL EVIDENCE</span>
+          <span class="eyebrow" style="color:var(--gold);">PROMOTION</span>
+        </div>
+        <div class="notes">섹션 타이틀 위에서 사용. <code>11pt / .3em / UPPERCASE</code> 좌측 36px 라인 동반.</div>
+      </div>
+    </section>
+
+    <!-- ================== STAT ================== -->
+    <section id="stat" class="ds-section">
+      <div class="ds-eyebrow">Components · 03</div>
+      <h2 class="ds-h2"><span class="num">10</span>Stat &amp; Number Badge</h2>
+      <p class="ds-lede">수치는 항상 출처를 캡션으로 명기. 큰 숫자는 Cormorant Garamond Semibold로 무게감 있게.</p>
+
+      <div class="comp-row">
+        <div class="comp-label">Stat Block</div>
+        <div class="demo">
+          <div class="stat-row">
+            <div class="stat"><strong>25,000+</strong><span>누적 수술 건수</span></div>
+            <div class="stat"><strong>99%</strong><span>목표 시력 달성률</span></div>
+            <div class="stat"><strong>5세대</strong><span>NEW SMILE LASIK</span></div>
+            <div class="stat"><strong>18년</strong><span>의료 전문성</span></div>
+          </div>
+        </div>
+        <div class="notes">숫자 단위(年/건/%)는 같은 라인에 두지 말고 Caption 라인에 분리 — 시각 노이즈 줄이기.</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-label">Number Badge</div>
+        <div class="demo">
+          <div class="num-badge sm">1</div>
+          <div class="num-badge">02</div>
+          <div class="num-badge gold">03</div>
+          <div class="num-badge outline">04</div>
+          <div class="num-badge lg">05</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== CARDS ================== -->
+    <section id="cards" class="ds-section">
+      <div class="ds-eyebrow">Components · 04</div>
+      <h2 class="ds-h2"><span class="num">11</span>Card Patterns</h2>
+      <p class="ds-lede">3가지 카드 — Why(중심 정렬, 번호+제목+설명), Treatment(이미지 헤더+세대 라벨+가격), Doctor(아바타+소속).</p>
+
+      <h3 class="ds-h3">Why Card <span class="small">grid border style</span></h3>
+      <div class="grid g-4" style="border:1px solid var(--line)">
+        <div class="why-card-d"><div class="num-badge">01</div><h4>안과전문의 3인</h4><p>학회 정회원 · 18년 평균 경력</p></div>
+        <div class="why-card-d" style="border-left:1px solid var(--line)"><div class="num-badge">02</div><h4>5세대 SMILE</h4><p>차세대 ATOS 장비 보유</p></div>
+        <div class="why-card-d" style="border-left:1px solid var(--line)"><div class="num-badge">03</div><h4>몽골어 상담</h4><p>전담 통역사 상주</p></div>
+        <div class="why-card-d" style="border-left:1px solid var(--line)"><div class="num-badge">04</div><h4>공항 픽업</h4><p>인천 → 강남 무료 차량</p></div>
+      </div>
+
+      <h3 class="ds-h3">Treatment Card</h3>
+      <div class="grid g-4">
+        <div class="treat-card-d">
+          <div class="img">
+            <span class="gen-label">5세대 · 차세대</span>
+            <span class="price-label">NEW SMILE</span>
+          </div>
+          <div class="body"><h4>NEW SMILE LASIK</h4><p>최소 절개 · 빠른 회복 · 99% 목표 시력</p></div>
+        </div>
+        <div class="treat-card-d">
+          <div class="img" style="background:linear-gradient(135deg,#3a4ad6,#2233b8)">
+            <span class="gen-label">고도근시 대안</span>
+            <span class="price-label">ICL</span>
+          </div>
+          <div class="body"><h4>ICL 렌즈 삽입술</h4><p>각막 두께 부족 환자에게 적합</p></div>
+        </div>
+        <div class="treat-card-d">
+          <div class="img mute">
+            <span class="gen-label">노안 교정</span>
+            <span class="price-label">ECHO</span>
+          </div>
+          <div class="body"><h4>ECHO 다초점</h4><p>40대 이상 원·근거리 교정</p></div>
+        </div>
+        <div class="treat-card-d">
+          <div class="img mute">
+            <span class="gen-label">정밀 검사</span>
+            <span class="price-label">EXAM</span>
+          </div>
+          <div class="body"><h4>50종 정밀 검진</h4><p>수술 전 안구 상태 종합 분석</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== DOCTOR ================== -->
+    <section id="doctor" class="ds-section">
+      <div class="ds-eyebrow">Components · 05</div>
+      <h2 class="ds-h2"><span class="num">12</span>Doctor Card</h2>
+      <p class="ds-lede">아바타는 실사 사진 또는 이니셜 폴백. 소속은 "전문의 + 학회 직위" 순.</p>
+      <div class="grid g-3">
+        <div class="doc-card">
+          <div class="avatar">YJ</div>
+          <div class="info"><small>대표원장</small><h4>윤준상 전문의</h4><p>대한안과학회 정회원 · 18년 임상 경력</p></div>
+        </div>
+        <div class="doc-card">
+          <div class="avatar">JH</div>
+          <div class="info"><small>진료원장</small><h4>정희원 전문의</h4><p>SMILE/LASIK 시술 누적 12,000건</p></div>
+        </div>
+        <div class="doc-card">
+          <div class="avatar">YS</div>
+          <div class="info"><small>진료원장</small><h4>염상수 전문의</h4><p>ICL · 노안교정 전담 · 12년 경력</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== TIMELINE ================== -->
+    <section id="timeline" class="ds-section">
+      <div class="ds-eyebrow">Components · 06</div>
+      <h2 class="ds-h2"><span class="num">13</span>Generation Timeline</h2>
+      <p class="ds-lede">5세대 SMILE 강조용 시그니처 컴포넌트. 활성 노드만 Navy fill + shadow-lg.</p>
+      <div class="comp-row">
+        <div class="comp-label">5 Generation Steps</div>
+        <div class="gen-row">
+          <div class="gen-cell"><div class="lab">2010</div><div class="gen-circle">G1</div><h5>1세대</h5><p>LASIK</p></div>
+          <div class="gen-cell"><div class="lab">2014</div><div class="gen-circle">G2</div><h5>2세대</h5><p>SMILE</p></div>
+          <div class="gen-cell"><div class="lab">2018</div><div class="gen-circle">G3</div><h5>3세대</h5><p>SMILE Pro</p></div>
+          <div class="gen-cell"><div class="lab">2022</div><div class="gen-circle">G4</div><h5>4세대</h5><p>SMILE+</p></div>
+          <div class="gen-cell active"><div class="lab">2024</div><div class="gen-circle">G5</div><h5>5세대</h5><p>NEW SMILE</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== FORM ================== -->
+    <section id="form" class="ds-section">
+      <div class="ds-eyebrow">Components · 07</div>
+      <h2 class="ds-h2"><span class="num">14</span>Form Field</h2>
+      <p class="ds-lede">상담 신청 폼·이메일 구독에서 사용. 라벨은 항상 위, 도움말은 아래.</p>
+      <div class="comp-row">
+        <div class="demo" style="display:block">
+          <div class="field">
+            <label>이름 / Нэр</label>
+            <input type="text" placeholder="홍길동" />
+          </div>
+          <div class="field">
+            <label>관심 시술</label>
+            <select><option>NEW SMILE LASIK</option><option>ICL 렌즈 삽입술</option><option>ECHO 다초점</option></select>
+          </div>
+          <div class="field">
+            <label>문의 내용</label>
+            <textarea rows="4" placeholder="검진 일정 / 비용 / 회복 기간 등 궁금하신 점을 적어주세요."></textarea>
+          </div>
+          <div class="check"><input type="checkbox" id="cb" checked /><label for="cb">개인정보 수집·이용에 동의합니다</label></div>
+          <button class="btn btn-primary mt-3" style="margin-top:24px">상담 신청 →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== TOPBAR ================== -->
+    <section id="topbar" class="ds-section">
+      <div class="ds-eyebrow">Components · 08</div>
+      <h2 class="ds-h2"><span class="num">15</span>Topbar &amp; Footer Band</h2>
+      <p class="ds-lede">Topbar는 항상 sticky · backdrop-blur · 18px 패딩. 카드뉴스 푸터 띠지는 1080×60 고정.</p>
+
+      <h3 class="ds-h3">Topbar (Landing)</h3>
+      <div class="topbar-d">
+        <div class="logo-mark" style="gap:12px">
+          <div class="symbol" style="width:34px;height:34px"></div>
+          <div class="text" style="font-size:16px">SMILE EYE<small>강남스마일안과의원</small></div>
+        </div>
+        <nav>
+          <a>Why</a><a>Generations</a><a>Doctors</a><a>Process</a><a>Contact</a>
+        </nav>
+        <button class="btn btn-primary sm">상담 신청</button>
+      </div>
+
+      <h3 class="ds-h3">Footer Band (Card News · 1080×60 @ y=1020)</h3>
+      <div class="footer-band">강남스마일안과의원 <span class="gold">·</span> 5세대 NEW SMILE LASIK <span class="gold">·</span> 몽골어 상담 가능</div>
+    </section>
+
+    <!-- ================== SECTION HEADER ================== -->
+    <section id="sec-header" class="ds-section">
+      <div class="ds-eyebrow">Components · 09</div>
+      <h2 class="ds-h2"><span class="num">16</span>Section Header</h2>
+      <p class="ds-lede">Eyebrow → H2(악센트 1단어) → Lede 3-line. 모든 섹션 진입의 표준 패턴.</p>
+      <div class="sec-header-d">
+        <div class="eyebrow">CLINICAL EVIDENCE</div>
+        <h2>5년 추적, <span class="accent">99.7% 유지율.</span></h2>
+        <p>2019년부터 2024년까지 SMILE 시술을 받은 환자 8,400명을 추적한 결과입니다. 자세한 출처는 본문 하단 임상 자료실에서 확인하실 수 있습니다.</p>
+      </div>
+    </section>
+
+    <!-- ================== CARD NEWS ================== -->
+    <section id="cardnews" class="ds-section">
+      <div class="ds-eyebrow">Patterns · 01</div>
+      <h2 class="ds-h2"><span class="num">17</span>Card News 7-Page Template</h2>
+      <p class="ds-lede">
+        1080×1080 정사각 · Pretendard 베이스 · 하단 60px 띠지 고정. 대주제 7페이지는 동일 구조, 소주제만 변경한다.
+      </p>
+
+      <div class="cn-grid">
+        <!-- P1 -->
+        <div class="cn-card">
+          <div class="cn-canvas">
+            <div class="cn-p1">
+              <span class="tag">정보형 · 시력교정</span>
+              <div class="head">3분 만에 알 수 있는<br>나에게 맞는 시력교정<span class="it">A clearer view, refined.</span></div>
+              <div class="sub">강남스마일안과의원 · 5세대 NEW SMILE LASIK</div>
+            </div>
+            <div class="cn-band">강남스마일안과의원<span class="gold">·</span>NEW SMILE</div>
+          </div>
+          <div class="cn-meta"><span><strong>P1</strong> · 표지</span><span>1 / 7</span></div>
+        </div>
+
+        <!-- P2 -->
+        <div class="cn-card">
+          <div class="cn-canvas">
+            <div class="cn-p2">
+              <div class="eb">DEFINITION</div>
+              <div class="ttl">NEW SMILE LASIK이란?</div>
+              <ul class="checks">
+                <li>최소 절개 · 약 2mm</li>
+                <li>각막 보존율 향상</li>
+                <li>당일 일상 복귀 가능</li>
+                <li>건조감 부담 감소</li>
+              </ul>
+            </div>
+            <div class="cn-band">강남스마일안과의원<span class="gold">·</span>NEW SMILE</div>
+          </div>
+          <div class="cn-meta"><span><strong>P2</strong> · 정의</span><span>2 / 7</span></div>
+        </div>
+
+        <!-- P3 -->
+        <div class="cn-card">
+          <div class="cn-canvas">
+            <div class="cn-p3">
+              <div class="eb">PROCESS</div>
+              <div class="ttl">수술 당일 흐름</div>
+              <div class="steps">
+                <div class="step"><div class="num">1</div>도착 · 사전 검진</div>
+                <div class="step"><div class="num">2</div>전문의 상담</div>
+                <div class="step"><div class="num">3</div>마취 · 대기</div>
+                <div class="step"><div class="num">4</div>수술 약 15분</div>
+                <div class="step"><div class="num">5</div>회복 · 귀가</div>
+              </div>
+            </div>
+            <div class="cn-band">강남스마일안과의원<span class="gold">·</span>NEW SMILE</div>
+          </div>
+          <div class="cn-meta"><span><strong>P3</strong> · 프로세스</span><span>3 / 7</span></div>
+        </div>
+
+        <!-- P4 -->
+        <div class="cn-card">
+          <div class="cn-canvas">
+            <div class="cn-p4">
+              <div class="eb">CLINICAL DATA</div>
+              <div class="big">99.7%</div>
+              <div class="desc">5년 추적 시력 유지율<br>(2019–2024 · 8,400명 누적)</div>
+            </div>
+            <div class="cn-band">강남스마일안과의원<span class="gold">·</span>NEW SMILE</div>
+          </div>
+          <div class="cn-meta"><span><strong>P4</strong> · 데이터</span><span>4 / 7</span></div>
+        </div>
+
+        <!-- P5 -->
+        <div class="cn-card">
+          <div class="cn-canvas">
+            <div class="cn-p5">
+              <div class="eb">COMPARE</div>
+              <div class="ttl">기존 LASIK vs NEW SMILE</div>
+              <div class="cols">
+                <div class="col a"><strong>기존 LASIK</strong>각막 절편 생성<br>회복 3~5일<br>건조감 가능성</div>
+                <div class="col b"><strong>NEW SMILE</strong>2mm 최소 절개<br>당일 일상 복귀<br>각막 보존</div>
+              </div>
+            </div>
+            <div class="cn-band">강남스마일안과의원<span class="gold">·</span>NEW SMILE</div>
+          </div>
+          <div class="cn-meta"><span><strong>P5</strong> · 비교</span><span>5 / 7</span></div>
+        </div>
+
+        <!-- P6 -->
+        <div class="cn-card">
+          <div class="cn-canvas">
+            <div class="cn-p6">
+              <div class="eb">AUDIENCE</div>
+              <div class="ttl">이런 분께 적합합니다</div>
+              <ul>
+                <li>안경·렌즈 의존도가 높은 분</li>
+                <li>건조감으로 라식이 망설여졌던 분</li>
+                <li>회복 기간이 짧아야 하는 분</li>
+                <li>운동·야외 활동이 많은 분</li>
+                <li>해외 거주로 1회 방문 수술이 필요한 분</li>
+              </ul>
+            </div>
+            <div class="cn-band">강남스마일안과의원<span class="gold">·</span>NEW SMILE</div>
+          </div>
+          <div class="cn-meta"><span><strong>P6</strong> · 적합 대상</span><span>6 / 7</span></div>
+        </div>
+
+        <!-- P7 -->
+        <div class="cn-card">
+          <div class="cn-canvas">
+            <div class="cn-p7">
+              <div>
+                <div class="eb">CONTACT</div>
+                <div class="head">무료 검진부터<br>편하게 시작하세요<span class="it">Talk to us, in your language.</span></div>
+              </div>
+              <a class="cta-btn">메시지로 문의 →</a>
+            </div>
+            <div class="cn-band">강남스마일안과의원<span class="gold">·</span>NEW SMILE</div>
+          </div>
+          <div class="cn-meta"><span><strong>P7</strong> · CTA</span><span>7 / 7</span></div>
+        </div>
+
+        <!-- Cover variant -->
+        <div class="cn-card">
+          <div class="cn-canvas">
+            <div class="cn-pCover">
+              <div class="body">
+                <span class="tag">SIGNATURE</span>
+                <div class="head">의사가 답하는<br>5세대 SMILE의 진짜 이야기<span class="it">From our surgeons, to you.</span></div>
+              </div>
+            </div>
+            <div class="cn-band">강남스마일안과의원<span class="gold">·</span>NEW SMILE</div>
+          </div>
+          <div class="cn-meta"><span><strong>Cover Alt</strong> · 다크</span><span>—</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== SAFE ZONE ================== -->
+    <section id="safezone" class="ds-section">
+      <div class="ds-eyebrow">Patterns · 02</div>
+      <h2 class="ds-h2"><span class="num">18</span>Safe Zone &amp; Grid (1080×1080)</h2>
+      <p class="ds-lede">
+        모든 카드뉴스는 동일한 안전 영역을 따른다 — 좌우상하 72px (6.66%) · Hero zone y=140~440 · Body zone y=460~960 · Footer band y=1020~1080 (60px).
+      </p>
+      <div class="grid g-2">
+        <div>
+          <h3 class="ds-h3 mt-0">Layout Zones</h3>
+          <div class="safe-zone">
+            <div class="m-safe marker"></div>
+            <div class="m-hero">HERO ZONE · y=140–440</div>
+            <div class="m-body">BODY ZONE · y=460–960</div>
+            <div class="m-band">FOOTER BAND · 1080×60</div>
+          </div>
+        </div>
+        <div>
+          <h3 class="ds-h3 mt-0">12-col Grid Overlay</h3>
+          <div class="safe-zone">
+            <div class="grid-overlay">
+              <div></div><div></div><div></div><div></div><div></div><div></div>
+              <div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+            <div class="m-band">FOOTER BAND · y=1020</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== VOICE ================== -->
+    <section id="voice" class="ds-section">
+      <div class="ds-eyebrow">Voice · 01</div>
+      <h2 class="ds-h2"><span class="num">19</span>Tone &amp; Copy Rules</h2>
+      <p class="ds-lede">의료광고법 + 친근함 + 사실 기반. 단정 표현 금지, 출처 동반 필수.</p>
+
+      <h3 class="ds-h3">Don't &amp; Do</h3>
+      <div class="voice-grid">
+        <div class="voice-cell no">
+          <span class="lab">✕ DON'T</span>
+          <p>"100% 안전한 최고의 수술, 완벽한 시력 회복을 약속드립니다."</p>
+          <p>단정 표현 + 비교광고 + 약속 — 의료광고법 위반</p>
+        </div>
+        <div class="voice-cell yes">
+          <span class="lab">✓ DO</span>
+          <p>"5년 추적 99.7% 유지율 — 강남스마일이 쌓아온 데이터입니다."</p>
+          <p>출처 + 수치 + 사실 기반 표현</p>
+        </div>
+        <div class="voice-cell no">
+          <span class="lab">✕ DON'T</span>
+          <p>"국내 최초·최고·1위 NEW SMILE LASIK 전문 병원!"</p>
+          <p>비교광고 — 의료광고법 위반</p>
+        </div>
+        <div class="voice-cell yes">
+          <span class="lab">✓ DO</span>
+          <p>"5세대 NEW SMILE LASIK · 차세대 ATOS 장비 보유"</p>
+          <p>장비·세대·역량 객관 사실</p>
+        </div>
+        <div class="voice-cell no">
+          <span class="lab">✕ DON'T</span>
+          <p>"부작용 0%, 100% 회복 보장 ⭐⭐⭐⭐⭐"</p>
+          <p>단정 + 별점 — 부적절</p>
+        </div>
+        <div class="voice-cell yes">
+          <span class="lab">✓ DO</span>
+          <p>"1~3일 일상 복귀 · 정기 검진 6회 무료 포함"</p>
+          <p>구체적 기간 + 포함 서비스 명시</p>
+        </div>
+      </div>
+
+      <h3 class="ds-h3">5-Rule Copywriting Checklist</h3>
+      <div class="grid g-5">
+        <div class="why-card-d"><div class="num-badge">01</div><h4>사실 + 출처</h4><p>"5년 데이터 기준" "임상 결과 기준"</p></div>
+        <div class="why-card-d"><div class="num-badge">02</div><h4>친근한 호칭</h4><p>"여러분" "분들" 자연스럽게</p></div>
+        <div class="why-card-d"><div class="num-badge">03</div><h4>명확한 숫자</h4><p>"약 90분" "1주일 회복"</p></div>
+        <div class="why-card-d"><div class="num-badge">04</div><h4>이모지 절제</h4><p>페이지당 1-2개 (✓ ✨)</p></div>
+        <div class="why-card-d"><div class="num-badge">05</div><h4>마지막 줄에 CTA</h4><p>정보→행동 자연 연결</p></div>
+      </div>
+    </section>
+
+    <!-- ================== LANG ================== -->
+    <section id="lang" class="ds-section">
+      <div class="ds-eyebrow">Voice · 02</div>
+      <h2 class="ds-h2"><span class="num">20</span>3-Language Sample</h2>
+      <p class="ds-lede">동일한 메시지를 한국어 / 몽골어 / 영어로. 폰트 스택과 어조를 함께 정의한다.</p>
+      <div class="grid g-3">
+        <div class="lang-card kr">
+          <div class="lab">한국어 · KR</div>
+          <p>차세대 시력교정,<br>강남스마일에서 시작하세요.<br>5년 추적 99.7% 유지율.</p>
+        </div>
+        <div class="lang-card mn">
+          <div class="lab">Монгол · MN</div>
+          <p>Шинэ үеийн харааны засал,<br>Гангнам Смайл-аас эхлүүл.<br>5 жилийн ажиглалт, 99.7% тогтвортой.</p>
+        </div>
+        <div class="lang-card en">
+          <div class="lab">English · EN</div>
+          <p>Next-generation vision correction,<br>starts at Gangnam Smile.<br>99.7% stable over 5-year follow-up.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== IMAGERY ================== -->
+    <section id="imagery" class="ds-section">
+      <div class="ds-eyebrow">Voice · 03</div>
+      <h2 class="ds-h2"><span class="num">21</span>Imagery</h2>
+      <p class="ds-lede">실내 자연광 · 청결한 화이트 톤 · 푸른빛 그림자. 모델 컷은 환자 시선 정면, 의료진은 측면 액션.</p>
+      <div class="img-grid">
+        <div class="img-tile dark"><div class="lab">수술실 액션</div></div>
+        <div class="img-tile"><div class="lab">검사 장비 클로즈업</div></div>
+        <div class="img-tile"><div class="lab">의료진 포트레이트</div></div>
+        <div class="img-tile dark"><div class="lab">상담 라운지</div></div>
+      </div>
+      <div class="comp-row mt-5">
+        <div class="comp-label">Imagery Rules</div>
+        <div class="notes" style="margin:0">
+          · 모든 사진은 5500K~6500K 색온도 통일 (병원 화이트 형광등 톤)<br>
+          · 인물 컷은 의료진 동의 + 초상권 사용 동의서 필수<br>
+          · 수술 장면은 마스크·캡 착용 컷만 사용 (위생 신뢰감)<br>
+          · 환자 컷은 BEFORE/AFTER 직접 비교 금지 (의료광고법) → "수술 후 일상" 라이프스타일 컷으로 대체<br>
+          · 스톡 사진 사용 시 한국 병원 환경과 어색하지 않은 컷만 (서양인 의료진 단독 컷 X)
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== DON'TS ================== -->
+    <section id="donts" class="ds-section">
+      <div class="ds-eyebrow">Voice · 04</div>
+      <h2 class="ds-h2"><span class="num">22</span>Do &amp; Don't</h2>
+      <p class="ds-lede">디자인 시스템 위반 사례 모음. 자동화 파이프라인의 검수 룰로도 활용.</p>
+
+      <h3 class="ds-h3">디자인</h3>
+      <div class="dont-grid">
+        <div class="dont-card"><div class="lab no">✕ Don't</div><p>색상 팔레트 외 임의 색 사용 (그린·핑크·바이올렛 등)</p></div>
+        <div class="dont-card"><div class="lab no">✕ Don't</div><p>본문 텍스트 18pt 미만 — 가독성 저하</p></div>
+        <div class="dont-card"><div class="lab no">✕ Don't</div><p>띠지 높이 60px 외 다른 값 사용</p></div>
+        <div class="dont-card do"><div class="lab yes">✓ Do</div><p>Navy 단일 주조 + Gold 1회 강조</p></div>
+        <div class="dont-card do"><div class="lab yes">✓ Do</div><p>Body 18pt + Caption 12pt 위계 유지</p></div>
+        <div class="dont-card do"><div class="lab yes">✓ Do</div><p>1080×60 띠지 고정, y=1020 위치 고정</p></div>
+      </div>
+
+      <h3 class="ds-h3">카피</h3>
+      <div class="dont-grid">
+        <div class="dont-card"><div class="lab no">✕ Don't</div><p>"최고의·1위·100%·완벽" 등 단정 표현</p></div>
+        <div class="dont-card"><div class="lab no">✕ Don't</div><p>"치료" — 시력교정에는 부적절 (교정·개선 사용)</p></div>
+        <div class="dont-card"><div class="lab no">✕ Don't</div><p>이모지 페이지당 3개 이상 (의료 신뢰감 저하)</p></div>
+        <div class="dont-card do"><div class="lab yes">✓ Do</div><p>"5년 추적 99.7%" — 출처 동반 수치</p></div>
+        <div class="dont-card do"><div class="lab yes">✓ Do</div><p>"교정·개선·일상 복귀" 사실 기반 동사</p></div>
+        <div class="dont-card do"><div class="lab yes">✓ Do</div><p>이모지 ✓ ✨ 💬 페이지당 1-2개 한정</p></div>
+      </div>
+    </section>
+
+    <!-- ================== FOOTER ================== -->
+    <footer class="ds-footer">
+      <div>
+        <div class="col-lab">DESIGN SYSTEM</div>
+        <h3>A consistent visual language,<br>so every clinic asset feels like Gangnam Smile.</h3>
+        <p>이 디자인 시스템은 카드뉴스 자동 생성, 랜딩페이지 변경, 인쇄물 템플릿, 소셜 광고 소재 모두에 적용됩니다.
+        새로운 패턴이 필요할 때는 시스템에 추가 후 사용 — 임의 변형은 금지.</p>
+      </div>
+      <div class="meta">
+        VERSION · 1.0<br>
+        UPDATED · 2026-05<br>
+        OWNER · 송준 (포트존)<br>
+        BRAND · 강남스마일안과의원<br>
+        LIVE · songjun2625.github.io/smileeye-landing
+        <strong>Maintained by PortZone Marketing Team</strong>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<script>
+  // Active nav highlight on scroll
+  const links = document.querySelectorAll('.ds-nav a');
+  const sections = [...links].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const setActive = () => {
+    let idx = 0;
+    sections.forEach((s, i) => { if (s.getBoundingClientRect().top < 120) idx = i; });
+    links.forEach(l => l.classList.remove('active'));
+    if (links[idx]) links[idx].classList.add('active');
+  };
+  window.addEventListener('scroll', setActive, { passive:true });
+  setActive();
+</script>
+</body>
+</html>

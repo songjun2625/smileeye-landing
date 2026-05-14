@@ -188,15 +188,16 @@
   padding-left: 0;
 }
 
-/* H2에 자동 번호 — eopla 스타일 "01." */
-.blog-post .post-body { counter-reset: section; }
-.blog-post .post-body h2 { counter-increment: section; }
+/* H2 강조 — 네이비 좌측 마크 (자동 번호 X, 본문의 Q1·Q2와 겹침 방지) */
 .blog-post .post-body h2::before {
-  content: counter(section, decimal-leading-zero) ". ";
-  color: var(--accent);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  margin-right: 4px;
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 3px;
+  background: var(--accent);
+  vertical-align: middle;
+  margin-right: 14px;
+  margin-bottom: 8px;
 }
 
 .blog-post .post-body h3 {
@@ -334,19 +335,21 @@
   margin-bottom: 32px;
 }
 .blog-post .post-author-card .author-avatar {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
+  background: #fff;
+  border: 1.5px solid var(--ink-divider);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-serif);
-  font-size: 20px;
-  font-weight: 700;
   flex-shrink: 0;
-  letter-spacing: 0;
+  overflow: hidden;
+}
+.blog-post .post-author-card .author-avatar svg {
+  width: 32px;
+  height: 32px;
+  display: block;
 }
 .blog-post .post-author-card .author-info {
   flex: 1;

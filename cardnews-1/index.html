@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>Facebook 브랜드 런칭 피드 — 강남스마일안과의원</title>
+<link rel="stylesheet" href="./colors_and_type.css" />
+<style>
+  html, body { margin:0; background:#ECEEF3; font-family: var(--font-kr); }
+  .stage { min-height: 100vh; display:flex; flex-direction:column; align-items:center; padding: 24px 20px 80px; gap: 20px; }
+
+  .controls {
+    position: sticky; top: 12px; z-index: 10;
+    display: flex; gap: 6px; padding: 8px 10px;
+    background: var(--gsc-blue-navy-deep); color:#fff;
+    border-radius: 999px;
+    box-shadow: 0 10px 30px -10px rgba(28,44,174,0.4);
+    align-items: center; flex-wrap:wrap;
+  }
+  .controls .seg { display:flex; gap:4px; padding:0 6px; border-right: 1px solid rgba(255,255,255,0.18);}
+  .controls .seg:last-child { border-right: none; }
+  .controls button {
+    border: none; background: transparent; color: #fff;
+    font-family: var(--font-kr); font-size: 12px; font-weight: 600;
+    padding: 6px 10px; border-radius: 999px;
+    cursor: pointer; opacity: 0.65; transition: 0.2s;
+    white-space: nowrap;
+  }
+  .controls button:hover { opacity: 1; }
+  .controls button.active { background: var(--gsc-gold); color: var(--gsc-blue-navy-deep); opacity: 1;}
+  .controls .meta { font-family: var(--font-en); font-size: 11px; color: var(--gsc-gold); letter-spacing:1px; padding: 0 12px; }
+
+  .frame {
+    width: 600px; height: 600px;
+    overflow: hidden; border-radius: 24px;
+    box-shadow: 0 30px 80px -30px rgba(15,26,48,0.45);
+    background:#fff; position:relative;
+  }
+  .fb-card {
+    width: 1200px; height: 1200px;
+    position: relative;
+    transform: scale(0.5); transform-origin: top left;
+    overflow: hidden;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="controls" id="ctl"></div>
+  <div class="frame"><div id="root"></div></div>
+</div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="fbContent.jsx"></script>
+<script type="text/babel" src="fbPages.jsx"></script>
+
+<script type="text/babel">
+const RENDERERS = [FB_F1, FB_F2, FB_F3, FB_F4, FB_F5, FB_F6];
+
+function App() {
+  const [idx, setIdx] = React.useState(0);
+  const [lang, setLang] = React.useState("kr");
+  const Cur = RENDERERS[idx];
+  const d = FB_POSTS[idx];
+
+  React.useEffect(() => {
+    const ctl = document.getElementById('ctl');
+    ctl.innerHTML = "";
+
+    // language toggle
+    const langSeg = document.createElement("div"); langSeg.className = "seg";
+    [["kr","KR · 한국어"], ["mn","MN · Монгол"]].forEach(([key, label]) => {
+      const b = document.createElement("button");
+      b.textContent = label;
+      if (lang === key) b.className = "active";
+      b.onclick = () => setLang(key);
+      langSeg.appendChild(b);
+    });
+    ctl.appendChild(langSeg);
+
+    // post selector
+    const postSeg = document.createElement("div"); postSeg.className = "seg";
+    FB_POSTS.forEach((p, i) => {
+      const b = document.createElement("button");
+      const labelTxt = (p.label && (p.label[lang] || p.label.kr)) || p.id;
+      b.textContent = labelTxt.replace(/^\d+\s·\s/, p.id + " · ");
+      if (i === idx) b.className = "active";
+      b.onclick = () => setIdx(i);
+      postSeg.appendChild(b);
+    });
+    ctl.appendChild(postSeg);
+
+    const meta = document.createElement("span");
+    meta.className = "meta";
+    meta.textContent = `${idx+1}/${FB_POSTS.length} · 1200×1200 @ 0.5×`;
+    ctl.appendChild(meta);
+  }, [idx, lang]);
+
+  return <Cur d={d} lang={lang} />;
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

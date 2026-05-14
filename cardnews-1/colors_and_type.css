@@ -1,0 +1,279 @@
+/* =========================================================
+   Gangnam Smile Eye Clinic — Design Tokens
+   Bilingual card-news system (KR master + MN pair)
+   100% Blue base · Authority · Precision · Trust
+   ========================================================= */
+
+/* -----------------------------
+   Fonts
+   ----------------------------- */
+@font-face {
+  font-family: "Noto Sans Mongolian";
+  src: url("./fonts/NotoSansMongolian-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Pretendard via web (Korean primary). Local TTFs were not bundled —
+   substitute via CDN until user re-uploads the .otf set. */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
+/* Inter — Latin master (Figma source uses Inter Bold/Black/Medium) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+
+  /* =========================================================
+     COLOR — base (raw tokens, do not consume directly)
+     Pulled from Figma metadata. KR master uses these exact RGBs.
+     ========================================================= */
+
+  /* Primary blue ramp */
+  --gsc-blue-navy:        #1A2744;  /* 26 39 68    — surface dark / footer / CTA */
+  --gsc-blue-navy-deep:   #0F1A30;  /* 15 26 48    — quote band, deep panel */
+  --gsc-blue-primary:     #1C2CAE;  /* 28 44 174   — brand primary, big numerals */
+  --gsc-blue-mid:         #2D5BE3;  /* 45 91 227   — link / mid blue */
+  --gsc-blue-light:       #5879F2;  /* 88 121 242  — accent surface, pills */
+  --gsc-blue-pastel:      #B8C5F5;  /* 184 197 245 — soft chip, light panel */
+  --gsc-blue-mist:        #F2F7FF;  /* 242 247 255 — Q&A page surface */
+
+  /* Accent gold (used for KR master CTAs, marker bars) */
+  --gsc-gold:             #E8B143;  /* 232 177 67  — accent, "넘기기" pill */
+
+  /* Neutrals */
+  --gsc-ink-100:          #0A0E14;  /* 10 14 20    — pure black ink */
+  --gsc-ink-90:           #263541;  /* 38 53 65    — body copy */
+  --gsc-ink-70:           #2D3F5C;  /* 45 63 92    — secondary ink */
+  --gsc-ink-50:           #798183;  /* 121 129 131 — muted label */
+  --gsc-line:             #E5E9EF;  /* 229 233 239 — divider */
+  --gsc-bg-50:            #F2F4F7;  /* 242 244 247 — soft panel */
+  --gsc-bg-cream:         #FCFAF5;  /* 252 250 245 — checklist surface */
+  --gsc-bg-ivory:         #FBF8F0;  /* 251 248 240 — alt warm surface */
+  --gsc-white:            #FFFFFF;
+  --gsc-white-soft:       #FBFBFD;  /* 251 251 253 */
+
+  /* Semantic alerts (from metadata, used sparingly in stats / B&A / myth-bust) */
+  --gsc-success:          #22C55E;
+  --gsc-warning:          #F59E0B;
+  --gsc-danger:           #DC2626;
+  --gsc-danger-soft:      #FCA5A5;
+  --gsc-info:             #0EA5E9;
+  --gsc-myth:             #6B4E9E;  /* 107 78 158 — myth-bust accent */
+
+  /* =========================================================
+     COLOR — semantic
+     ========================================================= */
+
+  /* Surfaces */
+  --bg-default:   var(--gsc-white);
+  --bg-soft:      var(--gsc-bg-50);
+  --bg-mist:      var(--gsc-blue-mist);     /* Q&A surface */
+  --bg-cream:     var(--gsc-bg-cream);      /* checklist / B&A surface */
+  --bg-navy:      var(--gsc-blue-navy);     /* dark cover panels */
+  --bg-primary:   var(--gsc-blue-primary);  /* big stat panels */
+  --bg-deep:      var(--gsc-blue-navy-deep);/* nested deep panels */
+  --bg-footer:    var(--gsc-blue-navy);
+
+  /* Foregrounds */
+  --fg-on-light:  var(--gsc-blue-navy);     /* primary text on light */
+  --fg-on-dark:   var(--gsc-white);
+  --fg-body:      var(--gsc-ink-90);
+  --fg-muted:     var(--gsc-ink-50);
+  --fg-link:      var(--gsc-blue-primary);
+  --fg-accent:    var(--gsc-gold);
+
+  /* Borders */
+  --border-hairline: var(--gsc-line);
+  --border-strong:   var(--gsc-blue-navy);
+
+  /* =========================================================
+     TYPOGRAPHY — families
+     ========================================================= */
+  --font-kr:  "Pretendard", "Pretendard Variable", "Apple SD Gothic Neo",
+              "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mn:  "Noto Sans Mongolian", "Pretendard", sans-serif;
+  --font-en:  "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Inter", sans-serif;
+
+  /* =========================================================
+     TYPOGRAPHY — scale (1080×1080 card-news, pt → px 1:1)
+     Per Figma layer styles in /01.
+     ========================================================= */
+  --t-display-size:    88px;
+  --t-display-weight:  900;
+  --t-display-lh:      0.9;
+  --t-display-track:   -2.5px;
+
+  --t-h1-size:    64px;
+  --t-h1-weight:  900;
+  --t-h1-lh:      1.18;     /* 76px */
+  --t-h1-track:   -1.5px;
+
+  --t-h2-size:    48px;
+  --t-h2-weight:  700;
+  --t-h2-lh:      1.21;     /* 58px */
+  --t-h2-track:   -1.0px;
+
+  --t-h3-size:    32px;
+  --t-h3-weight:  700;
+  --t-h3-lh:      1.31;     /* 42px */
+  --t-h3-track:   -0.5px;
+
+  --t-bodyL-size:    26px;
+  --t-bodyL-weight:  500;
+  --t-bodyL-lh:      1.46;  /* 38px */
+
+  --t-body-size:     22px;
+  --t-body-weight:   400;
+  --t-body-lh:       1.64;  /* 36px */
+
+  --t-footer-size:   17px;
+  --t-footer-weight: 600;
+  --t-footer-lh:     1.0;
+  --t-footer-track:  0.5px;
+
+  --t-caption-size:   16px;
+  --t-caption-weight: 500;
+  --t-caption-lh:     1.0;
+
+  --t-eyebrow-size:   14px;
+  --t-eyebrow-weight: 700;
+  --t-eyebrow-track:  1.5px;
+
+  /* MN fallback — Mongolian Cyrillic runs ~0.78× vs Korean visual size */
+  --t-mn-display-size: 68px;
+  --t-mn-h1-size:      52px;
+  --t-mn-h2-size:      40px;
+  --t-mn-body-size:    22px;
+  --t-mn-bodyL-size:   24px;
+
+  /* =========================================================
+     SPACING / RADIUS / SHADOW
+     1080×1080 grid: 72px gutter, 12-col @ 78px / 12px gap
+     ========================================================= */
+  --gutter:    72px;
+  --footer-h:  60px;     /* fixed footer band */
+  --header-h:  88px;     /* top tag pad */
+
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  88px;
+
+  --radius-xs: 6px;     /* check chip */
+  --radius-s:  8px;     /* badge */
+  --radius-m:  12px;    /* CTA strip */
+  --radius-l:  16px;    /* B&A image, channel card */
+  --radius-xl: 30px;    /* pill */
+  --radius-pill: 999px;
+
+  --shadow-card: 0 24px 60px -28px rgba(28,44,174,0.28);
+  --shadow-deep: 0 30px 80px -30px rgba(15,26,48,0.40);
+  --shadow-soft: 0 14px 40px -16px rgba(28,44,174,0.18);
+
+  /* =========================================================
+     COMPONENT TOKENS
+     ========================================================= */
+  --pill-h:        44px;     /* category pill */
+  --cta-pill-h:    60px;     /* "넘기기" pill */
+  --cta-pill-w:    200px;
+  --topmark-size:  80px;     /* corner icon mark */
+  --number-bubble: 80px;     /* Q/A number circle */
+  --check-size:    40px;     /* checklist square */
+}
+
+/* =========================================================
+   SEMANTIC ELEMENT STYLES
+   Apply via class (.gsc-display, .gsc-h1, …) so card-news bindings
+   stay independent of native h1/h2 nesting.
+   ========================================================= */
+
+.gsc-display {
+  font-family: var(--font-display);
+  font-size: var(--t-display-size);
+  font-weight: var(--t-display-weight);
+  line-height: var(--t-display-lh);
+  letter-spacing: var(--t-display-track);
+  color: var(--fg-on-light);
+}
+
+.gsc-h1 {
+  font-family: var(--font-display);
+  font-size: var(--t-h1-size);
+  font-weight: var(--t-h1-weight);
+  line-height: var(--t-h1-lh);
+  letter-spacing: var(--t-h1-track);
+  color: var(--fg-on-light);
+}
+
+.gsc-h2 {
+  font-family: var(--font-display);
+  font-size: var(--t-h2-size);
+  font-weight: var(--t-h2-weight);
+  line-height: var(--t-h2-lh);
+  letter-spacing: var(--t-h2-track);
+  color: var(--fg-on-light);
+}
+
+.gsc-h3 {
+  font-family: var(--font-display);
+  font-size: var(--t-h3-size);
+  font-weight: var(--t-h3-weight);
+  line-height: var(--t-h3-lh);
+  letter-spacing: var(--t-h3-track);
+  color: var(--fg-on-light);
+}
+
+.gsc-bodyL {
+  font-family: var(--font-kr);
+  font-size: var(--t-bodyL-size);
+  font-weight: var(--t-bodyL-weight);
+  line-height: var(--t-bodyL-lh);
+  color: var(--fg-body);
+}
+
+.gsc-body {
+  font-family: var(--font-kr);
+  font-size: var(--t-body-size);
+  font-weight: var(--t-body-weight);
+  line-height: var(--t-body-lh);
+  color: var(--fg-body);
+}
+
+.gsc-caption {
+  font-family: var(--font-kr);
+  font-size: var(--t-caption-size);
+  font-weight: var(--t-caption-weight);
+  line-height: var(--t-caption-lh);
+  color: var(--fg-muted);
+}
+
+.gsc-eyebrow {
+  font-family: var(--font-kr);
+  font-size: var(--t-eyebrow-size);
+  font-weight: var(--t-eyebrow-weight);
+  letter-spacing: var(--t-eyebrow-track);
+  text-transform: uppercase;
+  color: var(--fg-accent);
+}
+
+.gsc-footer-text {
+  font-family: var(--font-kr);
+  font-size: var(--t-footer-size);
+  font-weight: var(--t-footer-weight);
+  letter-spacing: var(--t-footer-track);
+  color: var(--fg-on-dark);
+}
+
+/* MN locale variants */
+[lang="mn"] .gsc-display { font-family: var(--font-mn); font-size: var(--t-mn-display-size); }
+[lang="mn"] .gsc-h1      { font-family: var(--font-mn); font-size: var(--t-mn-h1-size); }
+[lang="mn"] .gsc-h2      { font-family: var(--font-mn); font-size: var(--t-mn-h2-size); }
+[lang="mn"] .gsc-body    { font-family: var(--font-mn); font-size: var(--t-mn-body-size); line-height: 1.7; }
+[lang="mn"] .gsc-bodyL   { font-family: var(--font-mn); font-size: var(--t-mn-bodyL-size); line-height: 1.55; }
